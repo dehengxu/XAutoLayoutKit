@@ -24,6 +24,7 @@
 
 @interface UIView (LayoutConstraint)
 
+- (void)setSameSizeWithView:(id)view;
 - (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
 - (void)followViewCenterX:(UIView *)v1;
 - (void)followViewCenterY:(UIView *)v1;

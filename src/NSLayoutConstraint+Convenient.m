@@ -76,6 +76,12 @@
 
 @implementation UIView (LayoutConstraint)
 
+- (void)setSameSizeWithView:(id)view
+{
+    [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+}
+
 - (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView
 {
     if (!superView) {
