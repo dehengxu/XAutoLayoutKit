@@ -55,6 +55,23 @@
     [self followViewCenterY:v1 withView:v2];
 }
 
++ (void)addConstraintOnView:(id)view withItem:(id)view1 attribute:(NSLayoutAttribute)attr1 relatedBy:(NSLayoutRelation)relation toItem:(id)view2 attribute:(NSLayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c
+{
+    id constraint = [self constraintWithItem:view1 attribute:attr1 relatedBy:relation toItem:view2 attribute:attr2 multiplier:multiplier constant:c];
+    
+    if (view) {
+        [view addConstraint:constraint];
+    }
+}
+
++ (void)addConstraintsOnView:(id)view WithVisualFormat:(NSString *)format options:(NSLayoutFormatOptions)opts metrics:(NSDictionary *)metrics views:(NSDictionary *)views
+{
+    id constraints = [self constraintsWithVisualFormat:format options:opts metrics:metrics views:views];
+    if (view) {
+        [view addConstraints:constraints];
+    }
+}
+
 @end
 
 @implementation UIView (LayoutConstraint)
