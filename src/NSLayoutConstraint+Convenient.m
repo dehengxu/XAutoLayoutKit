@@ -64,7 +64,7 @@
     }
 }
 
-+ (void)addConstraintsOnView:(id)view WithVisualFormat:(NSString *)format options:(NSLayoutFormatOptions)opts metrics:(NSDictionary *)metrics views:(NSDictionary *)views
++ (void)addConstraintsOnView:(id)view withVisualFormat:(NSString *)format options:(NSLayoutFormatOptions)opts metrics:(NSDictionary *)metrics views:(NSDictionary *)views
 {
     id constraints = [self constraintsWithVisualFormat:format options:opts metrics:metrics views:views];
     if (view) {
