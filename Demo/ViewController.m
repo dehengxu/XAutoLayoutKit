@@ -3,7 +3,10 @@
 //  PlaygroundLab
 //
 //  https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/AutoLayoutinCode/AutoLayoutinCode.html#//apple_ref/doc/uid/TP40010853-CH11-SW1
+//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/
 //
+//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
+
 //  Created by DehengXu on 14/10/17.
 //  Copyright (c) 2014年 DehengXu. All rights reserved.
 //
@@ -23,12 +26,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     //UIView *v1, *v2;
-    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)];
-    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)];
-    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)];
-    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)];
+    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].x_constraintView;
+    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].x_constraintView;
+    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].x_constraintView;
+    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].x_constraintView;
 
-    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].x_constraintView;
 
     self.v1.backgroundColor = [UIColor redColor];
     self.v2.backgroundColor = [UIColor greenColor];
@@ -36,12 +39,6 @@
     self.v4.backgroundColor = [UIColor yellowColor];
 
     self.objectOfReference.backgroundColor = [UIColor orangeColor];
-    [self.v1 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.v2 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.v3 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.v4 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.objectOfReference setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     [self.view addSubview:self.objectOfReference];
     [self.view addSubview:self.v1];
@@ -51,7 +48,7 @@
 
     self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
 
-    [self _loadConstraintsB];
+    [self _loadConstraintsA];
 }
 
 - (void)updateViewConstraints
@@ -86,6 +83,13 @@
     [self.view addConstraints:constraints];
 }
 
+
+/**
+ Load constraint B
+ 
+ https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
+ 
+ */
 - (void)_loadConstraintsB
 {
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);

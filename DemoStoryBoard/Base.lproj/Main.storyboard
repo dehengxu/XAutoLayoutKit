@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lac-qm-26m" userLabel="DarkGrayView">
+                                <rect key="frame" x="275" y="484" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1cC-f0-0sb"/>
+                                    <constraint firstAttribute="width" constant="50" id="K4j-h5-q0b"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-35-q1l" userLabel="BlackView">
+                                <rect key="frame" x="250" y="350" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9FY-Rx-lEI"/>
+                                    <constraint firstAttribute="height" constant="100" id="hGL-nK-lIq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="SYy-35-q1l" secondAttribute="centerY" constant="-100" id="0VK-HJ-4Ev"/>
+                            <constraint firstItem="Lac-qm-26m" firstAttribute="top" secondItem="SYy-35-q1l" secondAttribute="bottom" constant="34" id="QAS-Yv-9In"/>
+                            <constraint firstItem="SYy-35-q1l" firstAttribute="centerX" secondItem="Lac-qm-26m" secondAttribute="centerX" id="gxa-ng-5vn"/>
+                            <constraint firstAttribute="centerX" secondItem="SYy-35-q1l" secondAttribute="centerX" id="r2a-y1-Vqo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blackView" destination="SYy-35-q1l" id="k9E-Ll-WSz"/>
+                        <outlet property="darkGrayView" destination="Lac-qm-26m" id="7iY-cC-PBN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
