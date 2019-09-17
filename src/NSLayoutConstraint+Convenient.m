@@ -141,6 +141,33 @@
 
 }
 
+- (void)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView
+{
+    if (!superView) {
+        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
+        return;
+    }
+    NSArray *constraints = nil;
+    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
+
+    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", width] views:bindViews];
+    [superView addConstraints:constraints];
+
+}
+
+- (void)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView
+{
+    if (!superView) {
+        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
+        return;
+    }
+    NSArray *constraints = nil;
+    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
+
+    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", height] views:bindViews];
+    [superView addConstraints:constraints];
+}
+
 - (void)followCenterXOfView:(UIView *)v1
 {
     [NSLayoutConstraint followViewCenterX:v1 withView:self];

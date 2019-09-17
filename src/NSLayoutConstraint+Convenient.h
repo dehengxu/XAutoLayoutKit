@@ -34,6 +34,8 @@
 - (void)setSameHeightWithView:(UIView *)view;
 - (void)setConstraintSize:(CGSize)size;
 - (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
+- (void)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView;
+- (void)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView;
 
 #pragma makr - follow center
 - (void)followCenterXOfView:(UIView *)v1;
