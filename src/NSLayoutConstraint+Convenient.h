@@ -30,6 +30,8 @@
 - (UIView *)x_constraintView;
 - (UIView *)x_nonnConstraintView;
 - (void)setSameSizeWithView:(UIView *)view;
+- (void)setSameWidthWithView:(UIView *)view;
+- (void)setSameHeightWithView:(UIView *)view;
 - (void)setConstraintSize:(CGSize)size;
 - (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
 
