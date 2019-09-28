@@ -193,6 +193,33 @@
     [self alignToTop:y ofView:v1];
 }
 
+- (void)followPositionOfView:(UIView *)v1
+{
+    [self followX:0 OfView:v1];
+    [self followY:0 OfView:v1];
+}
+
+- (void)followWidthOfView:(UIView *)v1
+{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    [self.superview addConstraint:constraint];
+}
+
+- (void)followHeightOfView:(UIView *)v1
+{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    [self.superview addConstraint:constraint];
+}
+
+- (void)followSizeOfView:(UIView *)v1
+{
+    NSArray *constraints = @[
+        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]
+    ];
+    [self.superview addConstraints:constraints];
+}
+
 #pragma mark - align of view
 
 - (void)alignToLeft:(CGFloat)margin ofView:(UIView *)v1

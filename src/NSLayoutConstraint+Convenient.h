@@ -43,6 +43,10 @@
 - (void)followCenterOfView:(UIView *)v1;
 - (void)followX:(CGFloat)x OfView:(UIView *)v1;
 - (void)followY:(CGFloat)y OfView:(UIView *)v1;
+- (void)followPositionOfView:(UIView *)v1;
+- (void)followWidthOfView:(UIView *)v1;
+- (void)followHeightOfView:(UIView *)v1;
+- (void)followSizeOfView:(UIView *)v1;
 
 #pragma mark - align of view
 
