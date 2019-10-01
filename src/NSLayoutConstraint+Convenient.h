@@ -27,8 +27,8 @@
 
 @interface UIView (LayoutConstraint)
 
-- (UIView *)x_constraintView;
-- (UIView *)x_nonnConstraintView;
+- (instancetype)x_constraintView;
+- (instancetype)x_nonnConstraintView;
 - (void)setSameSizeWithView:(UIView *)view;
 - (void)setSameWidthWithView:(UIView *)view;
 - (void)setSameHeightWithView:(UIView *)view;

@@ -76,7 +76,7 @@
 
 @implementation UIView (LayoutConstraint)
 
-- (UIView *)x_constraintView
+- (instancetype)x_constraintView
 {
     if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
@@ -84,7 +84,7 @@
     return self;
 }
 
-- (UIView *)x_nonnConstraintView
+- (instancetype)x_nonnConstraintView
 {
     if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
