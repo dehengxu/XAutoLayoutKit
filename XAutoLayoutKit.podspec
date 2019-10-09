@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XAutoLayoutKit"
-  s.version      = "0.2.0"
+  s.version      = "0.2.0-beta.1"
   s.summary      = "XAutoLayoutKit is a small collection of auto layout convenient utils."
 
   s.description  = <<-DESC
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/xudeheng/XAutoLayoutKit.git", :tag => "0.1" }
+  s.source       = { :git => "https://github.com/xudeheng/XAutoLayoutKit.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
