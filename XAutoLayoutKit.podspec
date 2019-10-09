@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XAutoLayoutKit"
-  s.version      = "0.2.0-beta.1"
+  s.version      = "0.2.0-beta.2"
   s.summary      = "XAutoLayoutKit is a small collection of auto layout convenient utils."
 
   s.description  = <<-DESC
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "https://github.com/xudeheng/XAutoLayoutKit"
+  s.homepage     = "https://github.com/dehengxu/XAutoLayoutKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
