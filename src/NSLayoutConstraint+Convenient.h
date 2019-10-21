@@ -37,16 +37,23 @@
 - (void)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView;
 - (void)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView;
 
-#pragma makr - follow center
+#pragma makr - follow position
+
 - (void)followCenterXOfView:(UIView *)v1;
 - (void)followCenterYOfView:(UIView *)v1;
 - (void)followCenterOfView:(UIView *)v1;
 - (void)followX:(CGFloat)x OfView:(UIView *)v1;
 - (void)followY:(CGFloat)y OfView:(UIView *)v1;
 - (void)followPositionOfView:(UIView *)v1;
+    
+#pragma mark - follow size
+    
 - (void)followWidthOfView:(UIView *)v1;
+- (void)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
 - (void)followHeightOfView:(UIView *)v1;
+- (void)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
 - (void)followSizeOfView:(UIView *)v1;
+- (void)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers;
 
 #pragma mark - align of view
 
@@ -63,6 +70,5 @@
 - (void)below:(CGFloat)behide OfView:(UIView *)v1;
 - (void)ahead:(CGFloat)ahead OfView:(UIView *)v1;
 - (void)after:(CGFloat)after OfView:(UIView *)v1;
-
 
 @end
