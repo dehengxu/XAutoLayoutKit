@@ -57,12 +57,12 @@
 
 #pragma mark - align of view
 
-- (void)alignToLeft:(CGFloat)margin ofView:(UIView *)v1;
-- (void)alignToRight:(CGFloat)margin ofView:(UIView *)v1;
-- (void)alignToTop:(CGFloat)margin ofView:(UIView *)v1;
-- (void)alignToBottom:(CGFloat)margin ofView:(UIView *)v1;
-- (void)alignToCenter:(CGPoint)point ofView:(UIView *)v1;
-- (void)alignToPoint:(CGPoint)location ofView:(UIView *)v1;
+- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1;
+- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1;
 
 #pragma mark - out of view
 

@@ -253,40 +253,45 @@
     
 #pragma mark - align of view
 
-- (void)alignToLeft:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:margin];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)alignToRight:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:-margin];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)alignToTop:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)alignToBottom:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)alignToCenter:(CGPoint)point ofView:(UIView *)v1
+- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:point.x];
     [self.superview addConstraint:constraint];
 
     constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:point.y];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)alignToPoint:(CGPoint)location ofView:(UIView *)v1
+- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:location.x];
     [self.superview addConstraint:constraint];
@@ -294,6 +299,7 @@
     constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:location.y];
 
     [self.superview addConstraint:constraint];
+    return self;
 }
 
 #pragma mark - out of view
