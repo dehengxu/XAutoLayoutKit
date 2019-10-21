@@ -168,36 +168,46 @@
     [superView addConstraints:constraints];
 }
 
-- (void)followCenterXOfView:(UIView *)v1
+#pragma mark - follow position
+    
+- (instancetype)followCenterXOfView:(UIView *)v1
 {
     [NSLayoutConstraint followViewCenterX:v1 withView:self];
+    return self;
 }
 
-- (void)followCenterYOfView:(UIView *)v1
+- (instancetype)followCenterYOfView:(UIView *)v1
 {
     [NSLayoutConstraint followViewCenterY:v1 withView:self];
+    return self;
 }
 
-- (void)followCenterOfView:(UIView *)v1
+- (instancetype)followCenterOfView:(UIView *)v1
 {
     [NSLayoutConstraint followViewCenter:v1 withView:self];
+    return self;
 }
 
-- (void)followX:(CGFloat)x OfView:(UIView *)v1
+- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1
 {
     [self alignToLeft:x ofView:v1];
+    return self;
 }
 
-- (void)followY:(CGFloat)y OfView:(UIView *)v1
+- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1
 {
     [self alignToTop:y ofView:v1];
+    return self;
 }
 
-- (void)followPositionOfView:(UIView *)v1
+- (instancetype)followPositionOfView:(UIView *)v1
 {
     [self followX:0 OfView:v1];
     [self followY:0 OfView:v1];
+    return self;
 }
+    
+#pragma mark - follow size
 
 - (instancetype)followWidthOfView:(UIView *)v1
 {

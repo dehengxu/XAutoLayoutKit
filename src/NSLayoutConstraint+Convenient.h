@@ -39,12 +39,12 @@
 
 #pragma makr - follow position
 
-- (void)followCenterXOfView:(UIView *)v1;
-- (void)followCenterYOfView:(UIView *)v1;
-- (void)followCenterOfView:(UIView *)v1;
-- (void)followX:(CGFloat)x OfView:(UIView *)v1;
-- (void)followY:(CGFloat)y OfView:(UIView *)v1;
-- (void)followPositionOfView:(UIView *)v1;
+- (instancetype)followCenterXOfView:(UIView *)v1;
+- (instancetype)followCenterYOfView:(UIView *)v1;
+- (instancetype)followCenterOfView:(UIView *)v1;
+- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1;
+- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1;
+- (instancetype)followPositionOfView:(UIView *)v1;
     
 #pragma mark - follow size
     
