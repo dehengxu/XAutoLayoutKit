@@ -199,37 +199,42 @@
     [self followY:0 OfView:v1];
 }
 
-- (void)followWidthOfView:(UIView *)v1
+- (instancetype)followWidthOfView:(UIView *)v1
 {
     [self followWidthOfView:v1 withMultiplier:1.0];
+    return self;
 }
     
-- (void)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier {
+- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:multiplier constant:0];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)followHeightOfView:(UIView *)v1
+- (instancetype)followHeightOfView:(UIView *)v1
 {
     [self followHeightOfView:v1 withMultiplier:1.0];
+    return self;
 }
     
-- (void)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier
+- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:multiplier constant:0];
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)followSizeOfView:(UIView *)v1
+- (instancetype)followSizeOfView:(UIView *)v1
 {
     NSArray *constraints = @[
         [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
         [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]
     ];
     [self.superview addConstraints:constraints];
+    return self;
 }
 
-- (void)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers
+- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers
 {
     CGFloat multiW = 1.0, multiH = 1.0;
     if (multipliers && multipliers.count > 1) {
@@ -243,6 +248,7 @@
                              [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:multiH constant:0]
                              ];
     [self.superview addConstraints:constraints];
+    return self;
 }
     
 #pragma mark - align of view

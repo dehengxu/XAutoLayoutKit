@@ -48,12 +48,12 @@
     
 #pragma mark - follow size
     
-- (void)followWidthOfView:(UIView *)v1;
-- (void)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
-- (void)followHeightOfView:(UIView *)v1;
-- (void)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
-- (void)followSizeOfView:(UIView *)v1;
-- (void)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers;
+- (instancetype)followWidthOfView:(UIView *)v1;
+- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
+- (instancetype)followHeightOfView:(UIView *)v1;
+- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
+- (instancetype)followSizeOfView:(UIView *)v1;
+- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers;
 
 #pragma mark - align of view
 
