@@ -92,27 +92,39 @@
     return self;
 }
 
-- (void)setSameSizeWithView:(UIView *)view
+- (instancetype)x_autoLayoutView
+{
+    if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
+    self.translatesAutoresizingMaskIntoConstraints = YES;
+    return self;
+}
+
+#pragma mark - set size
+    
+- (instancetype)setSameSizeWithView:(UIView *)view
 {
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    return self;
 }
 
-- (void)setSameWidthWithView:(UIView *)view
+- (instancetype)setSameWidthWithView:(UIView *)view
 {
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    return self;
 }
 
-- (void)setSameHeightWithView:(UIView *)view
+- (instancetype)setSameHeightWithView:(UIView *)view
 {
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    return self;
 }
 
-- (void)setConstraintSize:(CGSize)size
+- (instancetype)setConstraintSize:(CGSize)size
 {
     if (!self.superview) {
         printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-        return;
+        return nil;
     }
     NSArray *constraints = nil;
     NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
@@ -122,13 +134,14 @@
 
     constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", size.height] views:bindViews];
     [self.superview addConstraints:constraints];
+    return self;
 }
 
-- (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView
+- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView
 {
     if (!superView) {
         printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-        return;
+        return nil;
     }
     NSArray *constraints = nil;
     NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
@@ -138,34 +151,35 @@
 
     constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", size.height] views:bindViews];
     [superView addConstraints:constraints];
-
+    return self;
 }
 
-- (void)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView
+- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView
 {
     if (!superView) {
         printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-        return;
+        return nil;
     }
     NSArray *constraints = nil;
     NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
 
     constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", width] views:bindViews];
     [superView addConstraints:constraints];
-
+    return self;
 }
 
-- (void)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView
+- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView
 {
     if (!superView) {
         printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-        return;
+        return nil;
     }
     NSArray *constraints = nil;
     NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
 
     constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", height] views:bindViews];
     [superView addConstraints:constraints];
+    return self;
 }
 
 #pragma mark - follow position

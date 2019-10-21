@@ -29,13 +29,17 @@
 
 - (instancetype)x_constraintView;
 - (instancetype)x_nonnConstraintView;
-- (void)setSameSizeWithView:(UIView *)view;
-- (void)setSameWidthWithView:(UIView *)view;
-- (void)setSameHeightWithView:(UIView *)view;
-- (void)setConstraintSize:(CGSize)size;
-- (void)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
-- (void)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView;
-- (void)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView;
+- (instancetype)x_autoLayoutView;
+
+#pragma mark - set size
+
+- (instancetype)setSameSizeWithView:(UIView *)view;
+- (instancetype)setSameWidthWithView:(UIView *)view;
+- (instancetype)setSameHeightWithView:(UIView *)view;
+- (instancetype)setConstraintSize:(CGSize)size;
+- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
+- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView;
+- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView;
 
 #pragma makr - follow position
 
