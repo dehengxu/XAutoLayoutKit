@@ -66,9 +66,9 @@
 
 #pragma mark - out of view
 
-- (void)above:(CGFloat)above OfView:(UIView *)v1;
-- (void)below:(CGFloat)behide OfView:(UIView *)v1;
-- (void)ahead:(CGFloat)ahead OfView:(UIView *)v1;
-- (void)after:(CGFloat)after OfView:(UIView *)v1;
+- (instancetype)above:(CGFloat)above OfView:(UIView *)v1;
+- (instancetype)below:(CGFloat)behide OfView:(UIView *)v1;
+- (instancetype)ahead:(CGFloat)ahead OfView:(UIView *)v1;
+- (instancetype)after:(CGFloat)after OfView:(UIView *)v1;
 
 @end

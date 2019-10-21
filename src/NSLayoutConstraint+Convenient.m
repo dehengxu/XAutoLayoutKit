@@ -304,32 +304,36 @@
 
 #pragma mark - out of view
 
-- (void)above:(CGFloat)above OfView:(UIView *)v1
+- (instancetype)above:(CGFloat)above OfView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:above];
 
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)below:(CGFloat)behide OfView:(UIView *)v1
+- (instancetype)below:(CGFloat)behide OfView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:behide];
 
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)ahead:(CGFloat)ahead OfView:(UIView *)v1
+- (instancetype)ahead:(CGFloat)ahead OfView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:ahead];
 
     [self.superview addConstraint:constraint];
+    return self;
 }
 
-- (void)after:(CGFloat)after OfView:(UIView *)v1
+- (instancetype)after:(CGFloat)after OfView:(UIView *)v1
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:after];
 
     [self.superview addConstraint:constraint];
+    return self;
 }
 
 
