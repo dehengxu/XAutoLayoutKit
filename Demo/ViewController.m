@@ -48,13 +48,49 @@
 
     self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
 
-    [self _loadConstraintsA];
+//    [self _loadConstraintsA];
+    [self _loadConstraintsNewAPI_B];
 }
 
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
     NSLog(@"constraints :%lu", self.view.constraints.count);
+}
+
+- (void)_loadViewsNewAPI {
+    [self.objectOfReference setConstraintSize:CGSizeMake(200, 200)];
+    [self.objectOfReference followCenterOfView:self.view];
+    
+    [self.v1 setConstraintSize:CGSizeMake(30, 30)];
+    [self.v2 setConstraintSize:CGSizeMake(40, 40)];
+    [self.v3 setConstraintSize:CGSizeMake(50, 50)];
+    [self.v4 setConstraintSize:CGSizeMake(60, 60)];
+}
+
+- (void)_loadConstraintsNewAPI_A
+{
+    [self _loadViewsNewAPI];
+    
+    [self.v1 above:10 OfView:self.objectOfReference];
+    [self.v1 followCenterXOfView:self.objectOfReference];
+    
+    [self.v2 after:10 OfView:self.objectOfReference];
+    [self.v2 followCenterYOfView:self.objectOfReference];
+    
+    [self.v3 below:10 OfView:self.objectOfReference];
+    [self.v3 followCenterXOfView:self.objectOfReference];
+    
+    [self.v4 ahead:10 OfView:self.objectOfReference];
+    [self.v4 followCenterYOfView:self.objectOfReference];
+}
+
+- (void)_loadConstraintsNewAPI_B {
+    [self _loadViewsNewAPI];
+    [self.view addSubview:self.v1];
+    [self.v1 alignToTop:10 ofView:self.view];
+    [self.v1 alignToLeft:10 ofView:self.view];
+    
 }
 
 - (void)_loadConstraintsA
@@ -64,8 +100,8 @@
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
     [NSLayoutConstraint setConstraintsWithView:self.v1 size:CGSizeMake(30, 30)];
     [NSLayoutConstraint setConstraintsWithView:self.v2 size:CGSizeMake(40, 40)];
-    [NSLayoutConstraint setConstraintsWithView:self.v3 size:CGSizeMake(30, 30)];
-    [NSLayoutConstraint setConstraintsWithView:self.v4 size:CGSizeMake(40, 40)];
+    [NSLayoutConstraint setConstraintsWithView:self.v3 size:CGSizeMake(50, 50)];
+    [NSLayoutConstraint setConstraintsWithView:self.v4 size:CGSizeMake(60, 60)];
     [NSLayoutConstraint followViewCenter:self.view withView:self.objectOfReference];
 
     NSArray *constraints = nil;

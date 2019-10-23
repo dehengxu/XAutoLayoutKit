@@ -330,7 +330,7 @@
 
 - (instancetype)above:(CGFloat)above OfView:(UIView *)v1
 {
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:above];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:-above];
 
     [self.superview addConstraint:constraint];
     return self;
@@ -346,7 +346,7 @@
 
 - (instancetype)ahead:(CGFloat)ahead OfView:(UIView *)v1
 {
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:ahead];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
 
     [self.superview addConstraint:constraint];
     return self;
