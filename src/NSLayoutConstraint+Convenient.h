@@ -30,6 +30,7 @@
 - (instancetype)x_constraintView;
 - (instancetype)x_nonnConstraintView;
 - (instancetype)x_autoLayoutView;
+- (instancetype)x_disableAutoLayoutView;
 
 #pragma mark - set size
 

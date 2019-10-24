@@ -94,9 +94,16 @@
 
 - (instancetype)x_autoLayoutView
 {
+    if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    return self;
+}
+
+- (instancetype)x_disableAutoLayoutView
+{
     if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
     self.translatesAutoresizingMaskIntoConstraints = YES;
-    return self;
+    return self;    
 }
 
 #pragma mark - set size
