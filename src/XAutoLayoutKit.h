@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
+
 @interface NSLayoutConstraint (Convenient)
 
 + (NSArray *)defaultConstraintsWithFormat:(NSString *)format views:(NSDictionary *)views;
@@ -27,10 +29,8 @@
 
 @interface UIView (LayoutConstraint)
 
-- (instancetype)x_constraintView;
-- (instancetype)x_nonnConstraintView;
-- (instancetype)x_autoLayoutView;
-- (instancetype)x_disableAutoLayoutView;
+- (instancetype)alk_enableAutoLayout;
+- (instancetype)alk_disableAutoLayout;
 
 #pragma mark - set size
 

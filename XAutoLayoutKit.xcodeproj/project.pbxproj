@@ -14,8 +14,8 @@
 		24799C3B19FF937F009250EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24799C3A19FF937F009250EC /* Images.xcassets */; };
 		24799C3E19FF937F009250EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24799C3C19FF937F009250EC /* LaunchScreen.xib */; };
 		24799C4A19FF937F009250EC /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C4919FF937F009250EC /* DemoTests.m */; };
-		24799C5319FF93B5009250EC /* NSLayoutConstraint+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* NSLayoutConstraint+Convenient.m */; };
-		7439C0EB1A84D73D006AB07F /* NSLayoutConstraint+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* NSLayoutConstraint+Convenient.m */; };
+		24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
+		7439C0EB1A84D73D006AB07F /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		74944FE41A84742C00F6FEFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE31A84742C00F6FEFB /* main.m */; };
 		74944FE71A84742C00F6FEFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE61A84742C00F6FEFB /* AppDelegate.m */; };
 		74944FEA1A84742C00F6FEFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE91A84742C00F6FEFB /* ViewController.m */; };
@@ -56,8 +56,8 @@
 		24799C4319FF937F009250EC /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24799C4819FF937F009250EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24799C4919FF937F009250EC /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
-		24799C5119FF93B5009250EC /* NSLayoutConstraint+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Convenient.h"; sourceTree = "<group>"; };
-		24799C5219FF93B5009250EC /* NSLayoutConstraint+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Convenient.m"; sourceTree = "<group>"; };
+		24799C5119FF93B5009250EC /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
+		24799C5219FF93B5009250EC /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
 		74944FDF1A84742C00F6FEFB /* DemoStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74944FE21A84742C00F6FEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74944FE31A84742C00F6FEFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 		24799C2519FF933C009250EC /* src */ = {
 			isa = PBXGroup;
 			children = (
-				24799C5119FF93B5009250EC /* NSLayoutConstraint+Convenient.h */,
-				24799C5219FF93B5009250EC /* NSLayoutConstraint+Convenient.m */,
+				24799C5119FF93B5009250EC /* XAutoLayoutKit.h */,
+				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 			files = (
 				24799C3619FF937F009250EC /* ViewController.m in Sources */,
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
-				24799C5319FF93B5009250EC /* NSLayoutConstraint+Convenient.m in Sources */,
+				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,
 				24799C3019FF937F009250EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7439C0EB1A84D73D006AB07F /* NSLayoutConstraint+Convenient.m in Sources */,
+				7439C0EB1A84D73D006AB07F /* XAutoLayoutKit.m in Sources */,
 				74944FEA1A84742C00F6FEFB /* ViewController.m in Sources */,
 				74944FE71A84742C00F6FEFB /* AppDelegate.m in Sources */,
 				74944FE41A84742C00F6FEFB /* main.m in Sources */,

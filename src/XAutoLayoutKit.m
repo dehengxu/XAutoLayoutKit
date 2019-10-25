@@ -6,7 +6,9 @@
 //  Copyright (c) 2014年 DehengXu. All rights reserved.
 //
 
-#import "NSLayoutConstraint+Convenient.h"
+#import "XAutoLayoutKit.h"
+
+NSString * const kXAutoLayoutVersion = @"0.2.0-beta.4";
 
 @implementation NSLayoutConstraint (Convenient)
 
@@ -76,7 +78,7 @@
 
 @implementation UIView (LayoutConstraint)
 
-- (instancetype)x_constraintView
+- (instancetype)alk_enableAutoLayout
 {
     if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
@@ -84,26 +86,12 @@
     return self;
 }
 
-- (instancetype)x_nonnConstraintView
+- (instancetype)alk_disableAutoLayout
 {
     if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
     self.translatesAutoresizingMaskIntoConstraints = YES;
     return self;
-}
-
-- (instancetype)x_autoLayoutView
-{
-    if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    return self;
-}
-
-- (instancetype)x_disableAutoLayoutView
-{
-    if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
-    self.translatesAutoresizingMaskIntoConstraints = YES;
-    return self;    
 }
 
 #pragma mark - set size
