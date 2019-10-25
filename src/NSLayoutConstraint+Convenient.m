@@ -76,7 +76,7 @@
 
 @implementation UIView (LayoutConstraint)
 
-- (instancetype)x_constraintView
+- (instancetype)alk_enableAutoLayout
 {
     if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
@@ -84,26 +84,12 @@
     return self;
 }
 
-- (instancetype)x_nonnConstraintView
+- (instancetype)alk_disableAutoLayout
 {
     if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
     self.translatesAutoresizingMaskIntoConstraints = YES;
     return self;
-}
-
-- (instancetype)x_autoLayoutView
-{
-    if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    return self;
-}
-
-- (instancetype)x_disableAutoLayoutView
-{
-    if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
-    self.translatesAutoresizingMaskIntoConstraints = YES;
-    return self;    
 }
 
 #pragma mark - set size

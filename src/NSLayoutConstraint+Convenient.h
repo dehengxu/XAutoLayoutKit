@@ -27,10 +27,8 @@
 
 @interface UIView (LayoutConstraint)
 
-- (instancetype)x_constraintView;
-- (instancetype)x_nonnConstraintView;
-- (instancetype)x_autoLayoutView;
-- (instancetype)x_disableAutoLayoutView;
+- (instancetype)alk_enableAutoLayout;
+- (instancetype)alk_disableAutoLayout;
 
 #pragma mark - set size
 

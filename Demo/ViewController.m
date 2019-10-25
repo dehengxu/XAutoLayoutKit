@@ -26,12 +26,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     //UIView *v1, *v2;
-    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].x_constraintView;
-    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].x_constraintView;
-    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].x_constraintView;
-    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].x_constraintView;
+    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
+    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
+    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
+    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
 
-    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].x_constraintView;
+    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].alk_enableAutoLayout;
 
     self.v1.backgroundColor = [UIColor redColor];
     self.v2.backgroundColor = [UIColor greenColor];
