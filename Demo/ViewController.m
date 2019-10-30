@@ -32,7 +32,7 @@
     self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
 
     self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].alk_enableAutoLayout;
-
+    
     self.v1.backgroundColor = [UIColor redColor];
     self.v2.backgroundColor = [UIColor greenColor];
     self.v3.backgroundColor = [UIColor blueColor];
@@ -41,14 +41,24 @@
     self.objectOfReference.backgroundColor = [UIColor orangeColor];
 
     [self.view addSubview:self.objectOfReference];
-    [self.view addSubview:self.v1];
-    [self.view addSubview:self.v2];
-    [self.view addSubview:self.v3];
     [self.view addSubview:self.v4];
+    [self.view addSubview:self.v3];
+    [self.view addSubview:self.v2];
+    [self.view addSubview:self.v1];
 
-    self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
+    self.lineV = UIView.new.alk_enableAutoLayout;
+    self.lineH = UIView.new.alk_enableAutoLayout;
+    self.lineH.backgroundColor = UIColor.redColor;
+    self.lineV.backgroundColor = UIColor.redColor;
 
-//    [self _loadConstraintsA];
+    [self.view addSubview:self.lineH];
+    [self.view addSubview:self.lineV];
+
+    //self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
+
+    self.view.alpha = 0.3;
+    
+    //[self _loadConstraintsA];
     [self _loadConstraintsNewAPI_B];
 }
 
@@ -87,10 +97,17 @@
 
 - (void)_loadConstraintsNewAPI_B {
     [self _loadViewsNewAPI];
-    [self.view addSubview:self.v1];
-    [self.v1 alignToTop:10 ofView:self.view];
-    [self.v1 alignToLeft:10 ofView:self.view];
+    NSLog(@"version: %@", kXAutoLayoutVersion);
+    ///TODO: add layout
+    [self.lineH followCenterXOfView:self.objectOfReference];
+    [self.lineH followY:-5.0 OfView:self.objectOfReference];
+    [self.lineH followWidthOfView:self.objectOfReference];
+    [self.lineH setConstraintHeight:2.0 onSuperView:self.view];
     
+    [self.lineV followCenterYOfView:self.objectOfReference];
+    [self.lineV followX:-5.0 OfView:self.objectOfReference];
+    [self.lineV followHeightOfView:self.objectOfReference];
+    [self.lineV setConstraintWidth:2.0 onSuperView:self.view];
 }
 
 - (void)_loadConstraintsA
