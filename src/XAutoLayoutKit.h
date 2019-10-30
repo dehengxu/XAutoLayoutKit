@@ -13,6 +13,8 @@
 
 FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
+#pragma mark - NSLayoutConstraint category
+
 @interface NSLayoutConstraint (Convenient)
 
 + (NSArray *)defaultConstraintsWithFormat:(NSString *)format views:(NSDictionary *)views;
@@ -27,6 +29,8 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
 @end
 
+#pragma mark - UIView category
+
 @interface UIView (LayoutConstraint)
 
 - (instancetype)alk_enableAutoLayout;
@@ -38,18 +42,21 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 - (instancetype)setSameWidthWithView:(UIView *)view;
 - (instancetype)setSameHeightWithView:(UIView *)view;
 - (instancetype)setConstraintSize:(CGSize)size;
-- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView;
-- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView;
-- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView;
+- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintSize: instead after 0.2.0");
+- (instancetype)setConstraintWidth:(CGFloat)width;
+- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintWidth: instead after 0.2.0");
+- (instancetype)setConstraintHeight:(CGFloat)height;
+- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintHeight: instead after 0.2.0");
 
-#pragma makr - follow position
+#pragma mark - follow position
 
 - (instancetype)followCenterXOfView:(UIView *)v1;
 - (instancetype)followCenterYOfView:(UIView *)v1;
 - (instancetype)followCenterOfView:(UIView *)v1;
-- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1;
-- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1;
-- (instancetype)followPositionOfView:(UIView *)v1;
+
+- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead");
+- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead");
+- (instancetype)followPositionOfView:(UIView *)v1 __deprecated_msg("should use alignToPoint serial methods to instead");
     
 #pragma mark - follow size
     
@@ -71,9 +78,9 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
 #pragma mark - out of view
 
-- (instancetype)above:(CGFloat)above OfView:(UIView *)v1;
-- (instancetype)below:(CGFloat)behide OfView:(UIView *)v1;
-- (instancetype)ahead:(CGFloat)ahead OfView:(UIView *)v1;
-- (instancetype)after:(CGFloat)after OfView:(UIView *)v1;
+- (instancetype)above:(CGFloat)above ofView:(UIView *)v1;
+- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1;
+- (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1;
+- (instancetype)after:(CGFloat)after ofView:(UIView *)v1;
 
 @end

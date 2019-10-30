@@ -46,8 +46,8 @@
     [self.view addSubview:self.v2];
     [self.view addSubview:self.v1];
 
-    self.lineV = UIView.new.alk_enableAutoLayout;
-    self.lineH = UIView.new.alk_enableAutoLayout;
+    self.lineV = UIView.new;
+    self.lineH = UIView.new;
     self.lineH.backgroundColor = UIColor.redColor;
     self.lineV.backgroundColor = UIColor.redColor;
 
@@ -82,16 +82,16 @@
 {
     [self _loadViewsNewAPI];
     
-    [self.v1 above:10 OfView:self.objectOfReference];
+    [self.v1 above:10 ofView:self.objectOfReference];
     [self.v1 followCenterXOfView:self.objectOfReference];
     
-    [self.v2 after:10 OfView:self.objectOfReference];
+    [self.v2 after:10 ofView:self.objectOfReference];
     [self.v2 followCenterYOfView:self.objectOfReference];
     
-    [self.v3 below:10 OfView:self.objectOfReference];
+    [self.v3 below:10 ofView:self.objectOfReference];
     [self.v3 followCenterXOfView:self.objectOfReference];
     
-    [self.v4 ahead:10 OfView:self.objectOfReference];
+    [self.v4 ahead:10 ofView:self.objectOfReference];
     [self.v4 followCenterYOfView:self.objectOfReference];
 }
 
@@ -102,12 +102,12 @@
     [self.lineH followCenterXOfView:self.objectOfReference];
     [self.lineH followY:-5.0 OfView:self.objectOfReference];
     [self.lineH followWidthOfView:self.objectOfReference];
-    [self.lineH setConstraintHeight:2.0 onSuperView:self.view];
+    [self.lineH setConstraintHeight:2.0];
     
     [self.lineV followCenterYOfView:self.objectOfReference];
     [self.lineV followX:-5.0 OfView:self.objectOfReference];
     [self.lineV followHeightOfView:self.objectOfReference];
-    [self.lineV setConstraintWidth:2.0 onSuperView:self.view];
+    [self.lineV setConstraintWidth:2.0];
 }
 
 - (void)_loadConstraintsA
