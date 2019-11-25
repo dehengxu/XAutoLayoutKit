@@ -82,7 +82,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 
 @implementation UIView (LayoutConstraint)
 
-- (instancetype)alk_enableAutoLayout
+- (instancetype)alk_enableAutoLayout __attribute__((warn_unused_result))
 {
     if (!self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
@@ -90,7 +90,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alk_disableAutoLayout
+- (instancetype)alk_disableAutoLayout __attribute__((warn_unused_result))
 {
     if (self.translatesAutoresizingMaskIntoConstraints) { return self; }
 
@@ -100,7 +100,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 
 #pragma mark - set size
     
-- (instancetype)setSameSizeWithView:(UIView *)view
+- (instancetype)setSameSizeWithView:(UIView *)view __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
@@ -108,21 +108,21 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setSameWidthWithView:(UIView *)view
+- (instancetype)setSameWidthWithView:(UIView *)view __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
     return self;
 }
 
-- (instancetype)setSameHeightWithView:(UIView *)view
+- (instancetype)setSameHeightWithView:(UIView *)view __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
     return self;
 }
 
-- (instancetype)setConstraintSize:(CGSize)size
+- (instancetype)setConstraintSize:(CGSize)size __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!self.superview) {
@@ -140,7 +140,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView
+- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!superView) {
@@ -158,7 +158,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView
+- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!superView) {
@@ -173,7 +173,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setConstraintWidth:(CGFloat)width
+- (instancetype)setConstraintWidth:(CGFloat)width __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!self.superview) {
@@ -188,7 +188,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView
+- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!superView) {
@@ -203,7 +203,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)setConstraintHeight:(CGFloat)height
+- (instancetype)setConstraintHeight:(CGFloat)height __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     if (!self.superview) {
@@ -220,40 +220,40 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 
 #pragma mark - follow position
     
-- (instancetype)followCenterXOfView:(UIView *)v1
+- (instancetype)followCenterXOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint followViewCenterX:v1 withView:self];
     return self;
 }
 
-- (instancetype)followCenterYOfView:(UIView *)v1
+- (instancetype)followCenterYOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint followViewCenterY:v1 withView:self];
     return self;
 }
 
-- (instancetype)followCenterOfView:(UIView *)v1
+- (instancetype)followCenterOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     [NSLayoutConstraint followViewCenter:v1 withView:self];
     return self;
 }
 
-- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1
+- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alignToLeft:x ofView:v1];
     return self;
 }
 
-- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1
+- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alignToTop:y ofView:v1];
     return self;
 }
 
-- (instancetype)followPositionOfView:(UIView *)v1
+- (instancetype)followPositionOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alignToLeft:0 ofView:v1];
     [self alignToTop:0 ofView:v1];
@@ -262,26 +262,26 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     
 #pragma mark - follow size
 
-- (instancetype)followWidthOfView:(UIView *)v1
+- (instancetype)followWidthOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self followWidthOfView:v1 withMultiplier:1.0];
     return self;
 }
     
-- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier {
+- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier __attribute__((warn_unused_result)) {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:multiplier constant:0];
     [self.superview addConstraint:constraint];
     return self;
 }
 
-- (instancetype)followHeightOfView:(UIView *)v1
+- (instancetype)followHeightOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self followHeightOfView:v1 withMultiplier:1.0];
     return self;
 }
     
-- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier
+- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:multiplier constant:0];
@@ -289,7 +289,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)followSizeOfView:(UIView *)v1
+- (instancetype)followSizeOfView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSArray *constraints = @[
@@ -300,7 +300,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers
+- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     CGFloat multiW = 1.0, multiH = 1.0;
@@ -320,7 +320,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     
 #pragma mark - align of view
 
-- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:margin];
@@ -328,7 +328,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:-margin];
@@ -336,7 +336,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
@@ -344,7 +344,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1
+- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
@@ -352,7 +352,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1
+- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:point.x];
@@ -363,7 +363,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1
+- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:location.x];
@@ -377,7 +377,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 
 #pragma mark - out of view
 
-- (instancetype)above:(CGFloat)above ofView:(UIView *)v1
+- (instancetype)above:(CGFloat)above ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:-above];
@@ -386,7 +386,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1
+- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:behide];
@@ -395,7 +395,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1
+- (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
@@ -404,7 +404,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
     return self;
 }
 
-- (instancetype)after:(CGFloat)after ofView:(UIView *)v1
+- (instancetype)after:(CGFloat)after ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:after];

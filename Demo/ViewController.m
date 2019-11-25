@@ -172,12 +172,12 @@
 
 - (void)_loadConstraintsC
 {
-    [self.v1 setConstraintSize:CGSizeMake(30, 30) onSuperView:self.view];
-    [self.v2 setConstraintSize:CGSizeMake(40, 40) onSuperView:self.view];
-    [self.v3 setConstraintSize:CGSizeMake(30, 30) onSuperView:self.view];
-    [self.v4 setConstraintSize:CGSizeMake(40, 40) onSuperView:self.view];
+    [self.v1 setConstraintSize:CGSizeMake(30, 30)];
+    [self.v2 setConstraintSize:CGSizeMake(40, 40)];
+    [self.v3 setConstraintSize:CGSizeMake(30, 30)];
+    [self.v4 setConstraintSize:CGSizeMake(40, 40)];
 
-    [self.objectOfReference setConstraintSize:CGSizeMake(200, 200) onSuperView:self.view];
+    [self.objectOfReference setConstraintSize:CGSizeMake(200, 200)];
 
     id constraint = nil;
     //Align v1 right side with left of objectOfReference and at center axis y.
