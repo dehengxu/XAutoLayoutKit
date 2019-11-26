@@ -14,6 +14,7 @@
 #import "ViewController.h"
 
 #import "XAutoLayoutKit.h"
+#import <Demo-Swift.h>
 
 @interface ViewController ()
 
@@ -56,10 +57,14 @@
 
     //self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
 
-    self.view.alpha = 0.3;
+    self.view.alpha = 0.8;
     
     //[self _loadConstraintsA];
-    [self _loadConstraintsNewAPI_B];
+    //[self _loadConstraintsB];
+    //[self _loadConstraintsC];
+    //[self _loadConstraintsD];
+    [self _loadConstraintsE];
+    //[self _loadConstraintsNewAPI_B];
 }
 
 - (void)updateViewConstraints

@@ -389,7 +389,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 - (instancetype)below:(CGFloat)behide ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:behide];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:behide];
 
     [self.superview addConstraint:constraint];
     return self;
@@ -398,7 +398,7 @@ NSString * const kXAutoLayoutVersion = @"0.2.0-beta.5";
 - (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1 __attribute__((warn_unused_result))
 {
     [self alk_enableAutoLayout];
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationLessThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
 
     [self.superview addConstraint:constraint];
     return self;
