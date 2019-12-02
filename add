@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+path=$1
+if [[ -z $path ]];then
+    path=.
+fi
+git add $path
+comments=$(git status $path)
+git commit -m "[update] files 
+
+$comments"
