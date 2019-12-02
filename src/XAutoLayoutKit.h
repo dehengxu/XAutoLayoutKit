@@ -33,54 +33,54 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
 @interface UIView (LayoutConstraint)
 
-- (instancetype)alk_enableAutoLayout __attribute__((warn_unused_result));
-- (instancetype)alk_disableAutoLayout __attribute__((warn_unused_result));
+- (instancetype)alk_enableAutoLayout;
+- (instancetype)alk_disableAutoLayout;
 
 #pragma mark - set size
 
-- (instancetype)setSameSizeWithView:(UIView *)view __attribute__((warn_unused_result));
-- (instancetype)setSameWidthWithView:(UIView *)view __attribute__((warn_unused_result));
-- (instancetype)setSameHeightWithView:(UIView *)view __attribute__((warn_unused_result));
-- (instancetype)setConstraintSize:(CGSize)size __attribute__((warn_unused_result));
-- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView __attribute__((warn_unused_result)) __deprecated_msg("should use -(instancetype)setConstraintSize: instead after 0.2.0");
-- (instancetype)setConstraintWidth:(CGFloat)width __attribute__((warn_unused_result));
-- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView __attribute__((warn_unused_result)) __deprecated_msg("should use -(instancetype)setConstraintWidth: instead after 0.2.0");
-- (instancetype)setConstraintHeight:(CGFloat)height __attribute__((warn_unused_result));
-- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView __attribute__((warn_unused_result)) __deprecated_msg("should use -(instancetype)setConstraintHeight: instead after 0.2.0");
+- (instancetype)setSameSizeWithView:(UIView *)view;
+- (instancetype)setSameWidthWithView:(UIView *)view;
+- (instancetype)setSameHeightWithView:(UIView *)view;
+- (instancetype)setConstraintSize:(CGSize)size;
+- (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintSize: instead after 0.2.0");
+- (instancetype)setConstraintWidth:(CGFloat)width;
+- (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintWidth: instead after 0.2.0");
+- (instancetype)setConstraintHeight:(CGFloat)height;
+- (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView __deprecated_msg("should use -(instancetype)setConstraintHeight: instead after 0.2.0");
 
 #pragma mark - follow position
 
-- (instancetype)followCenterXOfView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)followCenterYOfView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)followCenterOfView:(UIView *)v1 __attribute__((warn_unused_result));
+- (instancetype)followCenterXOfView:(UIView *)v1;
+- (instancetype)followCenterYOfView:(UIView *)v1;
+- (instancetype)followCenterOfView:(UIView *)v1;
 
-- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead") __attribute__((warn_unused_result));
-- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead") __attribute__((warn_unused_result));
-- (instancetype)followPositionOfView:(UIView *)v1 __deprecated_msg("should use alignToPoint serial methods to instead") __attribute__((warn_unused_result));
+- (instancetype)followX:(CGFloat)x OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead");
+- (instancetype)followY:(CGFloat)y OfView:(UIView *)v1 __deprecated_msg("should use alignTo... serial methods to instead");
+- (instancetype)followPositionOfView:(UIView *)v1 __deprecated_msg("should use alignToPoint serial methods to instead");
     
 #pragma mark - follow size
     
-- (instancetype)followWidthOfView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier __attribute__((warn_unused_result));
-- (instancetype)followHeightOfView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier __attribute__((warn_unused_result));
-- (instancetype)followSizeOfView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers __attribute__((warn_unused_result));
+- (instancetype)followWidthOfView:(UIView *)v1;
+- (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
+- (instancetype)followHeightOfView:(UIView *)v1;
+- (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier;
+- (instancetype)followSizeOfView:(UIView *)v1;
+- (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers;
 
 #pragma mark - align of view
 
-- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1 __attribute__((warn_unused_result));
+- (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1;
+- (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1;
+- (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1;
 
 #pragma mark - out of view
 
-- (instancetype)above:(CGFloat)above ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1 __attribute__((warn_unused_result));
-- (instancetype)after:(CGFloat)after ofView:(UIView *)v1 __attribute__((warn_unused_result));
+- (instancetype)above:(CGFloat)above ofView:(UIView *)v1;
+- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1;
+- (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1;
+- (instancetype)after:(CGFloat)after ofView:(UIView *)v1;
 
 @end
