@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 remotes=$(git remote)
 for remote in $remotes;do
-	git push $remote --all
+	git push -f $remote --all
 done
