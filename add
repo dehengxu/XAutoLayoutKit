@@ -7,4 +7,6 @@ git add $path
 comments=$(git status $path)
 git commit -m "[update] files 
 
+PS:\"commit by scripts\"
+
 $comments"
