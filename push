@@ -3,3 +3,5 @@ remotes=$(git remote)
 for remote in $remotes;do
 	git push -f $remote --all
 done
+
+clear
