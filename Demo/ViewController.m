@@ -14,6 +14,7 @@
 #import "ViewController.h"
 
 #import "XAutoLayoutKit.h"
+#import "UIView+XAutoLayoutKitEva.h"
 
 @interface ViewController ()
 
@@ -108,6 +109,10 @@
     [self.lineV followX:-5.0 OfView:self.objectOfReference];
     [self.lineV followHeightOfView:self.objectOfReference];
     [self.lineV setConstraintWidth:2.0];
+    
+    [self.lineV followSize:^(ALKViewBinder * _Nonnull binder) {
+        [binder toView:self.view];
+    }];
 }
 
 - (void)_loadConstraintsA
