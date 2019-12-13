@@ -60,7 +60,8 @@
     self.view.alpha = 0.3;
     
     //[self _loadConstraintsA];
-    [self _loadConstraintsNewAPI_B];
+    //[self _loadConstraintsNewAPI_B];
+    [self _loadConstraintsNewAPI_C];
 }
 
 - (void)updateViewConstraints
@@ -110,6 +111,10 @@
     [self.lineV followHeightOfView:self.objectOfReference];
     [self.lineV setConstraintWidth:2.0];
     
+}
+
+- (void)_loadConstraintsNewAPI_C
+{
     [self.lineV followSize:^(ALKViewBinder * _Nonnull binder) {
         [binder toView:self.view];
     }];
