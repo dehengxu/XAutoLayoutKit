@@ -15,6 +15,7 @@
 		24799C3E19FF937F009250EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24799C3C19FF937F009250EC /* LaunchScreen.xib */; };
 		24799C4A19FF937F009250EC /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C4919FF937F009250EC /* DemoTests.m */; };
 		24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
+		248EA577238D7626006EED9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EA576238D7626006EED9E /* ViewController.swift */; };
 		7439C0EB1A84D73D006AB07F /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		74944FE41A84742C00F6FEFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE31A84742C00F6FEFB /* main.m */; };
 		74944FE71A84742C00F6FEFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE61A84742C00F6FEFB /* AppDelegate.m */; };
@@ -58,6 +59,8 @@
 		24799C4919FF937F009250EC /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		24799C5119FF93B5009250EC /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
 		24799C5219FF93B5009250EC /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
+		248EA575238D7626006EED9E /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		248EA576238D7626006EED9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74944FDF1A84742C00F6FEFB /* DemoStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74944FE21A84742C00F6FEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74944FE31A84742C00F6FEFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,10 +147,12 @@
 				24799C3219FF937F009250EC /* AppDelegate.m */,
 				24799C3419FF937F009250EC /* ViewController.h */,
 				24799C3519FF937F009250EC /* ViewController.m */,
+				248EA576238D7626006EED9E /* ViewController.swift */,
 				24799C3719FF937F009250EC /* Main.storyboard */,
 				24799C3A19FF937F009250EC /* Images.xcassets */,
 				24799C3C19FF937F009250EC /* LaunchScreen.xib */,
 				24799C2D19FF937F009250EC /* Supporting Files */,
+				248EA575238D7626006EED9E /* Demo-Bridging-Header.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 					24799C2919FF937F009250EC = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 375GT6S3QN;
+						LastSwiftMigration = 1120;
 					};
 					24799C4219FF937F009250EC = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -382,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248EA577238D7626006EED9E /* ViewController.swift in Sources */,
 				24799C3619FF937F009250EC /* ViewController.m in Sources */,
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
 				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,
@@ -523,6 +530,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -563,6 +573,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -571,6 +583,7 @@
 		24799C4F19FF937F009250EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -620,6 +633,7 @@
 		24799C5019FF937F009250EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
