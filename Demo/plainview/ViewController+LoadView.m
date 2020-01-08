@@ -1,82 +1,22 @@
 //
-//  ViewController.m
-//  PlaygroundLab
+//  ViewController+LoadView.m
+//  Demo
 //
-//  https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/AutoLayoutinCode/AutoLayoutinCode.html#//apple_ref/doc/uid/TP40010853-CH11-SW1
-//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/
-//
-//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
-
-//  Created by DehengXu on 14/10/17.
-//  Copyright (c) 2014年 DehengXu. All rights reserved.
+//  Created by Deheng Xu on 2020/1/8.
 //
 
-#import "ViewController.h"
+#import "ViewController+LoadView.h"
+
+#import <UIKit/UIKit.h>
 
 #import "XAutoLayoutKit.h"
-#import <Demo-Swift.h>
 
-@interface ViewController ()
-
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
-    //UIView *v1, *v2;
-    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
-    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
-    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
-    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
-
-    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].alk_enableAutoLayout;
-    
-    self.v1.backgroundColor = [UIColor redColor];
-    self.v2.backgroundColor = [UIColor greenColor];
-    self.v3.backgroundColor = [UIColor blueColor];
-    self.v4.backgroundColor = [UIColor yellowColor];
-
-    self.objectOfReference.backgroundColor = [UIColor orangeColor];
-
-    [self.view addSubview:self.objectOfReference];
-    [self.view addSubview:self.v4];
-    [self.view addSubview:self.v3];
-    [self.view addSubview:self.v2];
-    [self.view addSubview:self.v1];
-
-    self.lineV = UIView.new;
-    self.lineH = UIView.new;
-    self.lineH.backgroundColor = UIColor.redColor;
-    self.lineV.backgroundColor = UIColor.redColor;
-
-    [self.view addSubview:self.lineH];
-    [self.view addSubview:self.lineV];
-
-    //self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
-
-    self.view.alpha = 0.8;
-    
-    //[self _loadConstraintsA];
-    //[self _loadConstraintsB];
-    //[self _loadConstraintsC];
-    //[self _loadConstraintsD];
-    [self _loadConstraintsE];
-    //[self _loadConstraintsNewAPI_B];
-}
-
-- (void)updateViewConstraints
-{
-    [super updateViewConstraints];
-    NSLog(@"constraints :%lu", self.view.constraints.count);
-}
+@implementation ViewController (LoadView)
 
 - (void)_loadViewsNewAPI {
     [self.objectOfReference setConstraintSize:CGSizeMake(200, 200)];
     [self.objectOfReference followCenterOfView:self.view];
-    
+
     [self.v1 setConstraintSize:CGSizeMake(30, 30)];
     [self.v2 setConstraintSize:CGSizeMake(40, 40)];
     [self.v3 setConstraintSize:CGSizeMake(50, 50)];
@@ -86,16 +26,16 @@
 - (void)_loadConstraintsNewAPI_A
 {
     [self _loadViewsNewAPI];
-    
+
     [self.v1 above:10 ofView:self.objectOfReference];
     [self.v1 followCenterXOfView:self.objectOfReference];
-    
+
     [self.v2 after:10 ofView:self.objectOfReference];
     [self.v2 followCenterYOfView:self.objectOfReference];
-    
+
     [self.v3 below:10 ofView:self.objectOfReference];
     [self.v3 followCenterXOfView:self.objectOfReference];
-    
+
     [self.v4 ahead:10 ofView:self.objectOfReference];
     [self.v4 followCenterYOfView:self.objectOfReference];
 }
@@ -108,7 +48,7 @@
     [self.lineH followY:-5.0 OfView:self.objectOfReference];
     [self.lineH followWidthOfView:self.objectOfReference];
     [self.lineH setConstraintHeight:2.0];
-    
+
     [self.lineV followCenterYOfView:self.objectOfReference];
     [self.lineV followX:-5.0 OfView:self.objectOfReference];
     [self.lineV followHeightOfView:self.objectOfReference];
@@ -117,6 +57,7 @@
 
 - (void)_loadConstraintsA
 {
+#if false
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);
 
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
@@ -139,17 +80,19 @@
 
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_v4]-10-[_objectOfReference]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:views];
     [self.view addConstraints:constraints];
+#endif
 }
 
 
 /**
  Load constraint B
- 
+
  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
- 
+
  */
 - (void)_loadConstraintsB
 {
+#if 0
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);
 
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
@@ -172,7 +115,7 @@
 //    [self.view addConstraint:constraint];
 //    constraint = [NSLayoutConstraint constraintWithItem:self.v1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.objectOfReference attribute:NSLayoutAttributeCenterY multiplier:1. constant:0];
 //    [self.view addConstraint:constraint];
-
+#endif
 }
 
 - (void)_loadConstraintsC
@@ -214,17 +157,6 @@
     constraint = [NSLayoutConstraint constraintWithItem:self.objectOfReference attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1. constant:0];
     [self.view addConstraint:constraint];
 
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    NSLog(@"%@\n\n%@", _v1, _v2);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
