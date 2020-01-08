@@ -46,12 +46,12 @@ extension ViewController {
             //contentSize.height += 100
             self.scrollView.contentSize = contentSize
 
-            let content = UIView(frame: CGRect(x: 0, y: 50, width: contentSize.width, height: contentSize.height))
+            let content = UIView(frame: CGRect(x: 0, y: 0, width: self.scrollView.bounds.size.width, height: self.scrollView.bounds.size.height))
 
             content.isUserInteractionEnabled = false
             self.scrollView.addSubview(content)
             content.backgroundColor = .red
-            //content.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            content.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
             self.scrollView.addSubview(self.objectOfReference)
 
