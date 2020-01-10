@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XAutoLayoutKit"
-  s.version      = "0.2.0-beta.7"
+  s.version      = "0.2.0-beta.8"
   s.summary      = "XAutoLayoutKit is a small collection of auto layout convenient utils."
 
   s.description  = <<-DESC

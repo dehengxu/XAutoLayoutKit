@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2473336723C5269A006EED9E /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336623C5269A006EED9E /* ScrollViewController.m */; };
+		2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336A23C531A8006EED9E /* ViewController+LoadView.m */; };
 		24799C3019FF937F009250EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C2F19FF937F009250EC /* main.m */; };
 		24799C3319FF937F009250EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C3219FF937F009250EC /* AppDelegate.m */; };
 		24799C3619FF937F009250EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C3519FF937F009250EC /* ViewController.m */; };
@@ -15,6 +17,7 @@
 		24799C3E19FF937F009250EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24799C3C19FF937F009250EC /* LaunchScreen.xib */; };
 		24799C4A19FF937F009250EC /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C4919FF937F009250EC /* DemoTests.m */; };
 		24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
+		248EA577238D7626006EED9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EA576238D7626006EED9E /* ViewController.swift */; };
 		7439C0EB1A84D73D006AB07F /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		74944FE41A84742C00F6FEFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE31A84742C00F6FEFB /* main.m */; };
 		74944FE71A84742C00F6FEFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE61A84742C00F6FEFB /* AppDelegate.m */; };
@@ -44,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2473336523C5269A006EED9E /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		2473336623C5269A006EED9E /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		2473336823C5277D006EED9E /* ScrollViewController+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollViewController+Layout.h"; sourceTree = "<group>"; };
+		2473336923C531A8006EED9E /* ViewController+LoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+LoadView.h"; sourceTree = "<group>"; };
+		2473336A23C531A8006EED9E /* ViewController+LoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+LoadView.m"; sourceTree = "<group>"; };
 		24799C2A19FF937F009250EC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24799C2E19FF937F009250EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24799C2F19FF937F009250EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		24799C4919FF937F009250EC /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		24799C5119FF93B5009250EC /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
 		24799C5219FF93B5009250EC /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
+		248EA575238D7626006EED9E /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		248EA576238D7626006EED9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74944FDF1A84742C00F6FEFB /* DemoStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74944FE21A84742C00F6FEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74944FE31A84742C00F6FEFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +118,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2473336223C52640006EED9E /* scrollview */ = {
+			isa = PBXGroup;
+			children = (
+				2473336523C5269A006EED9E /* ScrollViewController.h */,
+				2473336623C5269A006EED9E /* ScrollViewController.m */,
+				2473336823C5277D006EED9E /* ScrollViewController+Layout.h */,
+			);
+			path = scrollview;
+			sourceTree = "<group>";
+		};
+		2473336423C5266F006EED9E /* plainview */ = {
+			isa = PBXGroup;
+			children = (
+				24799C3419FF937F009250EC /* ViewController.h */,
+				24799C3519FF937F009250EC /* ViewController.m */,
+				248EA576238D7626006EED9E /* ViewController.swift */,
+				2473336923C531A8006EED9E /* ViewController+LoadView.h */,
+				2473336A23C531A8006EED9E /* ViewController+LoadView.m */,
+			);
+			path = plainview;
+			sourceTree = "<group>";
+		};
 		24799C1E19FF92F0009250EC = {
 			isa = PBXGroup;
 			children = (
@@ -145,14 +177,15 @@
 		24799C2C19FF937F009250EC /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				2473336423C5266F006EED9E /* plainview */,
+				2473336223C52640006EED9E /* scrollview */,
 				24799C3119FF937F009250EC /* AppDelegate.h */,
 				24799C3219FF937F009250EC /* AppDelegate.m */,
-				24799C3419FF937F009250EC /* ViewController.h */,
-				24799C3519FF937F009250EC /* ViewController.m */,
 				24799C3719FF937F009250EC /* Main.storyboard */,
 				24799C3A19FF937F009250EC /* Images.xcassets */,
 				24799C3C19FF937F009250EC /* LaunchScreen.xib */,
 				24799C2D19FF937F009250EC /* Supporting Files */,
+				248EA575238D7626006EED9E /* Demo-Bridging-Header.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -308,6 +341,7 @@
 					24799C2919FF937F009250EC = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 375GT6S3QN;
+						LastSwiftMigration = 1120;
 					};
 					24799C4219FF937F009250EC = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -387,11 +421,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248EA577238D7626006EED9E /* ViewController.swift in Sources */,
 				24799C3619FF937F009250EC /* ViewController.m in Sources */,
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
+				2473336723C5269A006EED9E /* ScrollViewController.m in Sources */,
 				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,
 				74B9691D239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m in Sources */,
 				24799C3019FF937F009250EC /* main.m in Sources */,
+				2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +566,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -569,6 +609,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -577,6 +619,7 @@
 		24799C4F19FF937F009250EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -626,6 +669,7 @@
 		24799C5019FF937F009250EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

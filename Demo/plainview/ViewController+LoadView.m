@@ -1,25 +1,18 @@
 //
-//  ViewController.m
-//  PlaygroundLab
+//  ViewController+LoadView.m
+//  Demo
 //
-//  https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/AutoLayoutinCode/AutoLayoutinCode.html#//apple_ref/doc/uid/TP40010853-CH11-SW1
-//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/
-//
-//  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
-
-//  Created by DehengXu on 14/10/17.
-//  Copyright (c) 2014年 DehengXu. All rights reserved.
+//  Created by Deheng Xu on 2020/1/8.
 //
 
-#import "ViewController.h"
+#import "ViewController+LoadView.h"
+
+#import <UIKit/UIKit.h>
 
 #import "XAutoLayoutKit.h"
 #import "UIView+XAutoLayoutKitEva.h"
 
-@interface ViewController ()
-
-@end
-
+#if 0
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -61,7 +54,8 @@
     
     //[self _loadConstraintsA];
     //[self _loadConstraintsNewAPI_B];
-    [self _loadConstraintsNewAPI_C];
+    //[self _loadConstraintsNewAPI_C];
+    [self _loadConstraintsNewAPI_B];
 }
 
 - (void)updateViewConstraints
@@ -70,10 +64,16 @@
     NSLog(@"constraints :%lu", self.view.constraints.count);
 }
 
+
+@end
+#endif
+
+@implementation ViewController (LoadView)
+
 - (void)_loadViewsNewAPI {
     [self.objectOfReference setConstraintSize:CGSizeMake(200, 200)];
     [self.objectOfReference followCenterOfView:self.view];
-    
+
     [self.v1 setConstraintSize:CGSizeMake(30, 30)];
     [self.v2 setConstraintSize:CGSizeMake(40, 40)];
     [self.v3 setConstraintSize:CGSizeMake(50, 50)];
@@ -83,16 +83,16 @@
 - (void)_loadConstraintsNewAPI_A
 {
     [self _loadViewsNewAPI];
-    
+
     [self.v1 above:10 ofView:self.objectOfReference];
     [self.v1 followCenterXOfView:self.objectOfReference];
-    
+
     [self.v2 after:10 ofView:self.objectOfReference];
     [self.v2 followCenterYOfView:self.objectOfReference];
-    
+
     [self.v3 below:10 ofView:self.objectOfReference];
     [self.v3 followCenterXOfView:self.objectOfReference];
-    
+
     [self.v4 ahead:10 ofView:self.objectOfReference];
     [self.v4 followCenterYOfView:self.objectOfReference];
 }
@@ -105,7 +105,7 @@
     [self.lineH followY:-5.0 OfView:self.objectOfReference];
     [self.lineH followWidthOfView:self.objectOfReference];
     [self.lineH setConstraintHeight:2.0];
-    
+
     [self.lineV followCenterYOfView:self.objectOfReference];
     [self.lineV followX:-5.0 OfView:self.objectOfReference];
     [self.lineV followHeightOfView:self.objectOfReference];
@@ -122,6 +122,7 @@
 
 - (void)_loadConstraintsA
 {
+#if false
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);
 
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
@@ -144,17 +145,19 @@
 
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_v4]-10-[_objectOfReference]" options:NSLayoutFormatAlignAllCenterY metrics:nil views:views];
     [self.view addConstraints:constraints];
+#endif
 }
 
 
 /**
  Load constraint B
- 
+
  https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/DebuggingTricksandTips.html
- 
+
  */
 - (void)_loadConstraintsB
 {
+#if 0
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);
 
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
@@ -177,7 +180,7 @@
 //    [self.view addConstraint:constraint];
 //    constraint = [NSLayoutConstraint constraintWithItem:self.v1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.objectOfReference attribute:NSLayoutAttributeCenterY multiplier:1. constant:0];
 //    [self.view addConstraint:constraint];
-
+#endif
 }
 
 - (void)_loadConstraintsC
@@ -219,17 +222,6 @@
     constraint = [NSLayoutConstraint constraintWithItem:self.objectOfReference attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1. constant:0];
     [self.view addConstraint:constraint];
 
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    NSLog(@"%@\n\n%@", _v1, _v2);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
