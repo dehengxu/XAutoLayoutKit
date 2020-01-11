@@ -10,7 +10,7 @@
 
 #import "NSLayoutConstraint+XALK.h"
 #import "XAutoLayoutKit.h"
-#import "XAutoLayoutKitEva+Private.h"
+#import "XAutoLayoutBinder+Private.h"
 
 @implementation ViewController (LoadView)
 

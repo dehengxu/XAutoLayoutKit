@@ -71,9 +71,9 @@
 //    [self _loadConstraints_API3G_A];
 //    [self _loadConstraints_API3G_B];
 //    [self _loadConstraints_API2G_A];
-//    [self _loadConstraints_API2G_B];
+    [self _loadConstraints_API2G_B];
 //    [self _loadConstraints_Size];
-    [self _loadConstraints_API3G_C];
+//    [self _loadConstraints_API3G_C];
 }
 
 - (void)updateViewConstraints

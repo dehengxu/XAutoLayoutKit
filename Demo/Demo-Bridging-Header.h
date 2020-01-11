@@ -4,5 +4,5 @@
 
 #import "ViewController.h"
 #import "XAutoLayoutKit.h"
-#import "XAutoLayoutKitEva.h"
+#import "XAutoLayoutBinder.h"
 //#import "UIView+XAutoLayoutKitEva.h"

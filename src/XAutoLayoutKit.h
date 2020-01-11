@@ -63,7 +63,7 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 #pragma mark - out of view
 
 - (instancetype)above:(CGFloat)above ofView:(UIView *)v1;
-- (instancetype)below:(CGFloat)behide ofView:(UIView *)v1;
+- (instancetype)below:(CGFloat)below ofView:(UIView *)v1;
 - (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1;
 - (instancetype)after:(CGFloat)after ofView:(UIView *)v1;
 

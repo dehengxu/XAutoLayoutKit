@@ -1,12 +1,12 @@
 //
-//  UIView+XAutoLayoutKitEva.m
+//  XAutoLayoutBinder.m
 //  Demo
 //
 //  Created by NicholasXu on 2019/12/10.
 //
 
-#import "XAutoLayoutKitEva.h"
-#import "XAutoLayoutKitEva+Private.h"
+#import "XAutoLayoutBinder.h"
+#import "XAutoLayoutBinder+Private.h"
 
 @interface XALKViewBinder ()
 
