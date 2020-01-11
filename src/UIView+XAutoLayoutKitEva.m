@@ -13,24 +13,25 @@
 @property (nonatomic, copy) void(^alkLayout)();
 
 // MARK: - Relation
-@property (nonatomic, copy) ALKViewBinder *(^equal)(void);
-@property (nonatomic, copy) ALKViewBinder *(^lessThanOrEqual)(void);
-@property (nonatomic, copy) ALKViewBinder *(^greatThanOrEqual)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^equal)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^lessThanOrEqual)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^greatThanOrEqual)(void);
 
 // MARK: - Attribute
 
-@property (nonatomic, copy) ALKViewBinder *(^width)(void);
-@property (nonatomic, copy) ALKViewBinder *(^height)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^width)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^height)(void);
 
-@property (nonatomic, copy) ALKViewBinder *(^centerX)(void);
-@property (nonatomic, copy) ALKViewBinder *(^centerY)(void);
-@property (nonatomic, copy) ALKViewBinder *(^leading)(void);
-@property (nonatomic, copy) ALKViewBinder *(^trailing)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^centerX)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^centerY)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^leading)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^trailing)(void);
 
-@property (nonatomic, copy) ALKViewBinder *(^top)(void);
-@property (nonatomic, copy) ALKViewBinder *(^left)(void);
-@property (nonatomic, copy) ALKViewBinder *(^bottom)(void);
-@property (nonatomic, copy) ALKViewBinder *(^right)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^top)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^left)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^bottom)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^right)(void);
+
 @property (nonatomic, copy) ALKViewBinder *(^multiply)(CGFloat multiplier);
 @property (nonatomic, copy) ALKViewBinder *(^constant)(CGFloat constants);
 
@@ -53,97 +54,98 @@
 - (void)configBlocks
 {
     __weak typeof(self)wself = self;
+    __strong typeof(wself)sself = wself;
 
-    self.equal = ^ALKViewBinder * _Nonnull{
-        wself.value1.relation = ALKLayoutRelationEqual;
-        return wself;
-    };
+//    self.equal = ^ALKViewBinder * _Nonnull{
+//        wself.value1.relation = ALKLayoutRelationEqual;
+//        return wself;
+//    };
+//
+//    self.lessThanOrEqual = ^ALKViewBinder * _Nonnull{
+//        wself.value1.relation = ALKLayoutRelationLessThanOrEqual;
+//        return wself;
+//    };
+//
+//    self.greatThanOrEqual = ^ALKViewBinder * _Nonnull{
+//        wself.value1.relation = ALKLayoutRelationGreaterThanOrEqual;
+//        return wself;
+//    };
 
-    self.lessThanOrEqual = ^ALKViewBinder * _Nonnull{
-        wself.value1.relation = ALKLayoutRelationLessThanOrEqual;
-        return wself;
-    };
-
-    self.greatThanOrEqual = ^ALKViewBinder * _Nonnull{
-        wself.value1.relation = ALKLayoutRelationGreaterThanOrEqual;
-        return wself;
-    };
-
-    self.width = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeWidth;
-        return wself;
-    };
-    self.height = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeHeight;
-        return wself;
-    };
-    self.centerX = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeCenterX;
-        return wself;
-    };
-    self.centerY = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeCenterY;
-        return wself;
-    };
-    self.leading = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeLeading;
-        return wself;
-    };
-    self.trailing = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeTrailing;
-        return wself;
-    };
-    self.top = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeTop;
-        return wself;
-    };
-    self.left = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeLeft;
-        return wself;
-    };
-    self.bottom = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeBottom;
-        return wself;
-    };
-    self.right = ^ALKViewBinder * _Nonnull{
-        wself.value1.attribute = ALKLayoutAttributeRight;
-        return wself;
-    };
+//    self.width = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeWidth;
+//        return wself;
+//    };
+//    self.height = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeHeight;
+//        return wself;
+//    };
+//    self.centerX = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeCenterX;
+//        return wself;
+//    };
+//    self.centerY = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeCenterY;
+//        return wself;
+//    };
+//    self.leading = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeLeading;
+//        return wself;
+//    };
+//    self.trailing = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeTrailing;
+//        return wself;
+//    };
+//    self.top = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeTop;
+//        return wself;
+//    };
+//    self.left = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeLeft;
+//        return wself;
+//    };
+//    self.bottom = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeBottom;
+//        return wself;
+//    };
+//    self.right = ^ALKViewBinder * _Nonnull{
+//        wself.value1.attribute = ALKLayoutAttributeRight;
+//        return wself;
+//    };
 
     self.to = ^ALKViewBinder * _Nonnull(UIView * _Nonnull view) {
         //wself.value2.payload = view;
-        wself.slave = ALKViewBinder.new;
-        wself.slave.value1.payload = view;
-        return wself.slave;
+        sself.slave = ALKViewBinder.new;
+        sself.slave.value1.payload = view;
+        return sself.slave;
     };
 
     self.multiply = ^ALKViewBinder * _Nonnull(CGFloat multiplier) {
-        wself.value1.mutiplier = multiplier;
-        return wself;
+        sself.value1.mutiplier = multiplier;
+        return sself;
     };
 
     self.constant = ^ALKViewBinder * _Nonnull(CGFloat constants) {
-        wself.value1.constants = constants;
-        return wself;
+        sself.value1.constants = constants;
+        return sself;
     };
 
     self.alkLayout = ^{
         //if (!wself.value1) return;
-        if (!wself.master && !wself.value1.payload) {//if slave
+        if (!sself.master && !sself.value1.payload) {//if slave
             return;
-        }else if (!wself.value1.payload) {
+        }else if (!sself.value1.payload) {
             return;
         }
-        NSLog(@"%s %d, %d", __func__, wself.master.value1.attribute, wself.value1.attribute);
+        NSLog(@"%s %d, %d", __func__, sself.master.value1.attribute, sself.value1.attribute);
 
-        UIView *v1 = wself.master.value1.payload, *v2 = wself.value1.payload;
+        UIView *v1 = sself.master.value1.payload, *v2 = sself.value1.payload;
         BOOL isMaster = NO;
-        if (wself.master) {//slave
-            v1 = wself.master.value1.payload;
-            v2 = wself.value1.payload;
+        if (sself.master) {//slave
+            v1 = sself.master.value1.payload;
+            v2 = sself.value1.payload;
             isMaster = NO;
         }else {//master
-            v1 = wself.value1.payload;
+            v1 = sself.value1.payload;
             v2 = nil;//wself.slave.value1.payload;
             isMaster = YES;
         }
@@ -154,15 +156,11 @@
 
         //around
 
-//        NSArray *constraints = @[
-//            [NSLayoutConstraint constraintWithItem:v1 attribute:wself.value1.attribute relatedBy:wself.value1.relation toItem:v2 attribute:wself.value2.attribute multiplier:wself.value1.mutiplier constant:wself.value1.constants],
-//        ];
-
         NSLayoutConstraint *constraint;
         if (!isMaster) {//Slave
-            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)wself.master.value1.attribute relatedBy:(NSLayoutRelation)wself.master.value1.relation toItem:v2 attribute:(NSLayoutAttribute)wself.value1.attribute multiplier:wself.master.value1.mutiplier constant:wself.master.value1.constants];
+            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)sself.master.value1.attribute relatedBy:(NSLayoutRelation)sself.master.value1.relation toItem:v2 attribute:(NSLayoutAttribute)sself.value1.attribute multiplier:sself.master.value1.mutiplier constant:sself.master.value1.constants];
         }else {//Master
-            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)wself.value1.attribute relatedBy:(NSLayoutRelation)wself.value1.relation toItem:v2 attribute:(NSLayoutAttribute)wself.value1.attribute multiplier:wself.value1.mutiplier constant:wself.value1.constants];
+            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)sself.value1.attribute relatedBy:(NSLayoutRelation)sself.value1.relation toItem:v2 attribute:(NSLayoutAttribute)sself.value1.attribute multiplier:sself.value1.mutiplier constant:sself.value1.constants];
         }
 
         [v1.superview addConstraint:constraint];
@@ -186,56 +184,87 @@
     return self.value1.mutiplier;
 }
 
-- (void)setToView:(UIView *)toView
+- (ALKViewBinder *)equal
 {
-    self.value2.payload = toView;
-}
-
-- (UIView *)toView
-{
-    return self.value2.payload;
-}
-
-- (instancetype)toView:(UIView *)view
-{
-    self.value2.payload = view;
+    [self.value1 equal];
     return self;
 }
 
-- (instancetype)follow
+- (ALKViewBinder *)lessThanOrEqual
 {
-    self.action = ALKActionFollow;
+    [self.value1 lessThanOrEqual];
     return self;
 }
 
-- (instancetype)align
+- (ALKViewBinder *)greatThanOrEqual
 {
-    self.action = ALKActionInner;
+    [self.value1 greatThanOrEqual];
     return self;
 }
 
-- (instancetype)above
+- (ALKViewBinder *)width
 {
-    self.action = ALKActionAround;
+    [self.value1 width];
     return self;
 }
 
-- (void)layout
+- (ALKViewBinder *)height
 {
-    if (!self.value1) return;
-    if (!self.value2) return;
-    UIView *v1 = self.value1.payload, *v2 = self.value2.payload;
+    [self.value1 height];
+    return self;
+}
 
-    //follow
+- (ALKViewBinder *)centerX
+{
+    [self.value1 centerX];
+    return self;
+}
 
-    //inner
+- (ALKViewBinder *)centerY
+{
+    [self.value1 centerY];
+    return self;
+}
 
-    //around
+- (ALKViewBinder *)leading
+{
+    [self.value1 leading];
+    return self;
+}
 
-    NSArray *constraints = @[
-        [NSLayoutConstraint constraintWithItem:v1 attribute:self.value1.attribute relatedBy:self.value1.relation toItem:v2 attribute:self.value2.attribute multiplier:self.value1.mutiplier constant:self.value1.constants],
-    ];
-    [v1.superview addConstraints:constraints];
+- (ALKViewBinder *)trailing
+{
+    [self.value1 trailing];
+    return self;
+}
+
+- (ALKViewBinder *)top
+{
+    [self.value1 top];
+    return self;
+}
+
+- (ALKViewBinder *)left
+{
+    [self.value1 left];
+    return self;
+}
+
+- (ALKViewBinder *)bottom
+{
+    [self.value1 bottom];
+    return self;
+}
+
+- (ALKViewBinder *)right
+{
+    [self.value1 right];
+    return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@" attribute: %ld, relation: %ld", (NSInteger)self.value1.attribute, (NSInteger)self.value1.relation];
 }
 
 - (void)dealloc
@@ -339,52 +368,52 @@
 
 @implementation UIView (XAutoLayoutKitEva)
 
-- (instancetype)alkLayout:(BinderCallback)aBlock
-{
-    return self;
-}
-
-- (instancetype)followSize:(BinderCallback)aBlock
-{
-    [self followWidth:aBlock];
-    [self followHeight:aBlock];
-    return self;
-}
-
-- (instancetype)followWidth:(BinderCallback)aBlock
-{
-    ALKViewBinder *binder = self.alkBinder;
-    [binder.follow.value1.equal.width to:self];
-    aBlock(binder);
-    [binder.value2.equal width];
-    [binder layout];
-    return self;
-}
-
-- (instancetype)followHeight:(BinderCallback)aBlock
-{
-    ALKViewBinder *binder = self.alkBinder;
-    [binder.follow.value1.equal.height to:self];
-    aBlock(binder);
-    [binder.value2.equal height];
-    [binder layout];
-    return self;
-}
-
-- (instancetype)followCenter:(BinderCallback)aBlock
-{
-    return self;
-}
-
-- (instancetype)followCenterX:(BinderCallback)aBlock
-{
-    return self;
-}
-
-- (instancetype)followCenterY:(BinderCallback)aBlock
-{
-    return self;
-}
+//- (instancetype)alkLayout:(BinderCallback)aBlock
+//{
+//    return self;
+//}
+//
+//- (instancetype)followSize:(BinderCallback)aBlock
+//{
+//    [self followWidth:aBlock];
+//    [self followHeight:aBlock];
+//    return self;
+//}
+//
+//- (instancetype)followWidth:(BinderCallback)aBlock
+//{
+//    ALKViewBinder *binder = self.alkBinder;
+//    [binder.follow.value1.equal.width to:self];
+//    aBlock(binder);
+//    [binder.value2.equal width];
+//    [binder layout];
+//    return self;
+//}
+//
+//- (instancetype)followHeight:(BinderCallback)aBlock
+//{
+//    ALKViewBinder *binder = self.alkBinder;
+//    [binder.follow.value1.equal.height to:self];
+//    aBlock(binder);
+//    [binder.value2.equal height];
+//    [binder layout];
+//    return self;
+//}
+//
+//- (instancetype)followCenter:(BinderCallback)aBlock
+//{
+//    return self;
+//}
+//
+//- (instancetype)followCenterX:(BinderCallback)aBlock
+//{
+//    return self;
+//}
+//
+//- (instancetype)followCenterY:(BinderCallback)aBlock
+//{
+//    return self;
+//}
 
 - (ALKViewBinder *)alkBinder
 {

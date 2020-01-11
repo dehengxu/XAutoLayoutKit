@@ -11,14 +11,23 @@ import UIKit
 extension ViewController {
 
     @objc func _loadConstraintsD() {
-//        self.v1
-//            .align(toLeft: 5.0, of: self.view)?
-//            .followCenterY(of: self.view)?
-//            .setConstraintHeight(20.0)?
-//            //.setConstraintWidth(20.0)
-//            .ahead(5.0, of: self.objectOfReference)
+        self.v1.removeFromSuperview();
+        self.v2.removeFromSuperview();
+        self.v3.removeFromSuperview();
+        self.v4.removeFromSuperview();
+        self.lineV.backgroundColor = .green;
 
-        //self.objectOfReference.align(toRight: 10.0, of: self.view)?.followCenterY(of: self.view)?.setConstraintHeight(200.0)?.setConstraintWidth(200.0)?.after(5.0, of: self.v1)
+        let binder = self.objectOfReference.alkBinder.centerX.equal.to(self.view).centerX .alkLayout()
+        //print("binder: \(binder == nil ? "nil" : "not nil")")
+        self.objectOfReference.alkBinder.centerY.equal.to(self.view).centerY.alkLayout()
+        self.objectOfReference.alkBinder.width.multiply(0.5).equal.to(self.view).width.alkLayout()
+        self.objectOfReference.alkBinder.height.multiply(0.5).equal.to(self.view).height.alkLayout()
+
+        self.lineH.alkBinder.width.equal.to(self.objectOfReference).width.alkLayout()
+        self.lineH.alkBinder.trailing.to(self.objectOfReference).leading.alkLayout()
+        self.lineH.alkBinder.height.equal.constant(2.0).alkLayout()
+        self.lineH.alkBinder.bottom.greatThanOrEqual.constant(-2.0).to(self.objectOfReference).top.alkLayout()
+
     }
 
     @objc func _loadConstraintsE() {

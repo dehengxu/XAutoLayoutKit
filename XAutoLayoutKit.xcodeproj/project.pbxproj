@@ -52,6 +52,7 @@
 		2473336823C5277D006EED9E /* ScrollViewController+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollViewController+Layout.h"; sourceTree = "<group>"; };
 		2473336923C531A8006EED9E /* ViewController+LoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+LoadView.h"; sourceTree = "<group>"; };
 		2473336A23C531A8006EED9E /* ViewController+LoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+LoadView.m"; sourceTree = "<group>"; };
+		2473336F23C9C47B006EED9E /* XAutoLayoutKitEva.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKitEva.h; sourceTree = "<group>"; };
 		24799C2A19FF937F009250EC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24799C2E19FF937F009250EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24799C2F19FF937F009250EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		24799C2519FF933C009250EC /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2473336F23C9C47B006EED9E /* XAutoLayoutKitEva.h */,
 				24799C5119FF93B5009250EC /* XAutoLayoutKit.h */,
 				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
 				74B9691B239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.h */,

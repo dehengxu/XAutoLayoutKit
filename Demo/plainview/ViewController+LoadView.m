@@ -71,20 +71,20 @@
     self.lineV.backgroundColor = UIColor.greenColor;
 
 
-    self.objectOfReference.alkBinder.equal().centerX().to(self.view).centerX().alkLayout();
-    self.objectOfReference.alkBinder.equal().centerY().to(self.view).centerY().alkLayout();
-    self.objectOfReference.alkBinder.equal().width().multiply(0.4).to(self.view).width().alkLayout();
-    self.objectOfReference.alkBinder.equal().height().multiply(0.4).to(self.view).height().alkLayout();
+    self.objectOfReference.alkBinder.equal.centerX.to(self.view).centerX.alkLayout();
+    self.objectOfReference.alkBinder.equal.centerY.to(self.view).centerY.alkLayout();
+    self.objectOfReference.alkBinder.equal.width.multiply(0.4).to(self.view).width.alkLayout();
+    self.objectOfReference.alkBinder.equal.height.multiply(0.4).to(self.view).height.alkLayout();
 
-    self.lineH.alkBinder.equal().bottom().constant(-2.0).to(self.objectOfReference).top().alkLayout();
-    self.lineH.alkBinder.left().equal().to(self.objectOfReference).left().alkLayout();
-    self.lineH.alkBinder.width().equal().multiply(0.5).to(self.objectOfReference).width().alkLayout();
-        self.lineH.alkBinder.height().multiply(1.0).constant(2.0).alkLayout();
+    self.lineH.alkBinder.equal.bottom.constant(-2.0).to(self.objectOfReference).top.alkLayout();
+    self.lineH.alkBinder.left.equal.to(self.objectOfReference).left.alkLayout();
+    self.lineH.alkBinder.width.equal.multiply(0.5).to(self.objectOfReference).width.alkLayout();
+        self.lineH.alkBinder.height.multiply(1.0).constant(2.0).alkLayout();
 
-    self.lineV.alkBinder.right().equal().constant(-2.0).to(self.objectOfReference).left().alkLayout();
-    self.lineV.alkBinder.top().equal().to(self.objectOfReference).top().alkLayout();
-    self.lineV.alkBinder.width().constant(2.0).alkLayout();
-    self.lineV.alkBinder.height().multiply(0.5).equal().to(self.objectOfReference).height().alkLayout();
+    self.lineV.alkBinder.right.equal.constant(-2.0).to(self.objectOfReference).left.alkLayout();
+    self.lineV.alkBinder.top.equal.to(self.objectOfReference).top.alkLayout();
+    self.lineV.alkBinder.width.constant(2.0).alkLayout();
+    self.lineV.alkBinder.height.multiply(0.5).equal.to(self.objectOfReference).height.alkLayout();
 
 
 
