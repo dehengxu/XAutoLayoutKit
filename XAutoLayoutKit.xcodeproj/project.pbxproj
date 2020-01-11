@@ -27,7 +27,7 @@
 		74944FEF1A84742C00F6FEFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74944FEE1A84742C00F6FEFB /* Images.xcassets */; };
 		74944FF21A84742C00F6FEFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74944FF01A84742C00F6FEFB /* LaunchScreen.xib */; };
 		74944FFE1A84742C00F6FEFB /* DemoStoryBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FFD1A84742C00F6FEFB /* DemoStoryBoardTests.m */; };
-		74B9691D239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m */; };
+		74B9691D239F94C2006B3A74 /* XAutoLayoutKitEva.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutKitEva.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +86,8 @@
 		74944FF71A84742C00F6FEFB /* DemoStoryBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoStoryBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74944FFC1A84742C00F6FEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74944FFD1A84742C00F6FEFB /* DemoStoryBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoStoryBoardTests.m; sourceTree = "<group>"; };
-		74B9691B239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XAutoLayoutKitEva.h"; sourceTree = "<group>"; };
-		74B9691C239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XAutoLayoutKitEva.m"; sourceTree = "<group>"; };
+		74B9691B239F94C2006B3A74 /* XAutoLayoutKitEva+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutKitEva+Private.h"; sourceTree = "<group>"; };
+		74B9691C239F94C2006B3A74 /* XAutoLayoutKitEva.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKitEva.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +162,8 @@
 				2473336F23C9C47B006EED9E /* XAutoLayoutKitEva.h */,
 				24799C5119FF93B5009250EC /* XAutoLayoutKit.h */,
 				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
-				74B9691B239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.h */,
-				74B9691C239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m */,
+				74B9691B239F94C2006B3A74 /* XAutoLayoutKitEva+Private.h */,
+				74B9691C239F94C2006B3A74 /* XAutoLayoutKitEva.m */,
 				2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */,
 				2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */,
 			);
@@ -435,7 +435,7 @@
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
 				2473336723C5269A006EED9E /* ScrollViewController.m in Sources */,
 				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,
-				74B9691D239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m in Sources */,
+				74B9691D239F94C2006B3A74 /* XAutoLayoutKitEva.m in Sources */,
 				24799C3019FF937F009250EC /* main.m in Sources */,
 				2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */,
 			);

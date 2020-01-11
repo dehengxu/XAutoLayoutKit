@@ -10,7 +10,7 @@ import UIKit
 
 extension ViewController {
 
-    @objc func _loadConstraintsD() {
+    @objc func _loadConstraints_API3G_A() {
         self.v1.removeFromSuperview();
         self.v2.removeFromSuperview();
         self.v3.removeFromSuperview();
@@ -30,7 +30,7 @@ extension ViewController {
 
     }
 
-    @objc func _loadConstraintsE() {
+    @objc func _loadConstraints_API3G_B() {
         let delta = CGFloat(50.0)
 
         _ = self.scrollView.followSize(of: self.view)?.followCenter(of: self.view)
@@ -87,7 +87,6 @@ extension ViewController {
         self.lineV.removeFromSuperview()
 
         self.objectOfReference.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
-
-    }
+        }
 
 }

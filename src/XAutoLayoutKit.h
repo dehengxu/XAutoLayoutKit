@@ -13,13 +13,6 @@
 
 FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
-#pragma mark - NSLayoutConstraint category
-
-@interface NSLayoutConstraint (Convenient)
-
-
-@end
-
 #pragma mark - UIView category
 
 @interface UIView (LayoutConstraint)

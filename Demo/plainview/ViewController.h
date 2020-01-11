@@ -17,5 +17,12 @@
 
 @property (readonly) UIScrollView *scrollView;
 
+//Old api
+//#if __has_include("NSLayoutConstraint+XALK")
+- (void)_loadConstraintsXALKCategory_A;
+- (void)_loadConstraintsXALKCategory_B;
+- (void)_loadConstraintsXALKCategory_C;
+//#endif
+
 @end
 

@@ -5,7 +5,8 @@
 //  Created by NicholasXu on 2019/12/10.
 //
 
-#import "UIView+XAutoLayoutKitEva.h"
+#import "XAutoLayoutKitEva.h"
+#import "XAutoLayoutKitEva+Private.h"
 
 @interface XALKViewBinder ()
 

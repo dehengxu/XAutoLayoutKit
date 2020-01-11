@@ -11,12 +11,6 @@
 
 NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
-#pragma mark - NSLayoutConstraint category
-
-@implementation NSLayoutConstraint (Convenient)
-
-@end
-
 #pragma mark - UIView category
 
 @implementation UIView (LayoutConstraint)

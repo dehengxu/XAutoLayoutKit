@@ -14,17 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewController (LoadView)
 
-- (void)_loadViewsNewAPI;
+- (void)_loadConstraints_Size;
+
+- (void)_loadConstraints_API2G_A;
+- (void)_loadConstraints_API2G_B;
 
 //Eval api
-- (void)_loadConstraintsNewAPI_A;
-- (void)_loadConstraintsNewAPI_B;
-- (void)_loadConstraintsNewAPI_C;
-
-//Old api
-- (void)_loadConstraintsA;
-- (void)_loadConstraintsB;
-- (void)_loadConstraintsC;
+- (void)_loadConstraints_API3G_C;
 
 @end
 

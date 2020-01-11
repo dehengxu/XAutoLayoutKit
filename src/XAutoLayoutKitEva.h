@@ -8,11 +8,14 @@
 #ifndef XAutoLayoutKitEva_h
 #define XAutoLayoutKitEva_h
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 typedef enum: NSInteger {
-    ALKActionInner,
-    ALKActionAround,
-    ALKActionFollow
-} ALKAction;
+    XALKActionInner,
+    XALKActionAround,
+    XALKActionFollow
+} XALKAction;
 
 typedef NS_ENUM(NSInteger, XALKAttribute) {
         XALKLayoutAttributeLeft = NSLayoutAttributeLeft,
