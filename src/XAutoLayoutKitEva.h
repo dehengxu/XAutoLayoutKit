@@ -8,62 +8,55 @@
 #ifndef XAutoLayoutKitEva_h
 #define XAutoLayoutKitEva_h
 
-typedef enum : NSUInteger {
-    ALKValueUnknown = 0,
-    ALKValueSize,
-    ALKVAlueWidth,
-    ALKValueHeight,
-} ALKValueType;
-
 typedef enum: NSInteger {
     ALKActionInner,
     ALKActionAround,
     ALKActionFollow
 } ALKAction;
 
-typedef NS_ENUM(NSInteger, ALKAttribute) {
-        ALKLayoutAttributeLeft = NSLayoutAttributeLeft,
-        ALKLayoutAttributeRight,
-        ALKLayoutAttributeTop,
-        ALKLayoutAttributeBottom,
-        ALKLayoutAttributeLeading,
-        ALKLayoutAttributeTrailing,
-        ALKLayoutAttributeWidth,
-        ALKLayoutAttributeHeight,
-        ALKLayoutAttributeCenterX,
-        ALKLayoutAttributeCenterY,
-        ALKLayoutAttributeLastBaseline,
+typedef NS_ENUM(NSInteger, XALKAttribute) {
+        XALKLayoutAttributeLeft = NSLayoutAttributeLeft,
+        XALKLayoutAttributeRight,
+        XALKLayoutAttributeTop,
+        XALKLayoutAttributeBottom,
+        XALKLayoutAttributeLeading,
+        XALKLayoutAttributeTrailing,
+        XALKLayoutAttributeWidth,
+        XALKLayoutAttributeHeight,
+        XALKLayoutAttributeCenterX,
+        XALKLayoutAttributeCenterY,
+        XALKLayoutAttributeLastBaseline,
     #if TARGET_OS_IPHONE
-        ALKLayoutAttributeBaseline NS_SWIFT_UNAVAILABLE("Use 'lastBaseline' instead") = NSLayoutAttributeLastBaseline,
+        XALKLayoutAttributeBaseline NS_SWIFT_UNAVAILABLE("Use 'lastBaseline' instead") = NSLayoutAttributeLastBaseline,
     #else
-        ALKLayoutAttributeBaseline = NSLayoutAttributeLastBaseline,
+        XALKLayoutAttributeBaseline = NSLayoutAttributeLastBaseline,
     #endif
-        ALKLayoutAttributeFirstBaseline API_AVAILABLE(macos(10.11), ios(8.0)),
+        XALKLayoutAttributeFirstBaseline API_AVAILABLE(macos(10.11), ios(8.0)),
 
     #if TARGET_OS_IPHONE
-        ALKLayoutAttributeLeftMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeRightMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeTopMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeBottomMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeLeadingMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeTrailingMargin API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeCenterXWithinMargins API_AVAILABLE(ios(8.0)),
-        ALKLayoutAttributeCenterYWithinMargins API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeLeftMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeRightMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeTopMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeBottomMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeLeadingMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeTrailingMargin API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeCenterXWithinMargins API_AVAILABLE(ios(8.0)),
+        XALKLayoutAttributeCenterYWithinMargins API_AVAILABLE(ios(8.0)),
     #endif
 
-        ALKLayoutAttributeNotAnAttribute = 0
+        XALKLayoutAttributeNotAnAttribute = 0
 };
 
-typedef NS_ENUM(NSInteger, ALKRelation) {
-    ALKLayoutRelationEqual = NSLayoutRelationEqual,
-    ALKLayoutRelationLessThanOrEqual =  NSLayoutRelationLessThanOrEqual,
-    ALKLayoutRelationGreaterThanOrEqual = NSLayoutRelationGreaterThanOrEqual
+typedef NS_ENUM(NSInteger, XALKRelation) {
+    XALKLayoutRelationEqual = NSLayoutRelationEqual,
+    XALKLayoutRelationLessThanOrEqual =  NSLayoutRelationLessThanOrEqual,
+    XALKLayoutRelationGreaterThanOrEqual = NSLayoutRelationGreaterThanOrEqual
 };
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// Represent a constraint rule
-@interface ALKAutoLayoutValue : NSObject
+@interface XALKAutoLayoutValue : NSObject
 
 - (instancetype)equal;
 - (instancetype)lessThanOrEqual;
@@ -87,45 +80,45 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ALKViewBinder: NSObject
+@interface XALKViewBinder: NSObject
 
 @property (nonatomic, assign) CGFloat multiplier;
 @property (nonatomic, assign) CGFloat constants;
 
-@property (nonatomic, readonly) ALKViewBinder * _Nonnull (^to)(UIView *view);
+@property (nonatomic, readonly) XALKViewBinder * _Nonnull (^to)(UIView *view);
 
-@property (nonatomic, readonly) void(^alkLayout)();
+@property (nonatomic, readonly) void(^xalkLayout)();
 
 // MARK: - Relation
 
-@property (nonatomic, readonly, nonnull) ALKViewBinder * equal;
-@property (nonatomic, readonly, nonnull) ALKViewBinder * lessThanOrEqual;
-@property (nonatomic, readonly, nonnull) ALKViewBinder * greatThanOrEqual;
+@property (nonatomic, readonly, nonnull) XALKViewBinder * equal;
+@property (nonatomic, readonly, nonnull) XALKViewBinder * lessThanOrEqual;
+@property (nonatomic, readonly, nonnull) XALKViewBinder * greatThanOrEqual;
 
 // MARK: - Attribute
 
-@property (nonatomic, readonly) ALKViewBinder * width;
-@property (nonatomic, readonly) ALKViewBinder * height;
+@property (nonatomic, readonly) XALKViewBinder * width;
+@property (nonatomic, readonly) XALKViewBinder * height;
 
-@property (nonatomic, readonly) ALKViewBinder * centerX;
-@property (nonatomic, readonly) ALKViewBinder * centerY;
-@property (nonatomic, readonly) ALKViewBinder * leading;
-@property (nonatomic, readonly) ALKViewBinder * trailing;
+@property (nonatomic, readonly) XALKViewBinder * centerX;
+@property (nonatomic, readonly) XALKViewBinder * centerY;
+@property (nonatomic, readonly) XALKViewBinder * leading;
+@property (nonatomic, readonly) XALKViewBinder * trailing;
 
-@property (nonatomic, readonly) ALKViewBinder * top;
-@property (nonatomic, readonly) ALKViewBinder * left;
-@property (nonatomic, readonly) ALKViewBinder * bottom;
-@property (nonatomic, readonly) ALKViewBinder * right;
+@property (nonatomic, readonly) XALKViewBinder * top;
+@property (nonatomic, readonly) XALKViewBinder * left;
+@property (nonatomic, readonly) XALKViewBinder * bottom;
+@property (nonatomic, readonly) XALKViewBinder * right;
 
-@property (nonatomic, readonly) ALKViewBinder *(^multiply)(CGFloat multiplier);
-@property (nonatomic, readonly) ALKViewBinder *(^constant)(CGFloat constants);
+@property (nonatomic, readonly) XALKViewBinder *(^multiply)(CGFloat multiplier);
+@property (nonatomic, readonly) XALKViewBinder *(^constant)(CGFloat constants);
 
 @end
 
 @interface UIView (XAutoLayoutKitEva)
 
-@property (nonatomic, readonly) ALKViewBinder *alkBinder;
-- (ALKViewBinder *)alkBinder;
+@property (nonatomic, readonly) XALKViewBinder *xalkBinder;
+- (XALKViewBinder *)xalkBinder;
 
 @end
 

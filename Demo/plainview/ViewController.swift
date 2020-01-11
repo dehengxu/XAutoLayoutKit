@@ -17,16 +17,16 @@ extension ViewController {
         self.v4.removeFromSuperview();
         self.lineV.backgroundColor = .green;
 
-        let binder = self.objectOfReference.alkBinder.centerX.equal.to(self.view).centerX .alkLayout()
-        //print("binder: \(binder == nil ? "nil" : "not nil")")
-        self.objectOfReference.alkBinder.centerY.equal.to(self.view).centerY.alkLayout()
-        self.objectOfReference.alkBinder.width.multiply(0.5).equal.to(self.view).width.alkLayout()
-        self.objectOfReference.alkBinder.height.multiply(0.5).equal.to(self.view).height.alkLayout()
+        self.objectOfReference.xalkBinder.centerX.equal.to(self.view).centerX .xalkLayout()
+        
+        self.objectOfReference.xalkBinder.centerY.equal.to(self.view).centerY.xalkLayout()
+        self.objectOfReference.xalkBinder.width.multiply(0.5).equal.to(self.view).width.xalkLayout()
+        self.objectOfReference.xalkBinder.height.multiply(0.5).equal.to(self.view).height.xalkLayout()
 
-        self.lineH.alkBinder.width.equal.to(self.objectOfReference).width.alkLayout()
-        self.lineH.alkBinder.trailing.to(self.objectOfReference).leading.alkLayout()
-        self.lineH.alkBinder.height.equal.constant(2.0).alkLayout()
-        self.lineH.alkBinder.bottom.greatThanOrEqual.constant(-2.0).to(self.objectOfReference).top.alkLayout()
+        self.lineH.xalkBinder.width.equal.to(self.objectOfReference).width.xalkLayout()
+        self.lineH.xalkBinder.trailing.to(self.objectOfReference).leading.xalkLayout()
+        self.lineH.xalkBinder.height.equal.constant(2.0).xalkLayout()
+        self.lineH.xalkBinder.bottom.greatThanOrEqual.constant(-2.0).to(self.objectOfReference).top.xalkLayout()
 
     }
 

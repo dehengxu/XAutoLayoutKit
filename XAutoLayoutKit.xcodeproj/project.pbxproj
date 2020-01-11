@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2473336723C5269A006EED9E /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336623C5269A006EED9E /* ScrollViewController.m */; };
 		2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336A23C531A8006EED9E /* ViewController+LoadView.m */; };
+		2473337223CA1F61006EED9E /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */; };
 		24799C3019FF937F009250EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C2F19FF937F009250EC /* main.m */; };
 		24799C3319FF937F009250EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C3219FF937F009250EC /* AppDelegate.m */; };
 		24799C3619FF937F009250EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C3519FF937F009250EC /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		2473336923C531A8006EED9E /* ViewController+LoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+LoadView.h"; sourceTree = "<group>"; };
 		2473336A23C531A8006EED9E /* ViewController+LoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+LoadView.m"; sourceTree = "<group>"; };
 		2473336F23C9C47B006EED9E /* XAutoLayoutKitEva.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKitEva.h; sourceTree = "<group>"; };
+		2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
+		2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+XALK.m"; sourceTree = "<group>"; };
 		24799C2A19FF937F009250EC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24799C2E19FF937F009250EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24799C2F19FF937F009250EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
 				74B9691B239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.h */,
 				74B9691C239F94C2006B3A74 /* UIView+XAutoLayoutKitEva.m */,
+				2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */,
+				2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 		24799C1F19FF92F0009250EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XALK;
 				LastUpgradeCheck = 0620;
 				TargetAttributes = {
 					24799C2919FF937F009250EC = {
@@ -424,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				248EA577238D7626006EED9E /* ViewController.swift in Sources */,
+				2473337223CA1F61006EED9E /* NSLayoutConstraint+XALK.m in Sources */,
 				24799C3619FF937F009250EC /* ViewController.m in Sources */,
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
 				2473336723C5269A006EED9E /* ScrollViewController.m in Sources */,

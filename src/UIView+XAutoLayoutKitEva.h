@@ -11,13 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// Represent a constraint rule
-@interface ALKAutoLayoutValue ()
+@interface XALKAutoLayoutValue ()
 
-//@property (nonatomic, assign) ALKValueType type;
-//@property (nonatomic, strong) ALKAutoLayoutValue *target;
-
-@property (nonatomic, assign) ALKAttribute attribute;
-@property (nonatomic, assign) ALKRelation relation;
+@property (nonatomic, assign) XALKAttribute attribute;
+@property (nonatomic, assign) XALKRelation relation;
 @property (nonatomic, assign) CGFloat constants;
 @property (nonatomic, assign) CGFloat mutiplier;
 @property (nonatomic, strong) UIView *payload;
@@ -44,25 +41,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ALKViewBinder ()
+@interface XALKViewBinder ()
 
 // Used for convenience
 //@property ALKAction action;
 
-@property (nonatomic, weak) ALKViewBinder *master;
-@property (nonatomic, strong) ALKViewBinder *slave;
+@property (nonatomic, weak) XALKViewBinder *master;
+@property (nonatomic, strong) XALKViewBinder *slave;
 
-@property (strong) ALKAutoLayoutValue *value1;
-@property (strong) ALKAutoLayoutValue *value2;
+@property (strong) XALKAutoLayoutValue *value1;
+@property (strong) XALKAutoLayoutValue *value2;
 
 //@property (nonatomic, strong) UIView *toView;
 
 
-//@property (nonatomic, copy) ALKViewBinder *(^align)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^follow)(UIView *view);
+//@property (nonatomic, copy) XALKViewBinder *(^align)(void);
+//@property (nonatomic, copy) XALKViewBinder *(^follow)(UIView *view);
 
 @end
 
-typedef void(^BinderCallback)(ALKViewBinder *);
+typedef void(^BinderCallback)(XALKViewBinder *);
 
 NS_ASSUME_NONNULL_END

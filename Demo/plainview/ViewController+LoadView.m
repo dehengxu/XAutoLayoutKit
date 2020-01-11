@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
+//#import "NSLayoutConstraint+XALK.h"
 #import "XAutoLayoutKit.h"
 #import "UIView+XAutoLayoutKitEva.h"
 
@@ -70,21 +71,20 @@
     //[self.objectOfReference removeFromSuperview];
     self.lineV.backgroundColor = UIColor.greenColor;
 
+    self.objectOfReference.xalkBinder.equal.centerX.to(self.view).centerX.xalkLayout();
+    self.objectOfReference.xalkBinder.equal.centerY.to(self.view).centerY.xalkLayout();
+    self.objectOfReference.xalkBinder.equal.width.multiply(0.4).to(self.view).width.xalkLayout();
+    self.objectOfReference.xalkBinder.equal.height.multiply(0.4).to(self.view).height.xalkLayout();
 
-    self.objectOfReference.alkBinder.equal.centerX.to(self.view).centerX.alkLayout();
-    self.objectOfReference.alkBinder.equal.centerY.to(self.view).centerY.alkLayout();
-    self.objectOfReference.alkBinder.equal.width.multiply(0.4).to(self.view).width.alkLayout();
-    self.objectOfReference.alkBinder.equal.height.multiply(0.4).to(self.view).height.alkLayout();
+    self.lineH.xalkBinder.equal.bottom.constant(-2.0).to(self.objectOfReference).top.xalkLayout();
+    self.lineH.xalkBinder.left.equal.to(self.objectOfReference).left.xalkLayout();
+    self.lineH.xalkBinder.width.equal.multiply(0.5).to(self.objectOfReference).width.xalkLayout();
+        self.lineH.xalkBinder.height.multiply(1.0).constant(2.0).xalkLayout();
 
-    self.lineH.alkBinder.equal.bottom.constant(-2.0).to(self.objectOfReference).top.alkLayout();
-    self.lineH.alkBinder.left.equal.to(self.objectOfReference).left.alkLayout();
-    self.lineH.alkBinder.width.equal.multiply(0.5).to(self.objectOfReference).width.alkLayout();
-        self.lineH.alkBinder.height.multiply(1.0).constant(2.0).alkLayout();
-
-    self.lineV.alkBinder.right.equal.constant(-2.0).to(self.objectOfReference).left.alkLayout();
-    self.lineV.alkBinder.top.equal.to(self.objectOfReference).top.alkLayout();
-    self.lineV.alkBinder.width.constant(2.0).alkLayout();
-    self.lineV.alkBinder.height.multiply(0.5).equal.to(self.objectOfReference).height.alkLayout();
+    self.lineV.xalkBinder.right.equal.constant(-2.0).to(self.objectOfReference).left.xalkLayout();
+    self.lineV.xalkBinder.top.equal.to(self.objectOfReference).top.xalkLayout();
+    self.lineV.xalkBinder.width.constant(2.0).xalkLayout();
+    self.lineV.xalkBinder.height.multiply(0.5).equal.to(self.objectOfReference).height.xalkLayout();
 
 
 
@@ -124,6 +124,9 @@
 #endif
 }
 
+// MARK: - NSLayoutConstraint+XALK
+
+#if __has_include("NSLayoutConstraint+XALK")
 
 /**
  Load constraint B
@@ -133,7 +136,6 @@
  */
 - (void)_loadConstraintsB
 {
-#if 0
     NSDictionary *views = NSDictionaryOfVariableBindings(_v1, _v2, _v3, _v4, self.view, _objectOfReference);
 
     [NSLayoutConstraint setConstraintsWithView:self.objectOfReference size:CGSizeMake(200, 200)];
@@ -156,10 +158,10 @@
 //    [self.view addConstraint:constraint];
 //    constraint = [NSLayoutConstraint constraintWithItem:self.v1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.objectOfReference attribute:NSLayoutAttributeCenterY multiplier:1. constant:0];
 //    [self.view addConstraint:constraint];
-#endif
+
 }
 
-- (void)_loadConstraintsC
+- (void)_loadConstraintsXALKCategory
 {
     [self.v1 setConstraintSize:CGSizeMake(30, 30)];
     [self.v2 setConstraintSize:CGSizeMake(40, 40)];
@@ -199,5 +201,6 @@
     [self.view addConstraint:constraint];
 
 }
+#endif
 
 @end

@@ -7,25 +7,25 @@
 
 #import "UIView+XAutoLayoutKitEva.h"
 
-@interface ALKViewBinder ()
+@interface XALKViewBinder ()
 
-@property (nonatomic, copy) ALKViewBinder *(^to)(UIView *view);
-@property (nonatomic, copy) void(^alkLayout)();
+@property (nonatomic, copy) XALKViewBinder *(^to)(UIView *view);
 
-@property (nonatomic, copy) ALKViewBinder *(^multiply)(CGFloat multiplier);
-@property (nonatomic, copy) ALKViewBinder *(^constant)(CGFloat constants);
+@property (nonatomic, copy) void(^xalkLayout)();
+
+@property (nonatomic, copy) XALKViewBinder *(^multiply)(CGFloat multiplier);
+@property (nonatomic, copy) XALKViewBinder *(^constant)(CGFloat constants);
 
 @end
 
-@implementation ALKViewBinder
+@implementation XALKViewBinder
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.value1 = ALKAutoLayoutValue.new;
-        self.value2 = ALKAutoLayoutValue.new;
-
+        self.value1 = XALKAutoLayoutValue.new;
+        self.value2 = XALKAutoLayoutValue.new;
         [self configBlocks];
     }
     return self;
@@ -92,24 +92,24 @@
 //        return wself;
 //    };
 
-    self.to = ^ALKViewBinder * _Nonnull(UIView * _Nonnull view) {
+    self.to = ^XALKViewBinder * _Nonnull(UIView * _Nonnull view) {
         //wself.value2.payload = view;
-        sself.slave = ALKViewBinder.new;
+        sself.slave = XALKViewBinder.new;
         sself.slave.value1.payload = view;
         return sself.slave;
     };
 
-    self.multiply = ^ALKViewBinder * _Nonnull(CGFloat multiplier) {
+    self.multiply = ^XALKViewBinder * _Nonnull(CGFloat multiplier) {
         sself.value1.mutiplier = multiplier;
         return sself;
     };
 
-    self.constant = ^ALKViewBinder * _Nonnull(CGFloat constants) {
+    self.constant = ^XALKViewBinder * _Nonnull(CGFloat constants) {
         sself.value1.constants = constants;
         return sself;
     };
 
-    self.alkLayout = ^{
+    self.xalkLayout = ^{
         //if (!wself.value1) return;
         if (!sself.master && !sself.value1.payload) {//if slave
             return;
@@ -148,7 +148,7 @@
 
 }
 
-- (void)setSlave:(ALKViewBinder *)slave
+- (void)setSlave:(XALKViewBinder *)slave
 {
     _slave = slave;
     _slave.master = self;
@@ -164,79 +164,79 @@
     return self.value1.mutiplier;
 }
 
-- (ALKViewBinder *)equal
+- (XALKViewBinder *)equal
 {
     [self.value1 equal];
     return self;
 }
 
-- (ALKViewBinder *)lessThanOrEqual
+- (XALKViewBinder *)lessThanOrEqual
 {
     [self.value1 lessThanOrEqual];
     return self;
 }
 
-- (ALKViewBinder *)greatThanOrEqual
+- (XALKViewBinder *)greatThanOrEqual
 {
     [self.value1 greatThanOrEqual];
     return self;
 }
 
-- (ALKViewBinder *)width
+- (XALKViewBinder *)width
 {
     [self.value1 width];
     return self;
 }
 
-- (ALKViewBinder *)height
+- (XALKViewBinder *)height
 {
     [self.value1 height];
     return self;
 }
 
-- (ALKViewBinder *)centerX
+- (XALKViewBinder *)centerX
 {
     [self.value1 centerX];
     return self;
 }
 
-- (ALKViewBinder *)centerY
+- (XALKViewBinder *)centerY
 {
     [self.value1 centerY];
     return self;
 }
 
-- (ALKViewBinder *)leading
+- (XALKViewBinder *)leading
 {
     [self.value1 leading];
     return self;
 }
 
-- (ALKViewBinder *)trailing
+- (XALKViewBinder *)trailing
 {
     [self.value1 trailing];
     return self;
 }
 
-- (ALKViewBinder *)top
+- (XALKViewBinder *)top
 {
     [self.value1 top];
     return self;
 }
 
-- (ALKViewBinder *)left
+- (XALKViewBinder *)left
 {
     [self.value1 left];
     return self;
 }
 
-- (ALKViewBinder *)bottom
+- (XALKViewBinder *)bottom
 {
     [self.value1 bottom];
     return self;
 }
 
-- (ALKViewBinder *)right
+- (XALKViewBinder *)right
 {
     [self.value1 right];
     return self;
@@ -254,7 +254,7 @@
 
 @end
 
-@implementation ALKAutoLayoutValue
+@implementation XALKAutoLayoutValue
 
 - (instancetype)init
 {
@@ -268,73 +268,79 @@
 
 - (instancetype)equal
 {
-    self.relation = ALKLayoutRelationEqual;
+    self.relation = XALKLayoutRelationEqual;
     return self;
 }
 
 - (instancetype)lessThanOrEqual
 {
-    self.relation = ALKLayoutRelationLessThanOrEqual;
+    self.relation = XALKLayoutRelationLessThanOrEqual;
     return self;
 }
 
 - (instancetype)greatThanOrEqual
 {
-    self.relation = ALKLayoutRelationGreaterThanOrEqual;
+    self.relation = XALKLayoutRelationGreaterThanOrEqual;
     return self;
 }
 
 - (instancetype)width
 {
-    self.attribute = ALKLayoutAttributeWidth;
+    self.attribute = XALKLayoutAttributeWidth;
     return self;
 }
 
 - (instancetype)height
 {
-    self.attribute = ALKLayoutAttributeHeight;
+    self.attribute = XALKLayoutAttributeHeight;
     return self;
 }
 
 - (instancetype)top
 {
-    self.attribute = ALKLayoutAttributeTop;
+    self.attribute = XALKLayoutAttributeTop;
     return self;
 }
 
 - (instancetype)left
 {
-    self.attribute = ALKLayoutAttributeLeft;
+    self.attribute = XALKLayoutAttributeLeft;
+    return self;
+}
+
+- (instancetype)right
+{
+    self.attribute = XALKLayoutAttributeRight;
     return self;
 }
 
 - (instancetype)bottom
 {
-    self.attribute = ALKLayoutAttributeBottom;
+    self.attribute = XALKLayoutAttributeBottom;
     return self;
 }
 
 - (instancetype)leading
 {
-    self.attribute = ALKLayoutAttributeLeading;
+    self.attribute = XALKLayoutAttributeLeading;
     return self;
 }
 
 - (instancetype)trailing
 {
-    self.attribute = ALKLayoutAttributeTrailing;
+    self.attribute = XALKLayoutAttributeTrailing;
     return self;
 }
 
 - (instancetype)centerX
 {
-    self.attribute = ALKLayoutAttributeCenterX;
+    self.attribute = XALKLayoutAttributeCenterX;
     return self;
 }
 
 - (instancetype)centerY
 {
-    self.attribute = ALKLayoutAttributeCenterY;
+    self.attribute = XALKLayoutAttributeCenterY;
     return self;
 }
 
@@ -395,9 +401,9 @@
 //    return self;
 //}
 
-- (ALKViewBinder *)alkBinder
+- (XALKViewBinder *)xalkBinder
 {
-    ALKViewBinder *b = [ALKViewBinder new];
+    XALKViewBinder *b = [XALKViewBinder new];
     b.value1.payload = self;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     return b;
