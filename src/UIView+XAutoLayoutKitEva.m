@@ -12,26 +12,6 @@
 @property (nonatomic, copy) ALKViewBinder *(^to)(UIView *view);
 @property (nonatomic, copy) void(^alkLayout)();
 
-// MARK: - Relation
-//@property (nonatomic, copy) ALKViewBinder *(^equal)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^lessThanOrEqual)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^greatThanOrEqual)(void);
-
-// MARK: - Attribute
-
-//@property (nonatomic, copy) ALKViewBinder *(^width)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^height)(void);
-
-//@property (nonatomic, copy) ALKViewBinder *(^centerX)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^centerY)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^leading)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^trailing)(void);
-
-//@property (nonatomic, copy) ALKViewBinder *(^top)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^left)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^bottom)(void);
-//@property (nonatomic, copy) ALKViewBinder *(^right)(void);
-
 @property (nonatomic, copy) ALKViewBinder *(^multiply)(CGFloat multiplier);
 @property (nonatomic, copy) ALKViewBinder *(^constant)(CGFloat constants);
 
@@ -136,7 +116,7 @@
         }else if (!sself.value1.payload) {
             return;
         }
-        NSLog(@"%s %d, %d", __func__, sself.master.value1.attribute, sself.value1.attribute);
+        //NSLog(@"%s %d, %d", __func__, sself.master.value1.attribute, sself.value1.attribute);
 
         UIView *v1 = sself.master.value1.payload, *v2 = sself.value1.payload;
         BOOL isMaster = NO;
