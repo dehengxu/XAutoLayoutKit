@@ -107,30 +107,35 @@ typedef NS_ENUM(NSInteger, ALKRelation) {
 @property (nonatomic, assign) CGFloat constants;
 @property (nonatomic, strong) UIView *toView;
 
-@property (nonatomic, copy) ALKViewBinder *(^to)(UIView *view);
+@property (nonatomic, readonly) ALKViewBinder *(^to)(UIView *view);
 
 //@property (nonatomic, copy) ALKViewBinder *(^align)(void);
 //@property (nonatomic, copy) ALKViewBinder *(^follow)(UIView *view);
 
-@property (nonatomic, copy) void(^alkLayout)();
-@property (nonatomic, copy) ALKViewBinder *(^equal)(void);
-@property (nonatomic, copy) ALKViewBinder *(^lessThanOrEqual)(void);
-@property (nonatomic, copy) ALKViewBinder *(^greatThanOrEqual)(void);
+@property (nonatomic, readonly) void(^alkLayout)();
 
-@property (nonatomic, copy) ALKViewBinder *(^width)(void);
-@property (nonatomic, copy) ALKViewBinder *(^height)(void);
+// MARK: - Relation
 
-@property (nonatomic, copy) ALKViewBinder *(^centerX)(void);
-@property (nonatomic, copy) ALKViewBinder *(^centerY)(void);
-@property (nonatomic, copy) ALKViewBinder *(^leading)(void);
-@property (nonatomic, copy) ALKViewBinder *(^trailing)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^equal)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^lessThanOrEqual)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^greatThanOrEqual)(void);
 
-@property (nonatomic, copy) ALKViewBinder *(^top)(void);
-@property (nonatomic, copy) ALKViewBinder *(^left)(void);
-@property (nonatomic, copy) ALKViewBinder *(^bottom)(void);
-@property (nonatomic, copy) ALKViewBinder *(^right)(void);
-@property (nonatomic, copy) ALKViewBinder *(^multiply)(CGFloat multiplier);
-@property (nonatomic, copy) ALKViewBinder *(^constant)(CGFloat constants);
+// MARK: - Attribute
+
+@property (nonatomic, readonly) ALKViewBinder *(^width)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^height)(void);
+
+@property (nonatomic, readonly) ALKViewBinder *(^centerX)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^centerY)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^leading)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^trailing)(void);
+
+@property (nonatomic, readonly) ALKViewBinder *(^top)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^left)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^bottom)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^right)(void);
+@property (nonatomic, readonly) ALKViewBinder *(^multiply)(CGFloat multiplier);
+@property (nonatomic, readonly) ALKViewBinder *(^constant)(CGFloat constants);
 
 - (instancetype)follow;
 - (instancetype)align;

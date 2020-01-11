@@ -61,7 +61,7 @@
 
 - (void)_loadConstraintsNewAPI_C
 {
-    [self.v1 removeFromSuperview];
+    //[self.v1 removeFromSuperview];
     [self.v2 removeFromSuperview];
     [self.v3 removeFromSuperview];
     [self.v4 removeFromSuperview];
