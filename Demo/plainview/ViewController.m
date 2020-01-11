@@ -67,8 +67,9 @@
     //[self _loadConstraintsC];
     //[self _loadConstraintsD];
     //[self _loadConstraintsE];
-    [self _loadConstraintsNewAPI_A];
+    //[self _loadConstraintsNewAPI_A];
     //[self _loadConstraintsNewAPI_B];
+    [self _loadConstraintsNewAPI_C];
 }
 
 - (void)updateViewConstraints
@@ -76,6 +77,7 @@
     [super updateViewConstraints];
     NSLog(@"constraints :%lu", self.view.constraints.count);
     NSLog(@"%s objectOfReference: %@", __func__, NSStringFromCGRect(self.objectOfReference.frame));
+    NSLog(@"%s lineH: %@", __func__, NSStringFromCGRect(self.lineH.frame));
 
 }
 
@@ -99,7 +101,8 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    NSLog(@"%s objectOfReference: %@", __func__,  NSStringFromCGRect(self.objectOfReference.frame));
+    NSLog(@"%s objectOfReference: %@", __func__, NSStringFromCGRect(self.objectOfReference.frame));
+    NSLog(@"%s lineH: %@", __func__, NSStringFromCGRect(self.lineH.frame));
 }
 
 - (UIScrollView *)scrollView

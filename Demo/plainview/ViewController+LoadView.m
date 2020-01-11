@@ -12,62 +12,6 @@
 #import "XAutoLayoutKit.h"
 #import "UIView+XAutoLayoutKitEva.h"
 
-#if 0
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
-    //UIView *v1, *v2;
-    self.v1 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
-    self.v2 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
-    self.v3 = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 20, 20)].alk_enableAutoLayout;
-    self.v4 = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 20, 20)].alk_enableAutoLayout;
-
-    self.objectOfReference = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)].alk_enableAutoLayout;
-    
-    self.v1.backgroundColor = [UIColor redColor];
-    self.v2.backgroundColor = [UIColor greenColor];
-    self.v3.backgroundColor = [UIColor blueColor];
-    self.v4.backgroundColor = [UIColor yellowColor];
-
-    self.objectOfReference.backgroundColor = [UIColor orangeColor];
-
-    [self.view addSubview:self.objectOfReference];
-    [self.view addSubview:self.v4];
-    [self.view addSubview:self.v3];
-    [self.view addSubview:self.v2];
-    [self.view addSubview:self.v1];
-
-    self.lineV = UIView.new;
-    self.lineH = UIView.new;
-    self.lineH.backgroundColor = UIColor.redColor;
-    self.lineV.backgroundColor = UIColor.redColor;
-
-    [self.view addSubview:self.lineH];
-    [self.view addSubview:self.lineV];
-
-    //self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
-
-    self.view.alpha = 0.3;
-    
-    //[self _loadConstraintsA];
-    //[self _loadConstraintsNewAPI_B];
-    //[self _loadConstraintsNewAPI_C];
-    [self _loadConstraintsNewAPI_B];
-}
-
-- (void)updateViewConstraints
-{
-    [super updateViewConstraints];
-    NSLog(@"constraints :%lu", self.view.constraints.count);
-}
-
-
-@end
-#endif
-
 @implementation ViewController (LoadView)
 
 - (void)_loadViewsNewAPI {
@@ -102,12 +46,14 @@
     NSLog(@"version: %@", kXAutoLayoutVersion);
     ///TODO: add layout
     [self.lineH followCenterXOfView:self.objectOfReference];
-    [self.lineH followY:-5.0 OfView:self.objectOfReference];
+    //[self.lineH followY:-5.0 OfView:self.objectOfReference];
+    [self.lineH above:5.0 ofView:self.objectOfReference];
     [self.lineH followWidthOfView:self.objectOfReference];
     [self.lineH setConstraintHeight:2.0];
 
     [self.lineV followCenterYOfView:self.objectOfReference];
-    [self.lineV followX:-5.0 OfView:self.objectOfReference];
+    //[self.lineV followX:-5.0 OfView:self.objectOfReference];
+    [self.lineV ahead:5.0 ofView:self.objectOfReference];
     [self.lineV followHeightOfView:self.objectOfReference];
     [self.lineV setConstraintWidth:2.0];
     
@@ -115,9 +61,39 @@
 
 - (void)_loadConstraintsNewAPI_C
 {
-    [self.lineV followSize:^(ALKViewBinder * _Nonnull binder) {
-        [binder toView:self.view];
+    [self.v1 removeFromSuperview];
+    [self.v2 removeFromSuperview];
+    [self.v3 removeFromSuperview];
+    [self.v4 removeFromSuperview];
+    //[self.lineH removeFromSuperview];
+    //[self.lineV removeFromSuperview];
+    //[self.objectOfReference removeFromSuperview];
+    self.lineV.backgroundColor = UIColor.greenColor;
+
+
+    self.objectOfReference.alkBinder.equal().centerX().to(self.view).centerX().alkLayout();
+    self.objectOfReference.alkBinder.equal().centerY().to(self.view).centerY().alkLayout();
+    self.objectOfReference.alkBinder.equal().width().multiply(0.4).to(self.view).width().alkLayout();
+    self.objectOfReference.alkBinder.equal().height().multiply(0.4).to(self.view).height().alkLayout();
+
+    self.lineH.alkBinder.equal().bottom().constant(-2.0).to(self.objectOfReference).top().alkLayout();
+    self.lineH.alkBinder.left().equal().to(self.objectOfReference).left().alkLayout();
+    self.lineH.alkBinder.width().equal().multiply(0.5).to(self.objectOfReference).width().alkLayout();
+        self.lineH.alkBinder.height().multiply(1.0).constant(2.0).alkLayout();
+
+    self.lineV.alkBinder.right().equal().constant(-2.0).to(self.objectOfReference).left().alkLayout();
+    self.lineV.alkBinder.top().equal().to(self.objectOfReference).top().alkLayout();
+    self.lineV.alkBinder.width().constant(2.0).alkLayout();
+    self.lineV.alkBinder.height().multiply(0.5).equal().to(self.objectOfReference).height().alkLayout();
+
+
+
+#if 0 //API style B
+    [self.objectOfReference followSize:^(ALKViewBinder * _Nonnull binder) {
+        binder.toView = self.view;
+        binder.multiplier = 0.5;
     }];
+#endif
 }
 
 - (void)_loadConstraintsA

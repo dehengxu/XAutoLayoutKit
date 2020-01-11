@@ -17,12 +17,12 @@ typedef enum : NSUInteger {
 } ALKValueType;
 
 typedef enum: NSInteger {
-    ALKActionAlign,
-    ALKActionPosition,
+    ALKActionInner,
+    ALKActionAround,
     ALKActionFollow
 } ALKAction;
 
-typedef NS_ENUM(NSUInteger, ALKAttribute) {
+typedef NS_ENUM(NSInteger, ALKAttribute) {
         ALKLayoutAttributeLeft = NSLayoutAttributeLeft,
         ALKLayoutAttributeRight,
         ALKLayoutAttributeTop,
@@ -55,38 +55,107 @@ typedef NS_ENUM(NSUInteger, ALKAttribute) {
         ALKLayoutAttributeNotAnAttribute = 0
 };
 
+typedef NS_ENUM(NSInteger, ALKRelation) {
+    ALKLayoutRelationEqual = NSLayoutRelationEqual,
+    ALKLayoutRelationLessThanOrEqual =  NSLayoutRelationLessThanOrEqual,
+    ALKLayoutRelationGreaterThanOrEqual = NSLayoutRelationGreaterThanOrEqual
+};
+
 @interface ALKAutoLayoutValue : NSObject
+
 @property (nonatomic, assign) ALKValueType type;
-@property (assign) ALKAttribute attribute;
-@property (nonatomic, strong) NSValue *value;
-@property (nonatomic, strong) NSNumber *number;
+@property (nonatomic, assign) ALKAttribute attribute;
+@property (nonatomic, assign) ALKRelation relation;
+@property (nonatomic, assign) CGFloat constants;
+@property (nonatomic, assign) CGFloat mutiplier;
 @property (nonatomic, strong) UIView *payload;
 @property (nonatomic, strong) ALKAutoLayoutValue *target;
+
+- (instancetype)equal;
+- (instancetype)lessThanOrEqual;
+- (instancetype)greatThanOrEqual;
+
+- (instancetype)width;
+- (instancetype)height;
+
+- (instancetype)top;
+- (instancetype)left;
+- (instancetype)bottom;
+- (instancetype)right;
+
+- (instancetype)leading;
+- (instancetype)trailing;
+
+- (instancetype)centerX;
+- (instancetype)centerY;
+
+- (instancetype)to:(UIView *)view;
 
 @end
 
 @interface ALKViewBinder: NSObject
 
 @property ALKAction action;
+
+@property (nonatomic, weak) ALKViewBinder *master;
+@property (nonatomic, strong) ALKViewBinder *slave;
+
 @property (strong) ALKAutoLayoutValue *value1;
 @property (strong) ALKAutoLayoutValue *value2;
 
-- (instancetype)toView:(UIView *)view;
+@property (nonatomic, assign) CGFloat multiplier;
+@property (nonatomic, assign) CGFloat constants;
+@property (nonatomic, strong) UIView *toView;
+
+@property (nonatomic, copy) ALKViewBinder *(^to)(UIView *view);
+
+//@property (nonatomic, copy) ALKViewBinder *(^align)(void);
+//@property (nonatomic, copy) ALKViewBinder *(^follow)(UIView *view);
+
+@property (nonatomic, copy) void(^alkLayout)();
+@property (nonatomic, copy) ALKViewBinder *(^equal)(void);
+@property (nonatomic, copy) ALKViewBinder *(^lessThanOrEqual)(void);
+@property (nonatomic, copy) ALKViewBinder *(^greatThanOrEqual)(void);
+
+@property (nonatomic, copy) ALKViewBinder *(^width)(void);
+@property (nonatomic, copy) ALKViewBinder *(^height)(void);
+
+@property (nonatomic, copy) ALKViewBinder *(^centerX)(void);
+@property (nonatomic, copy) ALKViewBinder *(^centerY)(void);
+@property (nonatomic, copy) ALKViewBinder *(^leading)(void);
+@property (nonatomic, copy) ALKViewBinder *(^trailing)(void);
+
+@property (nonatomic, copy) ALKViewBinder *(^top)(void);
+@property (nonatomic, copy) ALKViewBinder *(^left)(void);
+@property (nonatomic, copy) ALKViewBinder *(^bottom)(void);
+@property (nonatomic, copy) ALKViewBinder *(^right)(void);
+@property (nonatomic, copy) ALKViewBinder *(^multiply)(CGFloat multiplier);
+@property (nonatomic, copy) ALKViewBinder *(^constant)(CGFloat constants);
 
 - (instancetype)follow;
 - (instancetype)align;
 - (instancetype)below;
 - (instancetype)above;
-- (instancetype)ahead;
-- (instancetype)behide;
+//- (instancetype)ahead;
+//- (instancetype)behide;
 - (void)layout;
 
 @end
 
+typedef void(^BinderCallback)(ALKViewBinder *);
+
 @interface UIView (XAutoLayoutKitEva)
 
-- (void)followSize:(void(^)(ALKViewBinder *))aBlock;
-- (ALKViewBinder *)alkLayoutBinder;
+- (ALKViewBinder *)alkBinder;
+
+- (instancetype)alkLayout:(BinderCallback)aBlock;
+
+- (instancetype)followSize:(BinderCallback) aBlock;
+- (instancetype)followWidth:(BinderCallback) aBlock;
+- (instancetype)followHeight:(BinderCallback) aBlock;
+- (instancetype)followCenter:(BinderCallback) aBlock;
+- (instancetype)followCenterX:(BinderCallback) aBlock;
+- (instancetype)followCenterY:(BinderCallback) aBlock;
 
 @end
 
