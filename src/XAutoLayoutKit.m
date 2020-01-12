@@ -295,7 +295,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    [self alk_enableAutoLayout];
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:margin];
 //    [self.superview addConstraint:constraint];
-    self.xalkBinder.left.equal.to(v1).left.xalkLayout();
+    self.xalkBinder.left.equal.constant(margin).to(v1).left.xalkLayout();
     return self;
 }
 
@@ -304,7 +304,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    [self alk_enableAutoLayout];
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:-margin];
 //    [self.superview addConstraint:constraint];
-    self.xalkBinder.right.equal.to(v1).right.xalkLayout();
+    self.xalkBinder.right.equal.constant(margin).to(v1).right.xalkLayout();
     return self;
 }
 
@@ -314,7 +314,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
 //    [self.superview addConstraint:constraint];
 
-    self.xalkBinder.top.equal.to(v1).top.xalkLayout();
+    self.xalkBinder.top.equal.constant(margin).to(v1).top.xalkLayout();
     return self;
 }
 
@@ -323,7 +323,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    [self alk_enableAutoLayout];
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
 //    [self.superview addConstraint:constraint];
-    self.xalkBinder.bottom.equal.to(v1).bottom.xalkLayout();
+    self.xalkBinder.bottom.equal.constant(margin).to(v1).bottom.xalkLayout();
     return self;
 }
 
