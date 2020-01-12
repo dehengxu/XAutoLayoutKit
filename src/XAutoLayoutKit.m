@@ -375,7 +375,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:below];
 //    [self.superview addConstraint:constraint];
 
-    self.xalkBinder.top.equal.constant(below).to(v1).bottom.xalkLayout();
+    self.xalkBinder.top.greatThanOrEqual.constant(below).to(v1).bottom.xalkLayout();
     return self;
 }
 
@@ -385,7 +385,7 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 //    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
 //
 //    [self.superview addConstraint:constraint];
-    self.xalkBinder.right.lessThanOrEqual.constant(-ahead).to(v1).left.xalkLayout();
+    self.xalkBinder.right.greatThanOrEqual.constant(-ahead).to(v1).left.xalkLayout();
     return self;
 }
 
