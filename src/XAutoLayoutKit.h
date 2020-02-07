@@ -68,3 +68,13 @@ FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 - (instancetype)after:(CGFloat)after ofView:(UIView *)v1;
 
 @end
+
+//! Project version number for XAutoLayoutKit.
+FOUNDATION_EXPORT double XAutoLayoutKitVersionNumber;
+
+//! Project version string for XAutoLayoutKit.
+FOUNDATION_EXPORT const unsigned char XAutoLayoutKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <XAutoLayoutKit/PublicHeader.h>
+
+

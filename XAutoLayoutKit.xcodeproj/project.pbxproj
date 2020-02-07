@@ -29,7 +29,6 @@
 		74944FFE1A84742C00F6FEFB /* DemoStoryBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FFD1A84742C00F6FEFB /* DemoStoryBoardTests.m */; };
 		749F233723ED7264000D6559 /* XAutoLayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749F232E23ED7264000D6559 /* XAutoLayoutKit.framework */; };
 		749F233E23ED7264000D6559 /* XAutoLayoutKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F233D23ED7264000D6559 /* XAutoLayoutKitTests.m */; };
-		749F234023ED7264000D6559 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F233023ED7264000D6559 /* XAutoLayoutKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749F234323ED7264000D6559 /* XAutoLayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749F232E23ED7264000D6559 /* XAutoLayoutKit.framework */; };
 		749F234523ED7264000D6559 /* XAutoLayoutKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 749F232E23ED7264000D6559 /* XAutoLayoutKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		749F234C23ED726D000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
@@ -37,11 +36,11 @@
 		749F234E23ED726D000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */; };
 		749F235923ED8934000D6559 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235223ED8934000D6559 /* XAutoLayoutBinder.m */; };
 		749F235A23ED8934000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */; };
-		749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235423ED8934000D6559 /* XAutoLayoutKit.h */; };
-		749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235523ED8934000D6559 /* XAutoLayoutBinder.h */; };
+		749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235423ED8934000D6559 /* XAutoLayoutKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235523ED8934000D6559 /* XAutoLayoutBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */; };
 		749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235723ED8934000D6559 /* XAutoLayoutKit.m */; };
-		749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */; };
+		749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74B9691D239F94C2006B3A74 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
 /* End PBXBuildFile section */
 
@@ -387,7 +386,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749F234023ED7264000D6559 /* XAutoLayoutKit.h in Headers */,
 				749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */,
 				749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */,
 				749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */,
