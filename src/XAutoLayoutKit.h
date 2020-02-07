@@ -10,6 +10,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XAutoLayoutBinder.h"
+#import "NSLayoutConstraint+XALK.h"
 
 FOUNDATION_EXTERN NSString * const kXAutoLayoutVersion;
 
