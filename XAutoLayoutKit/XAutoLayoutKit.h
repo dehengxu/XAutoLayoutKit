@@ -7,6 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XAutoLayoutKit.h"
+#import "XAutoLayoutBinder.h"
+#import "NSLayoutConstraint+XALK.h"
+
 //! Project version number for XAutoLayoutKit.
 FOUNDATION_EXPORT double XAutoLayoutKitVersionNumber;
 
