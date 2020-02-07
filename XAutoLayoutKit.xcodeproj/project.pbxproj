@@ -35,6 +35,13 @@
 		749F234C23ED726D000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		749F234D23ED726D000D6559 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
 		749F234E23ED726D000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */; };
+		749F235923ED8934000D6559 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235223ED8934000D6559 /* XAutoLayoutBinder.m */; };
+		749F235A23ED8934000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */; };
+		749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235423ED8934000D6559 /* XAutoLayoutKit.h */; };
+		749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235523ED8934000D6559 /* XAutoLayoutBinder.h */; };
+		749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */; };
+		749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235723ED8934000D6559 /* XAutoLayoutKit.m */; };
+		749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */; };
 		74B9691D239F94C2006B3A74 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +142,13 @@
 		749F233623ED7264000D6559 /* XAutoLayoutKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XAutoLayoutKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		749F233D23ED7264000D6559 /* XAutoLayoutKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKitTests.m; sourceTree = "<group>"; };
 		749F233F23ED7264000D6559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		749F235223ED8934000D6559 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
+		749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+XALK.m"; sourceTree = "<group>"; };
+		749F235423ED8934000D6559 /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
+		749F235523ED8934000D6559 /* XAutoLayoutBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutBinder.h; sourceTree = "<group>"; };
+		749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
+		749F235723ED8934000D6559 /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
+		749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
 		74B9691B239F94C2006B3A74 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
 		74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +350,7 @@
 		749F232F23ED7264000D6559 /* XAutoLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
+				749F235123ED8934000D6559 /* src */,
 				749F233023ED7264000D6559 /* XAutoLayoutKit.h */,
 				749F233123ED7264000D6559 /* Info.plist */,
 			);
@@ -351,6 +366,20 @@
 			path = XAutoLayoutKitTests;
 			sourceTree = "<group>";
 		};
+		749F235123ED8934000D6559 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */,
+				749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */,
+				749F235523ED8934000D6559 /* XAutoLayoutBinder.h */,
+				749F235223ED8934000D6559 /* XAutoLayoutBinder.m */,
+				749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */,
+				749F235423ED8934000D6559 /* XAutoLayoutKit.h */,
+				749F235723ED8934000D6559 /* XAutoLayoutKit.m */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -359,6 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				749F234023ED7264000D6559 /* XAutoLayoutKit.h in Headers */,
+				749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */,
+				749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */,
+				749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */,
+				749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,7 +670,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				749F234C23ED726D000D6559 /* XAutoLayoutKit.m in Sources */,
+				749F235A23ED8934000D6559 /* NSLayoutConstraint+XALK.m in Sources */,
+				749F235923ED8934000D6559 /* XAutoLayoutBinder.m in Sources */,
 				749F234E23ED726D000D6559 /* NSLayoutConstraint+XALK.m in Sources */,
+				749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */,
 				749F234D23ED726D000D6559 /* XAutoLayoutBinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
