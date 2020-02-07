@@ -19,6 +19,7 @@
 		24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		248EA577238D7626006EED9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EA576238D7626006EED9E /* ViewController.swift */; };
 		7439C0EB1A84D73D006AB07F /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
+		743F279D23C5A69700F91601 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 743F279C23C5A69700F91601 /* ViewModel.m */; };
 		74944FE41A84742C00F6FEFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE31A84742C00F6FEFB /* main.m */; };
 		74944FE71A84742C00F6FEFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE61A84742C00F6FEFB /* AppDelegate.m */; };
 		74944FEA1A84742C00F6FEFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74944FE91A84742C00F6FEFB /* ViewController.m */; };
@@ -68,6 +69,8 @@
 		24799C5219FF93B5009250EC /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
 		248EA575238D7626006EED9E /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		248EA576238D7626006EED9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		743F279B23C5A69700F91601 /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		743F279C23C5A69700F91601 /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
 		74944FDF1A84742C00F6FEFB /* DemoStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74944FE21A84742C00F6FEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74944FE31A84742C00F6FEFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		2473336223C52640006EED9E /* scrollview */ = {
 			isa = PBXGroup;
 			children = (
+				743F279A23C5A67100F91601 /* models */,
 				2473336523C5269A006EED9E /* ScrollViewController.h */,
 				2473336623C5269A006EED9E /* ScrollViewController.m */,
 				2473336823C5277D006EED9E /* ScrollViewController+Layout.h */,
@@ -209,6 +213,15 @@
 				24799C4819FF937F009250EC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		743F279A23C5A67100F91601 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				743F279B23C5A69700F91601 /* ViewModel.h */,
+				743F279C23C5A69700F91601 /* ViewModel.m */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		74944FE01A84742C00F6FEFB /* DemoStoryBoard */ = {
@@ -418,6 +431,7 @@
 			files = (
 				248EA577238D7626006EED9E /* ViewController.swift in Sources */,
 				24799C3619FF937F009250EC /* ViewController.m in Sources */,
+				743F279D23C5A69700F91601 /* ViewModel.m in Sources */,
 				24799C3319FF937F009250EC /* AppDelegate.m in Sources */,
 				2473336723C5269A006EED9E /* ScrollViewController.m in Sources */,
 				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,

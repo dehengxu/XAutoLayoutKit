@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadSubviewWithFixedSize;
 - (void)loadSubviewFloating;
+- (void)loadDynamicLayouts;
 
 @end
 

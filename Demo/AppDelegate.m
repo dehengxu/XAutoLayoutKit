@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ScrollViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    ScrollViewController *svc = [[UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle] instantiateViewControllerWithIdentifier:@"scroll1"];
+    if (!self.window) {
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    }
+    self.window.rootViewController = svc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
