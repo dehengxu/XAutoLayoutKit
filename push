@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+
+isforce=$1
+
 remotes=$(git remote)
 for remote in $remotes;do
-	git push -f $remote --all
+	git push $isforce $remote --all
 done
 
 clear
