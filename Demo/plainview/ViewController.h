@@ -13,5 +13,16 @@
 @property (nonatomic, strong) UIView *v1, *v2, *v3, *v4, *objectOfReference;
 @property (nonatomic, strong) UIView *lineH, *lineV;
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scroll;
+
+@property (readonly) UIScrollView *scrollView;
+
+//Old api
+//#if __has_include("NSLayoutConstraint+XALK")
+- (void)_loadConstraintsXALKCategory_A;
+- (void)_loadConstraintsXALKCategory_B;
+- (void)_loadConstraintsXALKCategory_C;
+//#endif
+
 @end
 
