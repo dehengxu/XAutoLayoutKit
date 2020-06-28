@@ -15,20 +15,12 @@
 
 FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 
-#ifndef XALK_WARN_UNUSED_RESULT
-    #define XALK_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
-#endif
-
-#ifndef XALK_DEPRECATED_MSG
-    #define XALK_DEPRECATED_MSG(x) __deprecated_msg(x)
-#endif
-
 #pragma mark - UIView category
 
 @interface UIView (LayoutConstraint)
 
-- (instancetype)alk_enableAutoLayout;
-- (instancetype)alk_disableAutoLayout;
+- (instancetype)alk_enableAutoLayout XALK_WARN_UNUSED_RESULT;
+- (instancetype)alk_disableAutoLayout XALK_WARN_UNUSED_RESULT;
 
 #pragma mark - set size
 
