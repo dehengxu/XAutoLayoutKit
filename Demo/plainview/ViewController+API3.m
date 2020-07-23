@@ -77,8 +77,8 @@
     UIView *o = self.objectOfReference;
 
     [o alignToTop:0 anchorOfView:self.view withSafeArea:true];
-    [o alignToLeft:0 ofView:self.view];
-    [o alignToRight:0 ofView:self.view];
+    [o alignToLeft:0 anchorOfView:self.view withSafeArea: true];
+    [o alignToRight:0 anchorOfView:self.view withSafeArea: true];
     [o alignToBottom:0 anchorOfView:self.view withSafeArea:true];
 }
 
