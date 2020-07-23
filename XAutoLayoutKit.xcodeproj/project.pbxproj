@@ -34,16 +34,16 @@
 		749F234C23ED726D000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C5219FF93B5009250EC /* XAutoLayoutKit.m */; };
 		749F234D23ED726D000D6559 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
 		749F234E23ED726D000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */; };
-		749F235923ED8934000D6559 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235223ED8934000D6559 /* XAutoLayoutBinder.m */; };
-		749F235A23ED8934000D6559 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */; };
-		749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235423ED8934000D6559 /* XAutoLayoutKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235523ED8934000D6559 /* XAutoLayoutBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */; };
-		749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235723ED8934000D6559 /* XAutoLayoutKit.m */; };
-		749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74B9691D239F94C2006B3A74 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
 		74DF638024C9342500B0E139 /* ViewController+OldAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF637F24C9342500B0E139 /* ViewController+OldAPI.m */; };
 		74DF638324C934C200B0E139 /* ViewController+API3.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF638224C934C200B0E139 /* ViewController+API3.m */; };
+		74DF638D24C9843400B0E139 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF638624C9843400B0E139 /* XAutoLayoutBinder.m */; };
+		74DF638E24C9843400B0E139 /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF638724C9843400B0E139 /* NSLayoutConstraint+XALK.m */; };
+		74DF638F24C9843400B0E139 /* XAutoLayoutKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 74DF638824C9843400B0E139 /* XAutoLayoutKit.h */; };
+		74DF639024C9843400B0E139 /* XAutoLayoutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 74DF638924C9843400B0E139 /* XAutoLayoutBinder.h */; };
+		74DF639124C9843400B0E139 /* XAutoLayoutBinder+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 74DF638A24C9843400B0E139 /* XAutoLayoutBinder+Private.h */; };
+		74DF639224C9843400B0E139 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF638B24C9843400B0E139 /* XAutoLayoutKit.m */; };
+		74DF639324C9843400B0E139 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 74DF638C24C9843400B0E139 /* NSLayoutConstraint+XALK.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,19 +143,19 @@
 		749F233623ED7264000D6559 /* XAutoLayoutKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XAutoLayoutKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		749F233D23ED7264000D6559 /* XAutoLayoutKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKitTests.m; sourceTree = "<group>"; };
 		749F233F23ED7264000D6559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		749F235223ED8934000D6559 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
-		749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+XALK.m"; sourceTree = "<group>"; };
-		749F235423ED8934000D6559 /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
-		749F235523ED8934000D6559 /* XAutoLayoutBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutBinder.h; sourceTree = "<group>"; };
-		749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
-		749F235723ED8934000D6559 /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
-		749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
 		74B9691B239F94C2006B3A74 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
 		74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
 		74DF637E24C9342500B0E139 /* ViewController+OldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+OldAPI.h"; sourceTree = "<group>"; };
 		74DF637F24C9342500B0E139 /* ViewController+OldAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+OldAPI.m"; sourceTree = "<group>"; };
 		74DF638124C934C200B0E139 /* ViewController+API3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+API3.h"; sourceTree = "<group>"; };
 		74DF638224C934C200B0E139 /* ViewController+API3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+API3.m"; sourceTree = "<group>"; };
+		74DF638624C9843400B0E139 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
+		74DF638724C9843400B0E139 /* NSLayoutConstraint+XALK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+XALK.m"; sourceTree = "<group>"; };
+		74DF638824C9843400B0E139 /* XAutoLayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutKit.h; sourceTree = "<group>"; };
+		74DF638924C9843400B0E139 /* XAutoLayoutBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutBinder.h; sourceTree = "<group>"; };
+		74DF638A24C9843400B0E139 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
+		74DF638B24C9843400B0E139 /* XAutoLayoutKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutKit.m; sourceTree = "<group>"; };
+		74DF638C24C9843400B0E139 /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,13 +249,7 @@
 		24799C2519FF933C009250EC /* src */ = {
 			isa = PBXGroup;
 			children = (
-				24799C5119FF93B5009250EC /* XAutoLayoutKit.h */,
-				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
-				2473336F23C9C47B006EED9E /* XAutoLayoutBinder.h */,
-				74B9691B239F94C2006B3A74 /* XAutoLayoutBinder+Private.h */,
-				74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */,
-				2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */,
-				2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */,
+				74DF638424C9838C00B0E139 /* objc */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -378,16 +372,38 @@
 		749F235123ED8934000D6559 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */,
-				749F235323ED8934000D6559 /* NSLayoutConstraint+XALK.m */,
-				749F235523ED8934000D6559 /* XAutoLayoutBinder.h */,
-				749F235223ED8934000D6559 /* XAutoLayoutBinder.m */,
-				749F235623ED8934000D6559 /* XAutoLayoutBinder+Private.h */,
-				749F235423ED8934000D6559 /* XAutoLayoutKit.h */,
-				749F235723ED8934000D6559 /* XAutoLayoutKit.m */,
+				74DF638524C9843400B0E139 /* objc */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
+		};
+		74DF638424C9838C00B0E139 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				24799C5119FF93B5009250EC /* XAutoLayoutKit.h */,
+				24799C5219FF93B5009250EC /* XAutoLayoutKit.m */,
+				2473336F23C9C47B006EED9E /* XAutoLayoutBinder.h */,
+				74B9691B239F94C2006B3A74 /* XAutoLayoutBinder+Private.h */,
+				74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */,
+				2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */,
+				2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */,
+			);
+			path = objc;
+			sourceTree = "<group>";
+		};
+		74DF638524C9843400B0E139 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				74DF638624C9843400B0E139 /* XAutoLayoutBinder.m */,
+				74DF638724C9843400B0E139 /* NSLayoutConstraint+XALK.m */,
+				74DF638824C9843400B0E139 /* XAutoLayoutKit.h */,
+				74DF638924C9843400B0E139 /* XAutoLayoutBinder.h */,
+				74DF638A24C9843400B0E139 /* XAutoLayoutBinder+Private.h */,
+				74DF638B24C9843400B0E139 /* XAutoLayoutKit.m */,
+				74DF638C24C9843400B0E139 /* NSLayoutConstraint+XALK.h */,
+			);
+			path = objc;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -396,10 +412,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */,
-				749F235C23ED8934000D6559 /* XAutoLayoutBinder.h in Headers */,
-				749F235D23ED8934000D6559 /* XAutoLayoutBinder+Private.h in Headers */,
-				749F235B23ED8934000D6559 /* XAutoLayoutKit.h in Headers */,
+				74DF638F24C9843400B0E139 /* XAutoLayoutKit.h in Headers */,
+				74DF639024C9843400B0E139 /* XAutoLayoutBinder.h in Headers */,
+				74DF639124C9843400B0E139 /* XAutoLayoutBinder+Private.h in Headers */,
+				74DF639324C9843400B0E139 /* NSLayoutConstraint+XALK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,11 +695,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DF638D24C9843400B0E139 /* XAutoLayoutBinder.m in Sources */,
+				74DF639224C9843400B0E139 /* XAutoLayoutKit.m in Sources */,
 				749F234C23ED726D000D6559 /* XAutoLayoutKit.m in Sources */,
-				749F235A23ED8934000D6559 /* NSLayoutConstraint+XALK.m in Sources */,
-				749F235923ED8934000D6559 /* XAutoLayoutBinder.m in Sources */,
+				74DF638E24C9843400B0E139 /* NSLayoutConstraint+XALK.m in Sources */,
 				749F234E23ED726D000D6559 /* NSLayoutConstraint+XALK.m in Sources */,
-				749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */,
 				749F234D23ED726D000D6559 /* XAutoLayoutBinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1212,7 +1228,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/src";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/src/objc";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1280,7 +1296,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/src";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/src/objc";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
