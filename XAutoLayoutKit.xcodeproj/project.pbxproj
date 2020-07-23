@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2473336723C5269A006EED9E /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336623C5269A006EED9E /* ScrollViewController.m */; };
-		2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336A23C531A8006EED9E /* ViewController+LoadView.m */; };
+		2473336B23C531A8006EED9E /* ViewController+API2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473336A23C531A8006EED9E /* ViewController+API2.m */; };
 		2473337223CA1F61006EED9E /* NSLayoutConstraint+XALK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */; };
 		24799C3019FF937F009250EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C2F19FF937F009250EC /* main.m */; };
 		24799C3319FF937F009250EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24799C3219FF937F009250EC /* AppDelegate.m */; };
@@ -42,6 +42,8 @@
 		749F235E23ED8934000D6559 /* XAutoLayoutKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 749F235723ED8934000D6559 /* XAutoLayoutKit.m */; };
 		749F235F23ED8934000D6559 /* NSLayoutConstraint+XALK.h in Headers */ = {isa = PBXBuildFile; fileRef = 749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74B9691D239F94C2006B3A74 /* XAutoLayoutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */; };
+		74DF638024C9342500B0E139 /* ViewController+OldAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF637F24C9342500B0E139 /* ViewController+OldAPI.m */; };
+		74DF638324C934C200B0E139 /* ViewController+API3.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF638224C934C200B0E139 /* ViewController+API3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +102,8 @@
 		2473336523C5269A006EED9E /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		2473336623C5269A006EED9E /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		2473336823C5277D006EED9E /* ScrollViewController+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollViewController+Layout.h"; sourceTree = "<group>"; };
-		2473336923C531A8006EED9E /* ViewController+LoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+LoadView.h"; sourceTree = "<group>"; };
-		2473336A23C531A8006EED9E /* ViewController+LoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+LoadView.m"; sourceTree = "<group>"; };
+		2473336923C531A8006EED9E /* ViewController+API2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+API2.h"; sourceTree = "<group>"; };
+		2473336A23C531A8006EED9E /* ViewController+API2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+API2.m"; sourceTree = "<group>"; };
 		2473336F23C9C47B006EED9E /* XAutoLayoutBinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutBinder.h; sourceTree = "<group>"; };
 		2473337023CA1F61006EED9E /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
 		2473337123CA1F61006EED9E /* NSLayoutConstraint+XALK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+XALK.m"; sourceTree = "<group>"; };
@@ -150,6 +152,10 @@
 		749F235823ED8934000D6559 /* NSLayoutConstraint+XALK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+XALK.h"; sourceTree = "<group>"; };
 		74B9691B239F94C2006B3A74 /* XAutoLayoutBinder+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAutoLayoutBinder+Private.h"; sourceTree = "<group>"; };
 		74B9691C239F94C2006B3A74 /* XAutoLayoutBinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutBinder.m; sourceTree = "<group>"; };
+		74DF637E24C9342500B0E139 /* ViewController+OldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+OldAPI.h"; sourceTree = "<group>"; };
+		74DF637F24C9342500B0E139 /* ViewController+OldAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+OldAPI.m"; sourceTree = "<group>"; };
+		74DF638124C934C200B0E139 /* ViewController+API3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+API3.h"; sourceTree = "<group>"; };
+		74DF638224C934C200B0E139 /* ViewController+API3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+API3.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +222,12 @@
 				24799C3419FF937F009250EC /* ViewController.h */,
 				24799C3519FF937F009250EC /* ViewController.m */,
 				248EA576238D7626006EED9E /* ViewController.swift */,
-				2473336923C531A8006EED9E /* ViewController+LoadView.h */,
-				2473336A23C531A8006EED9E /* ViewController+LoadView.m */,
+				2473336923C531A8006EED9E /* ViewController+API2.h */,
+				2473336A23C531A8006EED9E /* ViewController+API2.m */,
+				74DF638124C934C200B0E139 /* ViewController+API3.h */,
+				74DF638224C934C200B0E139 /* ViewController+API3.m */,
+				74DF637E24C9342500B0E139 /* ViewController+OldAPI.h */,
+				74DF637F24C9342500B0E139 /* ViewController+OldAPI.m */,
 			);
 			path = plainview;
 			sourceTree = "<group>";
@@ -631,8 +641,10 @@
 				2473336723C5269A006EED9E /* ScrollViewController.m in Sources */,
 				24799C5319FF93B5009250EC /* XAutoLayoutKit.m in Sources */,
 				74B9691D239F94C2006B3A74 /* XAutoLayoutBinder.m in Sources */,
+				74DF638024C9342500B0E139 /* ViewController+OldAPI.m in Sources */,
 				24799C3019FF937F009250EC /* main.m in Sources */,
-				2473336B23C531A8006EED9E /* ViewController+LoadView.m in Sources */,
+				74DF638324C934C200B0E139 /* ViewController+API3.m in Sources */,
+				2473336B23C531A8006EED9E /* ViewController+API2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
