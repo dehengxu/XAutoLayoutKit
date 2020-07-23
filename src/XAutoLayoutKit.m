@@ -144,38 +144,24 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 }
     
 - (instancetype)followWidthOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:multiplier constant:0];
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.width.equal.multiply(multiplier).to(v1).width.xalkLayout();
     return self;
 }
 
 - (instancetype)followHeightOfView:(UIView *)v1
 {
-    //[self followHeightOfView:v1 withMultiplier:1.0];
     self.xalkBinder.height.equal.to(v1).height.xalkLayout();
     return self;
 }
     
 - (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:multiplier constant:0];
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.height.equal.multiply(multiplier).to(v1).height.xalkLayout();
     return self;
 }
 
 - (instancetype)followSizeOfView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSArray *constraints = @[
-//        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-//        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]
-//    ];
-//    [self.superview addConstraints:constraints];
-
     self.xalkBinder.width.equal.to(v1).width.xalkLayout();
     self.xalkBinder.height.equal.to(v1).height.xalkLayout();
     return self;
@@ -183,19 +169,6 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers
 {
-//    [self alk_enableAutoLayout];
-//    CGFloat multiW = 1.0, multiH = 1.0;
-//    if (multipliers && multipliers.count > 1) {
-//        if ([multipliers[0] isKindOfClass:NSNumber.class] && [multipliers[1] isKindOfClass:NSNumber.class]) {
-//            multiW = ((NSNumber *)multipliers[0]).floatValue;
-//            multiH = ((NSNumber *)multipliers[1]).floatValue;
-//        }
-//    }
-//    NSArray *constraints = @[
-//                             [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeWidth multiplier:multiW constant:0],
-//                             [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeHeight multiplier:multiH constant:0]
-//                             ];
-//    [self.superview addConstraints:constraints];
     self.xalkBinder.width.equal.multiply(((NSNumber*)multipliers[0]).floatValue).to(v1).width.xalkLayout();
     self.xalkBinder.height.equal.multiply(((NSNumber*)multipliers[1]).floatValue).to(v1).height.xalkLayout();
     return self;

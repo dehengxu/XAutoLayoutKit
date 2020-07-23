@@ -67,6 +67,7 @@
 #endif
     } else {
         // Fallback on earlier versions
+        o.xalkBinder.top.equal.constant(0).to(self.view).top.xalkLayout();
         [o alignToTop:0.0 ofView:self.view];
     }
     [o alignToLeft:20.0 ofView:self.view];
