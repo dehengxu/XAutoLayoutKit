@@ -8,7 +8,7 @@
 
 #import "XAutoLayoutKit.h"
 #import "XAutoLayoutBinder.h"
-#import "NSLayoutConstraint+XALK.h"
+//#import "NSLayoutConstraint+XALK.h"
 
 NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
@@ -47,38 +47,18 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)setSameWidthWithView:(UIView *)view
 {
-//    [self alk_enableAutoLayout];
-//    [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
-
     self.xalkBinder.width.equal.to(view).width.xalkLayout();
     return self;
 }
 
 - (instancetype)setSameHeightWithView:(UIView *)view
 {
-//    [self alk_enableAutoLayout];
-//    [NSLayoutConstraint addConstraintOnView:[view superview] withItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-
     self.xalkBinder.height.equal.to(view).height.xalkLayout();
     return self;
 }
 
 - (instancetype)setConstraintSize:(CGSize)size
 {
-//    [self alk_enableAutoLayout];
-//    if (!self.superview) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", size.width] views:bindViews];
-//    [self.superview addConstraints:constraints];
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", size.height] views:bindViews];
-//    [self.superview addConstraints:constraints];
-
     self.xalkBinder.width.equal.constant(size.width).xalkLayout();
     self.xalkBinder.height.equal.constant(size.height).xalkLayout();
     return self;
@@ -86,20 +66,6 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)setConstraintSize:(CGSize)size onSuperView:(UIView *)superView
 {
-//    [self alk_enableAutoLayout];
-//    if (!superView) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", size.width] views:bindViews];
-//    [superView addConstraints:constraints];
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", size.height] views:bindViews];
-//    [superView addConstraints:constraints];
-
     self.xalkBinder.width.equal.constant(size.width).xalkLayout();
     self.xalkBinder.height.equal.constant(size.height).xalkLayout();
     return self;
@@ -107,68 +73,24 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)setConstraintWidth:(CGFloat)width onSuperView:(UIView *)superView
 {
-//    [self alk_enableAutoLayout];
-//    if (!superView) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", width] views:bindViews];
-//    [superView addConstraints:constraints];
-
     self.xalkBinder.width.equal.constant(width).xalkLayout();
     return self;
 }
 
 - (instancetype)setConstraintWidth:(CGFloat)width
 {
-//    [self alk_enableAutoLayout];
-//    if (!self.superview) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"[self(%f)]", width] views:bindViews];
-//    [self.superview addConstraints:constraints];
-
     self.xalkBinder.width.equal.constant(width).xalkLayout();
     return self;
 }
 
 - (instancetype)setConstraintHeight:(CGFloat)height onSuperView:(UIView *)superView
 {
-//    [self alk_enableAutoLayout];
-//    if (!superView) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, superView);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", height] views:bindViews];
-//    [superView addConstraints:constraints];
-
     self.xalkBinder.height.equal.constant(height).xalkLayout();
     return self;
 }
 
 - (instancetype)setConstraintHeight:(CGFloat)height
 {
-//    [self alk_enableAutoLayout];
-//    if (!self.superview) {
-//        printf("[XAutoLayout] Current view has not been add to a supeview.\n");
-//        return nil;
-//    }
-//    NSArray *constraints = nil;
-//    NSDictionary<NSString *, UIView *> *bindViews = NSDictionaryOfVariableBindings(self, self.superview);
-//
-//    constraints = [NSLayoutConstraint defaultConstraintsWithFormat:[NSString stringWithFormat:@"V:[self(%f)]", height] views:bindViews];
-//    [self.superview addConstraints:constraints];
-
     self.xalkBinder.height.equal.constant(height).xalkLayout();
     return self;
 }
@@ -177,27 +99,18 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
     
 - (instancetype)followCenterXOfView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    [NSLayoutConstraint followViewCenterX:v1 withView:self];
-
     self.xalkBinder.centerX.equal.to(v1).centerX.xalkLayout();
     return self;
 }
 
 - (instancetype)followCenterYOfView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    [NSLayoutConstraint followViewCenterY:v1 withView:self];
-
     self.xalkBinder.centerY.equal.to(v1).centerY.xalkLayout();
     return self;
 }
 
 - (instancetype)followCenterOfView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    [NSLayoutConstraint followViewCenter:v1 withView:self];
-
     self.xalkBinder.centerX.equal.to(v1).centerX.xalkLayout();
     self.xalkBinder.centerY.equal.to(v1).centerY.xalkLayout();
     return self;
@@ -292,65 +205,36 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:margin];
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.left.equal.constant(margin).to(v1).left.xalkLayout();
     return self;
 }
 
 - (instancetype)alignToRight:(CGFloat)margin ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:-margin];
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.right.equal.constant(-margin).to(v1).right.xalkLayout();
     return self;
 }
 
 - (instancetype)alignToTop:(CGFloat)margin ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
-//    [self.superview addConstraint:constraint];
-
     self.xalkBinder.top.equal.constant(margin).to(v1).top.xalkLayout();
     return self;
 }
 
 - (instancetype)alignToBottom:(CGFloat)margin ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.bottom.equal.constant(-margin).to(v1).bottom.xalkLayout();
     return self;
 }
 
 - (instancetype)alignToCenter:(CGPoint)point ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:point.x];
-//    [self.superview addConstraint:constraint];
-//
-//    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:point.y];
-//    [self.superview addConstraint:constraint];
-
     [self followCenterOfView:v1];
-
     return self;
 }
 
 - (instancetype)alignToPoint:(CGPoint)location ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:location.x];
-//    [self.superview addConstraint:constraint];
-//
-//    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:location.y];
-//
-//    [self.superview addConstraint:constraint];
-
     self.xalkBinder.left.equal.constant(location.x).to(v1).left.xalkLayout();
     self.xalkBinder.top.equal.constant(location.y).to(v1).top.xalkLayout();
     return self;
@@ -360,41 +244,24 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)above:(CGFloat)above ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeTop multiplier:1.0 constant:-above];
-//
-//    [self.superview addConstraint:constraint];
-
     self.xalkBinder.bottom.greatThanOrEqual.constant(-above).to(v1).top.xalkLayout();
     return self;
 }
 
 - (instancetype)below:(CGFloat)below ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:below];
-//    [self.superview addConstraint:constraint];
-
     self.xalkBinder.top.greatThanOrEqual.constant(below).to(v1).bottom.xalkLayout();
     return self;
 }
 
 - (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:-ahead];
-//
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.right.greatThanOrEqual.constant(-ahead).to(v1).left.xalkLayout();
     return self;
 }
 
 - (instancetype)after:(CGFloat)after ofView:(UIView *)v1
 {
-//    [self alk_enableAutoLayout];
-//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:v1 attribute:NSLayoutAttributeRight multiplier:1.0 constant:after];
-//
-//    [self.superview addConstraint:constraint];
     self.xalkBinder.left.greatThanOrEqual.constant(after).to(v1).right.xalkLayout();
     return self;
 }
