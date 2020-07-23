@@ -58,20 +58,28 @@
     [self.lineV removeFromSuperview];
     
     UIView *o = self.objectOfReference;
-    if (@available(iOS 11.0, *)) {
-#if 0
-        o.xalkBinder.anchor.top.equal.constant(-10.0).to(self.view).safeArea.top.xalkLayout();
-#else
-        id cons = [o.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:-10];
-        [self.view addConstraint:cons];
-#endif
-    } else {
-        // Fallback on earlier versions
-        o.xalkBinder.top.equal.constant(0).to(self.view).top.xalkLayout();
-        [o alignToTop:0.0 ofView:self.view];
-    }
-    [o alignToLeft:20.0 ofView:self.view];
-    [o setConstraintSize:CGSizeMake(128, 128)];
+
+    [o alignToTop:0 anchorOfView:self.view withSafeArea:false];
+    [o alignToLeft:0 ofView:self.view];
+    [o alignToRight:0 ofView:self.view];
+    [o alignToBottom:0 anchorOfView:self.view withSafeArea:false];
+    
+}
+
+- (void)layoutWithAPI3_StyleC {
+    [self.v1 removeFromSuperview];
+    [self.v2 removeFromSuperview];
+    [self.v3 removeFromSuperview];
+    [self.v4 removeFromSuperview];
+    [self.lineH removeFromSuperview];
+    [self.lineV removeFromSuperview];
+    
+    UIView *o = self.objectOfReference;
+
+    [o alignToTop:0 anchorOfView:self.view withSafeArea:true];
+    [o alignToLeft:0 ofView:self.view];
+    [o alignToRight:0 ofView:self.view];
+    [o alignToBottom:0 anchorOfView:self.view withSafeArea:true];
 }
 
 @end

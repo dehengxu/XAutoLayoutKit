@@ -239,6 +239,69 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
     return self;
 }
 
+#pragma mark - relate to anchor
+
+- (instancetype)alignToLeft:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
+    if (isSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            self.xalk.anchor.left.equal.constant(margin).to(v1).safeArea.left.xalkLayout();
+            return self;
+        }
+    }
+    self.xalk.anchor.left.equal.constant(margin).to(v1).left.xalkLayout();
+    return self;
+}
+
+- (instancetype)alignToRight:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
+    if (isSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            self.xalkBinder.anchor.right.equal.constant(-margin).to(v1).safeArea.right.xalkLayout();
+            return self;
+        }
+    }
+    
+    self.xalkBinder.anchor.right.equal.constant(-margin).to(v1).right.xalkLayout();
+    return self;
+}
+
+- (instancetype)alignToTop:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
+    if (isSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            self.xalkBinder.anchor.top.equal.constant(margin).to(v1).safeArea.top.xalkLayout();
+            return self;
+        }
+    }
+    
+    self.xalkBinder.anchor.top.equal.constant(margin).to(v1).top.xalkLayout();
+    return self;
+}
+
+- (instancetype)alignToBottom:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
+    if (isSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            self.xalkBinder.anchor.bottom.equal.constant(-margin).to(v1).safeArea.bottom.xalkLayout();
+            return self;
+        }
+    }
+    self.xalkBinder.anchor.bottom.equal.constant(-margin).to(v1).bottom.xalkLayout();
+    return self;
+}
+
+- (instancetype)alignToPoint:(CGPoint)location anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
+    if (isSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            self.xalkBinder.anchor.left.equal.constant(location.x).to(v1).safeArea.left.xalkLayout();
+            self.xalkBinder.anchor.top.equal.constant(location.y).to(v1).safeArea.top.xalkLayout();
+            return self;
+        }
+    }
+    
+    self.xalkBinder.anchor.left.equal.constant(location.x).to(v1).left.xalkLayout();
+    self.xalkBinder.anchor.top.equal.constant(location.y).to(v1).top.xalkLayout();
+    return self;
+}
+
+
 @end
 
 

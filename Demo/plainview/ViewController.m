@@ -65,10 +65,9 @@
     [self.view addSubview:self.lineH];
     [self.view addSubview:self.lineV];
     
-    //self.objectOfReference.center = CGPointMake(self.view.bounds.size.width / 2., self.view.bounds.size.height / 2.);
     self.view.alpha = 0.3;
     
-    [self layoutWithAPI3_StyleB];
+    [self layoutWithAPI3_StyleC];
 }
 
 - (void)updateViewConstraints

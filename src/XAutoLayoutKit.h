@@ -78,13 +78,14 @@ FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 
 #pragma mark - relate to anchor
 
-- (instancetype)alignToLeft:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
-- (instancetype)alignToRight:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
-- (instancetype)alignToTop:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
-- (instancetype)alignToBottom:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
-- (instancetype)alignToCenter:(CGPoint)point anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
-- (instancetype)alignToPoint:(CGPoint)location anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToLeft:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToRight:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToTop:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToBottom:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToCenter:(CGPoint)point anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToPoint:(CGPoint)location anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
 
+#if 0
 - (instancetype)above:(CGFloat)above anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
 - (instancetype)below:(CGFloat)below anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
 - (instancetype)ahead:(CGFloat)ahead anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
@@ -94,6 +95,7 @@ FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 - (instancetype)below:(CGFloat)below anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 - (instancetype)ahead:(CGFloat)ahead anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 - (instancetype)after:(CGFloat)after anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+#endif
 
 @end
 

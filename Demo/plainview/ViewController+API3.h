@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 //API 3
 - (void)layoutWithAPI3_StyleA;
 - (void)layoutWithAPI3_StyleB;
+- (void)layoutWithAPI3_StyleC;
 
 @end
 
