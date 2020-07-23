@@ -57,6 +57,10 @@
     [self.lineH removeFromSuperview];
     [self.lineV removeFromSuperview];
     
+    UIView *o = self.objectOfReference;
+    [o alignToTop:10.0 ofView:self.view];
+    [o followCenterXOfView:self.view];
+    [o setConstraintSize:CGSizeMake(128, 128)];
 }
 
 @end
