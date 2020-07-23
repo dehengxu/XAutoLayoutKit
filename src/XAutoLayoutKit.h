@@ -11,7 +11,14 @@
 
 #import <UIKit/UIKit.h>
 #import "XAutoLayoutBinder.h"
-#import "NSLayoutConstraint+XALK.h"
+
+#ifndef XALK_WARN_UNUSED_RESULT
+#define XALK_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+#endif
+
+#ifndef XALK_DEPRECATED_MSG
+#define XALK_DEPRECATED_MSG(x) __deprecated_msg(x)
+#endif
 
 FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 
@@ -68,6 +75,25 @@ FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 - (instancetype)below:(CGFloat)below ofView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 - (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 - (instancetype)after:(CGFloat)after ofView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+
+#pragma mark - relate to anchor
+
+- (instancetype)alignToLeft:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToRight:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToTop:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToBottom:(CGFloat)margin anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToCenter:(CGPoint)point anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)alignToPoint:(CGPoint)location anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+
+- (instancetype)above:(CGFloat)above anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)below:(CGFloat)below anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)ahead:(CGFloat)ahead anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+- (instancetype)after:(CGFloat)after anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT;
+
+- (instancetype)above:(CGFloat)above anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)below:(CGFloat)below anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)ahead:(CGFloat)ahead anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
+- (instancetype)after:(CGFloat)after anchorOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 
 @end
 

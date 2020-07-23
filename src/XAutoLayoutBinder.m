@@ -47,64 +47,7 @@ do {\
     __weak typeof(self) wself = self;
     __strong typeof(wself) sself = wself;
 
-//    self.equal = ^ALKViewBinder * _Nonnull{
-//        wself.value1.relation = ALKLayoutRelationEqual;
-//        return wself;
-//    };
-//
-//    self.lessThanOrEqual = ^ALKViewBinder * _Nonnull{
-//        wself.value1.relation = ALKLayoutRelationLessThanOrEqual;
-//        return wself;
-//    };
-//
-//    self.greatThanOrEqual = ^ALKViewBinder * _Nonnull{
-//        wself.value1.relation = ALKLayoutRelationGreaterThanOrEqual;
-//        return wself;
-//    };
-
-//    self.width = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeWidth;
-//        return wself;
-//    };
-//    self.height = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeHeight;
-//        return wself;
-//    };
-//    self.centerX = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeCenterX;
-//        return wself;
-//    };
-//    self.centerY = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeCenterY;
-//        return wself;
-//    };
-//    self.leading = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeLeading;
-//        return wself;
-//    };
-//    self.trailing = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeTrailing;
-//        return wself;
-//    };
-//    self.top = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeTop;
-//        return wself;
-//    };
-//    self.left = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeLeft;
-//        return wself;
-//    };
-//    self.bottom = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeBottom;
-//        return wself;
-//    };
-//    self.right = ^ALKViewBinder * _Nonnull{
-//        wself.value1.attribute = ALKLayoutAttributeRight;
-//        return wself;
-//    };
-
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
-        //wself.value2.payload = view;
         sself.slave = XALKViewBinder.new;
         sself.slave.useAnchor = sself.useAnchor;
         sself.slave.value1.payload = view;
@@ -142,12 +85,8 @@ do {\
             isMaster = YES;
         }
 
-        //follow
-
-        //inner
-
-        //around
-
+        //Generate constraint
+        
         NSLayoutConstraint *constraint;
         if (!isMaster) {//Slave
             if (sself.useAnchor) {
@@ -190,7 +129,8 @@ do {\
                 constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)sself.value1.attribute relatedBy:(NSLayoutRelation)sself.value1.relation toItem:v2 attribute:(NSLayoutAttribute)sself.value1.attribute multiplier:sself.value1.mutiplier constant:sself.value1.constants];
             }
         }
-
+        
+        //Install constraint
         [v1.superview addConstraint:constraint];
     };
 }
@@ -429,53 +369,6 @@ do {\
 @end
 
 @implementation UIView (XAutoLayoutKitEva)
-
-//- (instancetype)alkLayout:(BinderCallback)aBlock
-//{
-//    return self;
-//}
-//
-//- (instancetype)followSize:(BinderCallback)aBlock
-//{
-//    [self followWidth:aBlock];
-//    [self followHeight:aBlock];
-//    return self;
-//}
-//
-//- (instancetype)followWidth:(BinderCallback)aBlock
-//{
-//    ALKViewBinder *binder = self.alkBinder;
-//    [binder.follow.value1.equal.width to:self];
-//    aBlock(binder);
-//    [binder.value2.equal width];
-//    [binder layout];
-//    return self;
-//}
-//
-//- (instancetype)followHeight:(BinderCallback)aBlock
-//{
-//    ALKViewBinder *binder = self.alkBinder;
-//    [binder.follow.value1.equal.height to:self];
-//    aBlock(binder);
-//    [binder.value2.equal height];
-//    [binder layout];
-//    return self;
-//}
-//
-//- (instancetype)followCenter:(BinderCallback)aBlock
-//{
-//    return self;
-//}
-//
-//- (instancetype)followCenterX:(BinderCallback)aBlock
-//{
-//    return self;
-//}
-//
-//- (instancetype)followCenterY:(BinderCallback)aBlock
-//{
-//    return self;
-//}
 
 - (XALKViewBinder *)xalkBinder
 {
