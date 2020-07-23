@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Represent a constraint rule
 @interface XALKAutoLayoutValue ()
 
+@property (nonatomic, assign) BOOL useAnchor;
+@property (nonatomic, assign) BOOL isSafeArea;
+@property (nonatomic, strong) NSLayoutAnchor *anchor;
+
 @property (nonatomic, assign) XALKAttribute attribute;
 @property (nonatomic, assign) XALKRelation relation;
 @property (nonatomic, assign) CGFloat constants;
@@ -42,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface XALKViewBinder ()
+
+@property (nonatomic, assign) BOOL useAnchor;
+@property (nonatomic, assign) BOOL isSafeArea;
 
 // Used for convenience
 //@property ALKAction action;

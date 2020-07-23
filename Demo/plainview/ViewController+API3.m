@@ -58,8 +58,18 @@
     [self.lineV removeFromSuperview];
     
     UIView *o = self.objectOfReference;
-    [o alignToTop:10.0 ofView:self.view];
-    [o followCenterXOfView:self.view];
+    if (@available(iOS 11.0, *)) {
+#if 0
+        o.xalkBinder.anchor.top.equal.constant(-10.0).to(self.view).safeArea.top.xalkLayout();
+#else
+        id cons = [o.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:-10];
+        [self.view addConstraint:cons];
+#endif
+    } else {
+        // Fallback on earlier versions
+        [o alignToTop:0.0 ofView:self.view];
+    }
+    [o alignToLeft:20.0 ofView:self.view];
     [o setConstraintSize:CGSizeMake(128, 128)];
 }
 

@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) XALKViewBinder * _Nonnull (^to)(UIView *view);
 
-@property (nonatomic, readonly) void(^xalkLayout)();
+@property (nonatomic, readonly) void(^xalkLayout)(void);
 
 // MARK: - Relation
 
@@ -115,6 +115,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) XALKViewBinder *(^multiply)(CGFloat multiplier);
 @property (nonatomic, readonly) XALKViewBinder *(^constant)(CGFloat constants);
+
+@property (nonatomic, readonly) XALKViewBinder *anchor API_AVAILABLE(ios(9.0));
+@property (nonatomic, readonly) XALKViewBinder *safeArea API_AVAILABLE(ios(11.0), tvos(11.0));
 
 @end
 
