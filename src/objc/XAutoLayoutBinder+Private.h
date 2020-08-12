@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)centerX;
 - (instancetype)centerY;
 
-- (instancetype)to:(UIView *)view;
+//- (instancetype)to:(UIView *)view;
 
 @end
 
