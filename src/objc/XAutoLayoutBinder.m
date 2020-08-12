@@ -66,9 +66,14 @@ do {\
     };
     
     self.xalkLayout = ^{
-        UIView *v1 = sself.master.value1.payload;
         NSLayoutConstraint *constraint = [sself xalkConstraint];
         if (!constraint) return;
+        UIView *v1 = nil;
+        if (sself.master) {
+            v1 = sself.master.value1.payload;
+        }else {
+            v1 = sself.value1.payload;
+        }
         //Install constraint
         [v1.superview addConstraint:constraint];
     };

@@ -75,11 +75,29 @@
     [self.lineV removeFromSuperview];
     
     UIView *o = self.objectOfReference;
+    o.translatesAutoresizingMaskIntoConstraints = false;
+//    [o followCenterXOfView:self.view];
+//    [o followWidthOfView:self.view];
+//    [o setConstraintHeight:48.0];
+//    [o alignToBottom:0 anchorOfView:self.view withSafeArea:true];
+    
+//    o.xalk.centerX.equal.to(self.view).centerX.xalkLayout();
+//    o.xalk.width.equal.to(self.view).width.xalkLayout();
+//    o.xalk.height.equal.constant(48.0).xalkLayout();
+//    o.xalk.anchor.bottom.equal.to(self.view).safeArea.bottom.xalkLayout();
 
-    [o alignToTop:0 anchorOfView:self.view withSafeArea:true];
-    [o alignToLeft:0 anchorOfView:self.view withSafeArea: true];
-    [o alignToRight:0 anchorOfView:self.view withSafeArea: true];
-    [o alignToBottom:0 anchorOfView:self.view withSafeArea:true];
+#if true
+    o.xalk.centerX.equal.to(self.view).centerX.xalkLayout();
+    o.xalk.width.equal.to(self.view).width.xalkLayout();
+    o.xalk.height.equal.constant(68.0).xalkLayout();
+    o.xalk.anchor.bottom.equal.to(self.view).safeArea.bottom.xalkLayout();
+#else
+    id c1 = o.xalk.centerX.equal.to(self.view).centerX.xalkConstraint;
+    id c2 = o.xalk.width.equal.to(self.view).width.xalkConstraint;
+    id c3 = o.xalk.height.equal.constant(68.0).xalkConstraint;
+    id c4 = [o.xalk.anchor.bottom.equal.to(self.view).safeArea.bottom xalkConstraint];
+    [self.view addConstraints:@[c1, c2, c3, c4]];
+#endif
 }
 
 @end
