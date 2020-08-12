@@ -64,73 +64,11 @@ do {\
         sself.value1.constants = constants;
         return sself;
     };
-
+    
     self.xalkLayout = ^{
-        //if (!wself.value1) return;
-        if (!sself.master && !sself.value1.payload) {//if slave
-            return;
-        } else if (!sself.value1.payload) {
-            return;
-        }
-        //NSLog(@"%s %d, %d", __func__, sself.master.value1.attribute, sself.value1.attribute);
-
-        UIView *v1 = sself.master.value1.payload, *v2 = sself.value1.payload;
-        BOOL isMaster = NO;
-        if (sself.master) {//slave
-            v1 = sself.master.value1.payload;
-            v2 = sself.value1.payload;
-            isMaster = NO;
-        } else {//master
-            v1 = sself.value1.payload;
-            v2 = nil;//wself.slave.value1.payload;
-            isMaster = YES;
-        }
-
-        //Generate constraint
-        
-        NSLayoutConstraint *constraint;
-        if (!isMaster) {//Slave
-            if (sself.useAnchor) {
-                switch (sself.master.value1.relation) {
-                    case NSLayoutRelationEqual: {
-                        constraint = [sself.master.value1.anchor constraintEqualToAnchor:sself.value1.anchor constant:sself.master.value1.constants];
-                    }
-                    break;
-                    case NSLayoutRelationLessThanOrEqual: {
-                        constraint = [sself.master.value1.anchor constraintLessThanOrEqualToAnchor:sself.value1.anchor constant:sself.master.value1.constants];
-                    }
-                    break;
-                    case NSLayoutRelationGreaterThanOrEqual: {
-                        constraint = [sself.master.value1.anchor constraintGreaterThanOrEqualToAnchor:sself.value1.anchor constant:sself.master.value1.constants];
-                    }
-                    break;
-                }
-                [constraint setActive:true];
-            } else {
-                constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)sself.master.value1.attribute relatedBy:(NSLayoutRelation)sself.master.value1.relation toItem:v2 attribute:(NSLayoutAttribute)sself.value1.attribute multiplier:sself.master.value1.mutiplier constant:sself.master.value1.constants];
-            }
-        } else {//Master
-            if (sself.useAnchor) {
-                switch (sself.value1.relation) {
-                    case NSLayoutRelationEqual: {
-                        constraint = [sself.value1.anchor constraintEqualToAnchor:sself.value2.anchor constant:sself.value1.constants];
-                    }
-                    break;
-                    case NSLayoutRelationLessThanOrEqual: {
-                        constraint = [sself.value1.anchor constraintLessThanOrEqualToAnchor:sself.value2.anchor constant:sself.value1.constants];
-                    }
-                    break;
-                    case NSLayoutRelationGreaterThanOrEqual: {
-                        constraint = [sself.value1.anchor constraintGreaterThanOrEqualToAnchor:sself.value2.anchor constant:sself.value1.constants];
-                    }
-                    break;
-                }
-                constraint.active = true;
-            } else {
-                constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)sself.value1.attribute relatedBy:(NSLayoutRelation)sself.value1.relation toItem:v2 attribute:(NSLayoutAttribute)sself.value1.attribute multiplier:sself.value1.mutiplier constant:sself.value1.constants];
-            }
-        }
-        
+        UIView *v1 = sself.master.value1.payload;
+        NSLayoutConstraint *constraint = [sself xalkConstraint];
+        if (!constraint) return;
         //Install constraint
         [v1.superview addConstraint:constraint];
     };
@@ -249,6 +187,74 @@ do {\
     return [NSString stringWithFormat:@" attribute: %ld, relation: %ld", (NSInteger)self.value1.attribute, (NSInteger)self.value1.relation];
 }
 
+- (NSLayoutConstraint *)xalkConstraint {
+    //if (!wself.value1) return;
+    if (!self.master && !self.value1.payload) {//if slave
+        return nil;
+    } else if (!self.value1.payload) {
+        return nil;
+    }
+    //NSLog(@"%s %d, %d", __func__, sself.master.value1.attribute, sself.value1.attribute);
+    
+    UIView *v1 = self.master.value1.payload, *v2 = self.value1.payload;
+    BOOL isMaster = NO;
+    if (self.master) {//slave
+        v1 = self.master.value1.payload;
+        v2 = self.value1.payload;
+        isMaster = NO;
+    } else {//master
+        v1 = self.value1.payload;
+        v2 = nil;
+        isMaster = YES;
+    }
+    
+    //Generate constraint
+    
+    NSLayoutConstraint *constraint;
+    if (!isMaster) {//Slave
+        if (self.useAnchor) {
+            switch (self.master.value1.relation) {
+            case NSLayoutRelationEqual: {
+                constraint = [self.master.value1.anchor constraintEqualToAnchor:self.value1.anchor constant:self.master.value1.constants];
+            }
+                break;
+            case NSLayoutRelationLessThanOrEqual: {
+                constraint = [self.master.value1.anchor constraintLessThanOrEqualToAnchor:self.value1.anchor constant:self.master.value1.constants];
+            }
+                break;
+            case NSLayoutRelationGreaterThanOrEqual: {
+                constraint = [self.master.value1.anchor constraintGreaterThanOrEqualToAnchor:self.value1.anchor constant:self.master.value1.constants];
+            }
+                break;
+            }
+        } else {
+            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)self.master.value1.attribute relatedBy:(NSLayoutRelation)self.master.value1.relation toItem:v2 attribute:(NSLayoutAttribute)self.value1.attribute multiplier:self.master.value1.mutiplier constant:self.master.value1.constants];
+            
+        }
+    } else {//Master
+        if (self.useAnchor) {
+            switch (self.value1.relation) {
+            case NSLayoutRelationEqual: {
+                constraint = [self.value1.anchor constraintEqualToAnchor:self.value2.anchor constant:self.value1.constants];
+            }
+                break;
+            case NSLayoutRelationLessThanOrEqual: {
+                constraint = [self.value1.anchor constraintLessThanOrEqualToAnchor:self.value2.anchor constant:self.value1.constants];
+            }
+                break;
+            case NSLayoutRelationGreaterThanOrEqual: {
+                constraint = [self.value1.anchor constraintGreaterThanOrEqualToAnchor:self.value2.anchor constant:self.value1.constants];
+            }
+                break;
+            }
+        } else {
+            constraint = [NSLayoutConstraint constraintWithItem:v1 attribute:(NSLayoutAttribute)self.value1.attribute relatedBy:(NSLayoutRelation)self.value1.relation toItem:v2 attribute:(NSLayoutAttribute)self.value1.attribute multiplier:self.value1.mutiplier constant:self.value1.constants];
+        }
+    }
+    constraint.identifier = @"XALKBinder";
+    return constraint;
+}
+
 - (void)dealloc
 {
     NSLog(@"%s", __func__);
@@ -361,11 +367,11 @@ do {\
     return self;
 }
 
-- (instancetype)to:(UIView *)view
-{
-    self.payload = view;
-    return self;
-}
+//- (instancetype)to:(UIView *)view
+//{
+//    self.payload = view;
+//    return self;
+//}
 
 @end
 
