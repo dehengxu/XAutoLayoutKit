@@ -48,7 +48,9 @@ do {\
     __strong typeof(wself) sself = wself;
 
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
+        BOOL b = view.translatesAutoresizingMaskIntoConstraints;
         sself.slave = view.xalk;
+        view.translatesAutoresizingMaskIntoConstraints = b;
         sself.slave.useAnchor = sself.useAnchor;
         return sself.slave;
     };
