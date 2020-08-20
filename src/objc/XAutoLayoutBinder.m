@@ -45,9 +45,9 @@ do {\
 - (void)configBlocks
 {
     __weak typeof(self) wself = self;
-    __strong typeof(wself) sself = wself;
 
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
+        __strong typeof(wself) sself = wself;
         BOOL b = view.translatesAutoresizingMaskIntoConstraints;
         sself.slave = view.xalk;
         view.translatesAutoresizingMaskIntoConstraints = b;
@@ -56,16 +56,19 @@ do {\
     };
 
     self.multiply = ^XALKViewBinder *_Nonnull (CGFloat multiplier) {
+        __strong typeof(wself) sself = wself;
         sself.value1.mutiplier = multiplier;
         return sself;
     };
 
     self.constant = ^XALKViewBinder *_Nonnull (CGFloat constants) {
+        __strong typeof(wself) sself = wself;
         sself.value1.constants = constants;
         return sself;
     };
     
     self.xalkLayout = ^{
+        __strong typeof(wself) sself = wself;
         NSLayoutConstraint *constraint = [sself xalkConstraint];
         if (!constraint) return;
         UIView *v1 = nil;
