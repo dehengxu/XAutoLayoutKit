@@ -244,11 +244,11 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 - (instancetype)alignToLeft:(CGFloat)margin anchorOfView:(UIView *)v1 withSafeArea:(BOOL)isSafeArea XALK_WARN_UNUSED_RESULT {
     if (isSafeArea) {
         if (@available(iOS 11.0, *)) {
-            self.xalk.anchor.left.equal.constant(margin).to(v1).safeArea.left.xalkLayout();
+            self.primaryBinder.anchor.left.equal.constant(margin).to(v1).safeArea.left.xalkLayout();
             return self;
         }
     }
-    self.xalk.anchor.left.equal.constant(margin).to(v1).left.xalkLayout();
+    self.primaryBinder.anchor.left.equal.constant(margin).to(v1).left.xalkLayout();
     return self;
 }
 

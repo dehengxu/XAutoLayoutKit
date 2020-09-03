@@ -125,7 +125,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) XALKViewBinder *xalkBinder;
 - (XALKViewBinder *)xalkBinder;
-- (XALKViewBinder *)xalk;
+- (XALKViewBinder *)primaryBinder;
+- (XALKViewBinder *)secondaryBinder;
 
 @end
 
