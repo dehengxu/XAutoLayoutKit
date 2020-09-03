@@ -19,16 +19,16 @@ typedef enum: NSInteger {
 
 typedef NS_ENUM(NSInteger, XALKAttribute) {
         XALKLayoutAttributeLeft = NSLayoutAttributeLeft,
-        XALKLayoutAttributeRight,
-        XALKLayoutAttributeTop,
-        XALKLayoutAttributeBottom,
-        XALKLayoutAttributeLeading,
-        XALKLayoutAttributeTrailing,
-        XALKLayoutAttributeWidth,
-        XALKLayoutAttributeHeight,
-        XALKLayoutAttributeCenterX,
-        XALKLayoutAttributeCenterY,
-        XALKLayoutAttributeLastBaseline,
+        XALKLayoutAttributeRight = NSLayoutAttributeRight,
+        XALKLayoutAttributeTop = NSLayoutAttributeTop,
+        XALKLayoutAttributeBottom = NSLayoutAttributeBottom,
+        XALKLayoutAttributeLeading = NSLayoutAttributeLeading,
+        XALKLayoutAttributeTrailing = NSLayoutAttributeTrailing,
+        XALKLayoutAttributeWidth = NSLayoutAttributeWidth,
+        XALKLayoutAttributeHeight = NSLayoutAttributeHeight,
+        XALKLayoutAttributeCenterX = NSLayoutAttributeCenterX,
+        XALKLayoutAttributeCenterY = NSLayoutAttributeCenterY,
+        XALKLayoutAttributeLastBaseline = NSLayoutAttributeBaseline,
     #if TARGET_OS_IPHONE
         XALKLayoutAttributeBaseline NS_SWIFT_UNAVAILABLE("Use 'lastBaseline' instead") = NSLayoutAttributeLastBaseline,
     #else
@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, XALKAttribute) {
         XALKLayoutAttributeCenterYWithinMargins API_AVAILABLE(ios(8.0)),
     #endif
 
-        XALKLayoutAttributeNotAnAttribute = 0
+        XALKLayoutAttributeNotAnAttribute = NSLayoutAttributeNotAnAttribute
 };
 
 typedef NS_ENUM(NSInteger, XALKRelation) {
@@ -119,11 +119,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) XALKViewBinder *anchor API_AVAILABLE(ios(9.0));
 @property (nonatomic, readonly) XALKViewBinder *safeArea API_AVAILABLE(ios(11.0), tvos(11.0));
 
+- (NSLayoutConstraint *)xalkConstraint;
+
 @end
 
 @interface UIView (XAutoLayoutKitEva)
 
 @property (nonatomic, readonly) XALKViewBinder *xalkBinder;
+@property (nonatomic, readonly) XALKViewBinder *xalk;
 - (XALKViewBinder *)xalkBinder;
 - (XALKViewBinder *)primaryBinder;
 - (XALKViewBinder *)secondaryBinder;
