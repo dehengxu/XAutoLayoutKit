@@ -47,10 +47,9 @@ do {\
     __weak typeof(self) wself = self;
 
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
-        __strong typeof(wself) sself = wself;
+		__strong typeof(wself) sself = wself;
         BOOL b = view.translatesAutoresizingMaskIntoConstraints;
-        sself.slave = view.xalk;
-        view.translatesAutoresizingMaskIntoConstraints = b;
+        sself.slave = view.secondaryBinder;
         sself.slave.useAnchor = sself.useAnchor;
         return sself.slave;
     };
@@ -387,14 +386,20 @@ do {\
 
 - (XALKViewBinder *)xalkBinder
 {
-    return [self xalk];
+    return [self primaryBinder];
 }
 
-- (XALKViewBinder *)xalk {
+- (XALKViewBinder *)primaryBinder {
     XALKViewBinder *b = [XALKViewBinder new];
     b.value1.payload = self;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     return b;
+}
+
+- (XALKViewBinder *)secondaryBinder {
+	XALKViewBinder *b = [XALKViewBinder new];
+	b.value1.payload = self;
+	return b;
 }
 
 @end
