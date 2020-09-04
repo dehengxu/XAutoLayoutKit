@@ -262,10 +262,12 @@ do {\
     return constraint;
 }
 
+#if false
 - (void)dealloc
 {
     NSLog(@"%s", __func__);
 }
+#endif
 
 @end
 
