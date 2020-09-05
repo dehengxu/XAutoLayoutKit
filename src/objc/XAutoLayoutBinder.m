@@ -405,6 +405,11 @@ do {\
     return [self primaryBinder];
 }
 
+- (XALKViewBinder *)xalk
+{
+	return [self primaryBinder];
+}
+
 - (XALKViewBinder *)primaryBinder {
     XALKViewBinder *b = [XALKViewBinder new];
     b.value1.payload = self;
