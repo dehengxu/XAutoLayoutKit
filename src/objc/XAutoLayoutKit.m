@@ -169,11 +169,18 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers
 {
-    self.xalkBinder.width.equal.multiply(((NSNumber*)multipliers[0]).floatValue).to(v1).width.xalkLayout();
-    self.xalkBinder.height.equal.multiply(((NSNumber*)multipliers[1]).floatValue).to(v1).height.xalkLayout();
+    self.xalkBinder.width.equal.multiplyNumber(multipliers[0]).to(v1).width.xalkLayout();
+    self.xalkBinder.height.equal.multiplyNumber(multipliers[1]).to(v1).height.xalkLayout();
     return self;
 }
-    
+
+- (instancetype)followSafeAreaOfView:(UIView *)v1 {
+	self.xalkBinder.width.equal.to(v1).width.xalkLayout();
+	[self alignToTop:0 anchorOfView:v1 withSafeArea:true];
+	[self alignToBottom:0 anchorOfView:v1 withSafeArea:true];
+	return self;
+}
+
 #pragma mark - align of view
 
 - (instancetype)alignToLeft:(CGFloat)margin ofView:(UIView *)v1

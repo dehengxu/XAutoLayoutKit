@@ -26,6 +26,8 @@ do {\
 @property (nonatomic, copy) XALKViewBinder * (^ multiply)(CGFloat multiplier);
 @property (nonatomic, copy) XALKViewBinder * (^ constant)(CGFloat constants);
 
+@property (nonatomic, copy) XALKViewBinder * (^ multiplyNumber)(NSNumber* multiplier);
+@property (nonatomic, copy) XALKViewBinder * (^ constantNumber)(NSNumber* constants);
 @end
 
 @implementation XALKViewBinder
@@ -65,6 +67,18 @@ do {\
         sself.value1.constants = constants;
         return sself;
     };
+
+	self.multiplyNumber = ^XALKViewBinder* _Nonnull (NSNumber *multiplier) {
+		__strong typeof(wself) sself = wself;
+		sself.value1.mutiplier = multiplier.floatValue;
+		return sself;
+	};
+
+	self.constantNumber = ^XALKViewBinder* _Nonnull (NSNumber* constant) {
+		__strong typeof(wself) sself = wself;
+		sself.value1.constants = constant.floatValue;
+		return self;
+	};
     
     self.xalkLayout = ^{
         __strong typeof(wself) sself = wself;

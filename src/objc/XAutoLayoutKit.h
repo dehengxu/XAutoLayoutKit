@@ -59,6 +59,7 @@ FOUNDATION_EXTERN NSString *const kXAutoLayoutVersion;
 - (instancetype)followHeightOfView:(UIView *)v1 withMultiplier:(CGFloat)multiplier XALK_WARN_UNUSED_RESULT;
 - (instancetype)followSizeOfView:(UIView *)v1 XALK_WARN_UNUSED_RESULT;
 - (instancetype)followSizeOfView:(UIView *)v1 withMultipliers:(NSArray *)multipliers XALK_WARN_UNUSED_RESULT;
+- (instancetype)followSafeAreaOfView:(UIView*)v1 XALK_WARN_UNUSED_RESULT;
 
 #pragma mark - align of view
 
