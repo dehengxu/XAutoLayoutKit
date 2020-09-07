@@ -21,7 +21,7 @@ do {\
 
 @property (nonatomic, copy) XALKViewBinder * (^ to)(UIView *view);
 
-@property (nonatomic, copy) void (^ xalkLayout)(void);
+@property (nonatomic, copy) UIView* (^ xalkLayout)(void);
 
 @property (nonatomic, copy) XALKViewBinder * (^ multiply)(CGFloat multiplier);
 @property (nonatomic, copy) XALKViewBinder * (^ constant)(CGFloat constants);
@@ -50,7 +50,7 @@ do {\
 
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
 		__strong typeof(wself) sself = wself;
-        BOOL b = view.translatesAutoresizingMaskIntoConstraints;
+        //BOOL b = view.translatesAutoresizingMaskIntoConstraints;
         sself.slave = view.secondaryBinder;
         sself.slave.useAnchor = sself.useAnchor;
         return sself.slave;
@@ -77,21 +77,25 @@ do {\
 	self.constantNumber = ^XALKViewBinder* _Nonnull (NSNumber* constant) {
 		__strong typeof(wself) sself = wself;
 		sself.value1.constants = constant.floatValue;
-		return self;
+		return sself;
 	};
     
-    self.xalkLayout = ^{
+    self.xalkLayout = ^UIView* {
         __strong typeof(wself) sself = wself;
-        NSLayoutConstraint *constraint = [sself xalkConstraint];
-        if (!constraint) return;
-        UIView *v1 = nil;
-        if (sself.master) {
-            v1 = sself.master.value1.payload;
-        }else {
-            v1 = sself.value1.payload;
-        }
+
+		UIView *v1 = nil;
+		if (sself.master) {
+			v1 = sself.master.value1.payload;
+		}else {
+			v1 = sself.value1.payload;
+		}
+
+		NSLayoutConstraint *constraint = [sself xalkConstraint];
+        if (!constraint) return v1;
+
         //Install constraint
         [v1.superview addConstraint:constraint];
+		return v1;
     };
 }
 

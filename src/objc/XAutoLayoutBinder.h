@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) XALKViewBinder * _Nonnull (^to)(UIView *view);
 
-@property (nonatomic, readonly) void(^xalkLayout)(void);
+@property (nonatomic, readonly) UIView*(^xalkLayout)(void);
 
 // MARK: - Relation
 
