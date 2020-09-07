@@ -22,6 +22,7 @@ do {\
 @property (nonatomic, copy) XALKViewBinder * (^ to)(UIView *view);
 
 @property (nonatomic, copy) UIView* (^ xalkLayout)(void);
+@property (nonatomic, copy) UIView* (^ end)(void);
 
 @property (nonatomic, copy) XALKViewBinder * (^ multiply)(CGFloat multiplier);
 @property (nonatomic, copy) XALKViewBinder * (^ constant)(CGFloat constants);
@@ -97,6 +98,8 @@ do {\
         [v1.superview addConstraint:constraint];
 		return v1;
     };
+
+	self.end = self.xalkLayout;
 }
 
 - (void)setSlave:(XALKViewBinder *)slave
