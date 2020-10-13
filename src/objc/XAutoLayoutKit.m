@@ -224,25 +224,25 @@ NSString * const kXAutoLayoutVersion = @"0.3.0-beta";
 
 - (instancetype)above:(CGFloat)above ofView:(UIView *)v1
 {
-    self.xalkBinder.bottom.greatThanOrEqual.constant(-above).to(v1).top.xalkLayout();
+    self.xalkBinder.bottom.equal.constant(-above).to(v1).top.xalkLayout();
     return self;
 }
 
 - (instancetype)below:(CGFloat)below ofView:(UIView *)v1
 {
-    self.xalkBinder.top.greatThanOrEqual.constant(below).to(v1).bottom.xalkLayout();
+    self.xalkBinder.top.equal.constant(below).to(v1).bottom.xalkLayout();
     return self;
 }
 
 - (instancetype)ahead:(CGFloat)ahead ofView:(UIView *)v1
 {
-    self.xalkBinder.right.greatThanOrEqual.constant(-ahead).to(v1).left.xalkLayout();
+    self.xalkBinder.right.equal.constant(-ahead).to(v1).left.xalkLayout();
     return self;
 }
 
 - (instancetype)after:(CGFloat)after ofView:(UIView *)v1
 {
-    self.xalkBinder.left.greatThanOrEqual.constant(after).to(v1).right.xalkLayout();
+    self.xalkBinder.left.equal.constant(after).to(v1).right.xalkLayout();
     return self;
 }
 
