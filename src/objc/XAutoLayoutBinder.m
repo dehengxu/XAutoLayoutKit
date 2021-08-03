@@ -50,48 +50,48 @@ do {\
     __weak typeof(self) wself = self;
 
     self.to = ^XALKViewBinder *_Nonnull (UIView *_Nonnull view) {
-		__strong typeof(wself) sself = wself;
+		__strong typeof(wself) self = wself;
         //BOOL b = view.translatesAutoresizingMaskIntoConstraints;
-        sself.slave = view.secondaryBinder;
-        sself.slave.useAnchor = sself.useAnchor;
-        return sself.slave;
+		self.slave = view.secondaryBinder;
+		self.slave.useAnchor = self.useAnchor;
+        return self.slave;
     };
 
     self.multiply = ^XALKViewBinder *_Nonnull (CGFloat multiplier) {
-        __strong typeof(wself) sself = wself;
-        sself.value1.mutiplier = multiplier;
-        return sself;
+        __strong typeof(wself) self = wself;
+		self.value1.mutiplier = multiplier;
+        return self;
     };
 
     self.constant = ^XALKViewBinder *_Nonnull (CGFloat constants) {
-        __strong typeof(wself) sself = wself;
-        sself.value1.constants = constants;
-        return sself;
+        __strong typeof(wself) self = wself;
+		self.value1.constants = constants;
+        return self;
     };
 
 	self.multiplyNumber = ^XALKViewBinder* _Nonnull (NSNumber *multiplier) {
-		__strong typeof(wself) sself = wself;
-		sself.value1.mutiplier = multiplier.floatValue;
-		return sself;
+		__strong typeof(wself) self = wself;
+		self.value1.mutiplier = multiplier.floatValue;
+		return self;
 	};
 
 	self.constantNumber = ^XALKViewBinder* _Nonnull (NSNumber* constant) {
-		__strong typeof(wself) sself = wself;
-		sself.value1.constants = constant.floatValue;
-		return sself;
+		__strong typeof(wself) self = wself;
+		self.value1.constants = constant.floatValue;
+		return self;
 	};
     
     self.xalkLayout = ^UIView* {
-        __strong typeof(wself) sself = wself;
+        __strong typeof(wself) self = wself;
 
 		UIView *v1 = nil;
-		if (sself.master) {
-			v1 = sself.master.value1.payload;
+		if (self.master) {
+			v1 = self.master.value1.payload;
 		}else {
-			v1 = sself.value1.payload;
+			v1 = self.value1.payload;
 		}
 
-		NSLayoutConstraint *constraint = [sself xalkConstraint];
+		NSLayoutConstraint *constraint = [self xalkConstraint];
         if (!constraint) return v1;
 
         //Install constraint
