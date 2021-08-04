@@ -17,8 +17,8 @@ do {\
 }\
 }while(0)
 
-typedef NS_OPTIONS (long, AttributeSetupState) {
-    SETUP_NONE      = 0x0,
+typedef NS_OPTIONS (long, AttributeState) {
+    SETUP_NONE      = 0,
     SETUP_TOP       = 1,
     SETUP_BOTTOM      = 1 << 1,
     SETUP_LEFT      = 1 << 2,
@@ -29,12 +29,11 @@ typedef NS_OPTIONS (long, AttributeSetupState) {
     SETUP_CENTERY = 1 << 7,
     SETUP_LEADING = 1 << 8,
     SETUP_TRAILING = 1 << 9,
-    SETUP_ANCHOR    = 1 << 10,
-    SETUP_SAFE_AREA = 1 << 11,
 };
 
 @interface XALKViewBinder () {
-    AttributeSetupState _attributeSetupState;
+    AttributeState _attributeState;
+    BOOL _constantState;
 }
 
 @property (nonatomic, copy) XALKViewBinder * (^ to)(UIView *view);
@@ -72,10 +71,10 @@ typedef NS_OPTIONS (long, AttributeSetupState) {
 		__strong typeof(wself) self = wself;
         //BOOL b = view.translatesAutoresizingMaskIntoConstraints;
 		self.slave = view.secondaryBinder;
-		self.slave.useAnchor = self.useAnchor;
-        if (self.isSafeArea) {
-            [self.slave safeArea];
-        }
+//		self.slave.useAnchor = self.useAnchor;
+//        if (self.isSafeArea) {
+//            [self.slave safeArea];
+//        }
         return self.slave;
     };
 
@@ -87,6 +86,7 @@ typedef NS_OPTIONS (long, AttributeSetupState) {
 
     self.constant = ^XALKViewBinder *_Nonnull (CGFloat constants) {
         __strong typeof(wself) self = wself;
+        self->_constantState = YES;
 		self.value1.constants = constants;
         return self;
     };
@@ -160,70 +160,70 @@ typedef NS_OPTIONS (long, AttributeSetupState) {
 
 - (XALKViewBinder *)width
 {
-    _attributeSetupState |= SETUP_WIDTH;
+    _attributeState |= SETUP_WIDTH;
     [self.value1 width];
     return self;
 }
 
 - (XALKViewBinder *)height
 {
-    _attributeSetupState |= SETUP_HEIGHT;
+    _attributeState |= SETUP_HEIGHT;
     [self.value1 height];
     return self;
 }
 
 - (XALKViewBinder *)centerX
 {
-    _attributeSetupState |= SETUP_CENTERX;
+    _attributeState |= SETUP_CENTERX;
     [self.value1 centerX];
     return self;
 }
 
 - (XALKViewBinder *)centerY
 {
-    _attributeSetupState |= SETUP_CENTERY;
+    _attributeState |= SETUP_CENTERY;
     [self.value1 centerY];
     return self;
 }
 
 - (XALKViewBinder *)leading
 {
-    _attributeSetupState |= SETUP_LEADING;
+    _attributeState |= SETUP_LEADING;
     [self.value1 leading];
     return self;
 }
 
 - (XALKViewBinder *)trailing
 {
-    _attributeSetupState |= SETUP_TRAILING;
+    _attributeState |= SETUP_TRAILING;
     [self.value1 trailing];
     return self;
 }
 
 - (XALKViewBinder *)top
 {
-    _attributeSetupState |= SETUP_TOP;
+    _attributeState |= SETUP_TOP;
     [self.value1 top];
     return self;
 }
 
 - (XALKViewBinder *)left
 {
-    _attributeSetupState |= SETUP_LEFT;
+    _attributeState |= SETUP_LEFT;
     [self.value1 left];
     return self;
 }
 
 - (XALKViewBinder *)bottom
 {
-    _attributeSetupState |= SETUP_BOTTOM;
+    _attributeState |= SETUP_BOTTOM;
     [self.value1 bottom];
     return self;
 }
 
 - (XALKViewBinder *)right
 {
-    _attributeSetupState |= SETUP_RIGHT;
+    _attributeState |= SETUP_RIGHT;
     [self.value1 right];
     return self;
 }
@@ -255,15 +255,15 @@ typedef NS_OPTIONS (long, AttributeSetupState) {
 - (NSLayoutConstraint *)xalkConstraint {
     //if (!wself.value1) return;
     if (self.master && !self.slave) {
-        if (self.master->_attributeSetupState && self->_attributeSetupState) {} else {
+        if (self.master->_attributeState && self->_attributeState) {} else {
             NSAssert(false, @"both of views should setup attributes");
         }
     }else if (self.slave && !self.master) {
-        if (self->_attributeSetupState && self.slave->_attributeSetupState) {} else {
+        if (self->_attributeState && self.slave->_attributeState) {} else {
             NSAssert(false, @"both of views should setup attributes");
         }
     }else {
-        NSAssert(false, @"layout views setup issues.");
+        NSAssert(self->_constantState, @"layout views setup issues.");// use absolute constant value
     }
 
     if (!self.master && !self.value1.payload) {//if slave
