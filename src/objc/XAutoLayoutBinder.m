@@ -12,12 +12,30 @@
 do {\
     if (@available(iOS 11.0, *)) {\
     self.anchor = (_isSafeArea) ? self.payload.safeAreaLayoutGuide.DIRECT##Anchor:  self.payload.DIRECT##Anchor;\
-    } else {\
+    } else if (@available(iOS 9.0, *)) {\
     self.anchor = self.payload.DIRECT##Anchor;\
 }\
 }while(0)
 
-@interface XALKViewBinder ()
+typedef NS_OPTIONS (long, AttributeSetupState) {
+    SETUP_NONE      = 0x0,
+    SETUP_TOP       = 1,
+    SETUP_BOTTOM      = 1 << 1,
+    SETUP_LEFT      = 1 << 2,
+    SETUP_RIGHT     = 1 << 3,
+    SETUP_WIDTH     = 1 << 4,
+    SETUP_HEIGHT    = 1 << 5,
+    SETUP_CENTERX = 1 << 6,
+    SETUP_CENTERY = 1 << 7,
+    SETUP_LEADING = 1 << 8,
+    SETUP_TRAILING = 1 << 9,
+    SETUP_ANCHOR    = 1 << 10,
+    SETUP_SAFE_AREA = 1 << 11,
+};
+
+@interface XALKViewBinder () {
+    AttributeSetupState _attributeSetupState;
+}
 
 @property (nonatomic, copy) XALKViewBinder * (^ to)(UIView *view);
 
@@ -29,6 +47,7 @@ do {\
 
 @property (nonatomic, copy) XALKViewBinder * (^ multiplyNumber)(NSNumber* multiplier);
 @property (nonatomic, copy) XALKViewBinder * (^ constantNumber)(NSNumber* constants);
+
 @end
 
 @implementation XALKViewBinder
@@ -54,6 +73,9 @@ do {\
         //BOOL b = view.translatesAutoresizingMaskIntoConstraints;
 		self.slave = view.secondaryBinder;
 		self.slave.useAnchor = self.useAnchor;
+        if (self.isSafeArea) {
+            [self.slave safeArea];
+        }
         return self.slave;
     };
 
@@ -138,65 +160,79 @@ do {\
 
 - (XALKViewBinder *)width
 {
+    _attributeSetupState |= SETUP_WIDTH;
     [self.value1 width];
     return self;
 }
 
 - (XALKViewBinder *)height
 {
+    _attributeSetupState |= SETUP_HEIGHT;
     [self.value1 height];
     return self;
 }
 
 - (XALKViewBinder *)centerX
 {
+    _attributeSetupState |= SETUP_CENTERX;
     [self.value1 centerX];
     return self;
 }
 
 - (XALKViewBinder *)centerY
 {
+    _attributeSetupState |= SETUP_CENTERY;
     [self.value1 centerY];
     return self;
 }
 
 - (XALKViewBinder *)leading
 {
+    _attributeSetupState |= SETUP_LEADING;
     [self.value1 leading];
     return self;
 }
 
 - (XALKViewBinder *)trailing
 {
+    _attributeSetupState |= SETUP_TRAILING;
     [self.value1 trailing];
     return self;
 }
 
 - (XALKViewBinder *)top
 {
+    _attributeSetupState |= SETUP_TOP;
     [self.value1 top];
     return self;
 }
 
 - (XALKViewBinder *)left
 {
+    _attributeSetupState |= SETUP_LEFT;
     [self.value1 left];
     return self;
 }
 
 - (XALKViewBinder *)bottom
 {
+    _attributeSetupState |= SETUP_BOTTOM;
     [self.value1 bottom];
     return self;
 }
 
 - (XALKViewBinder *)right
 {
+    _attributeSetupState |= SETUP_RIGHT;
     [self.value1 right];
     return self;
 }
 
 - (instancetype)anchor {
+    if (!_isSafeArea) {
+        NSAssert(false, @"safeArea must called ahead");
+        return self;
+    }
     _useAnchor = YES;
     _value1.useAnchor = _useAnchor;
     _value2.useAnchor = _useAnchor;
@@ -207,6 +243,7 @@ do {\
 {
     _isSafeArea = YES;
     _value1.isSafeArea = YES;
+    [self anchor];
     return self;
 }
 
@@ -217,6 +254,18 @@ do {\
 
 - (NSLayoutConstraint *)xalkConstraint {
     //if (!wself.value1) return;
+    if (self.master && !self.slave) {
+        if (self.master->_attributeSetupState && self->_attributeSetupState) {} else {
+            NSAssert(false, @"both of views should setup attributes");
+        }
+    }else if (self.slave && !self.master) {
+        if (self->_attributeSetupState && self.slave->_attributeSetupState) {} else {
+            NSAssert(false, @"both of views should setup attributes");
+        }
+    }else {
+        NSAssert(false, @"layout views setup issues.");
+    }
+
     if (!self.master && !self.value1.payload) {//if slave
         return nil;
     } else if (!self.value1.payload) {
@@ -328,14 +377,15 @@ do {\
 
 - (instancetype)width
 {
-    self.anchor = self.payload.widthAnchor;
+    //self.anchor = self.payload.widthAnchor;
+    AdoptedAnchor(width);
     self.attribute = XALKLayoutAttributeWidth;
     return self;
 }
 
 - (instancetype)height
 {
-    self.anchor = self.payload.heightAnchor;
+    AdoptedAnchor(height);
     self.attribute = XALKLayoutAttributeHeight;
     return self;
 }

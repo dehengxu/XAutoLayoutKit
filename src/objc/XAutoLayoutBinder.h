@@ -120,8 +120,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) XALKViewBinder *(^multiplyNumber)(NSNumber* multiplier);
 @property (nonatomic, readonly) XALKViewBinder *(^constantNumber)(NSNumber* constants);
 
-@property (nonatomic, readonly) XALKViewBinder *anchor API_AVAILABLE(ios(9.0));
-@property (nonatomic, readonly) XALKViewBinder *safeArea API_AVAILABLE(ios(11.0), tvos(11.0));
+@property (nonatomic, readonly) XALKViewBinder *anchor;// API_AVAILABLE(ios(9.0));
+@property (nonatomic, readonly) XALKViewBinder *safeArea; //API_AVAILABLE(ios(11.0), tvos(11.0));
 
 - (NSLayoutConstraint *)xalkConstraint;
 
