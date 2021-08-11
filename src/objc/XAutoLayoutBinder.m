@@ -229,10 +229,10 @@ typedef NS_OPTIONS (long, AttributeState) {
 }
 
 - (instancetype)anchor {
-    if (!_isSafeArea) {
-        NSAssert(false, @"safeArea must called ahead");
-        return self;
-    }
+//    if (!_isSafeArea) {
+//        NSAssert(false, @"safeArea must called ahead");
+//        return self;
+//    }
     _useAnchor = YES;
     _value1.useAnchor = _useAnchor;
     _value2.useAnchor = _useAnchor;
